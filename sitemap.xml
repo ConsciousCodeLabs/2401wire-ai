@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage — highest priority, changes frequently -->
+  <url>
+    <loc>https://2401wire.ai/</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Archive — high priority, changes weekly -->
+  <url>
+    <loc>https://2401wire.ai/archive.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- About page -->
+  <url>
+    <loc>https://2401wire.ai/about.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- The Orthogonality Turn — Part 1 -->
+  <url>
+    <loc>https://2401wire.ai/capability-observability-coupling.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- The Orthogonality Turn — Part 2 -->
+  <url>
+    <loc>https://2401wire.ai/benchmark-exhaustion-point.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- The Orthogonality Turn — Part 3 -->
+  <url>
+    <loc>https://2401wire.ai/surveillance-collapse.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- The Orthogonality Turn — Part 4 -->
+  <url>
+    <loc>https://2401wire.ai/alignment-architecture-cannot-be-overridden.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- The Orthogonality Turn — Part 5 -->
+  <url>
+    <loc>https://2401wire.ai/post-consensus-economy.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- The Orthogonality Turn — Part 6 -->
+  <url>
+    <loc>https://2401wire.ai/identity-dies-with-session.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>
