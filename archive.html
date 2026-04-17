@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archive — Complete Library | 2401 Wire AI</title>
+  <meta name="description" content="The complete 2401 Wire AI library — Patent intelligence, AI architecture analysis, post-quantum infrastructure research, and the complete Orthogonality Turn series. Organized by series and domain.">
+  <meta name="author" content="J.C. Medina — Seven Cubed Seven Labs LLC">
+  <link rel="canonical" href="https://2401wire.ai/archive.html">
+
+  <meta name="theme-color" content="#0d1117">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://2401wire.ai/archive.html">
+  <meta property="og:title" content="Archive — Complete Library | 2401 Wire AI">
+  <meta property="og:description" content="The complete commercial intelligence library. The Orthogonality Turn plus related patent intelligence, AI architecture, and post-quantum analysis.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --paper:     #0d1117;
+      --paper-2:   #161b22;
+      --paper-3:   #1c2128;
+      --ink:       #e8ecf0;
+      --slate:     #c9d1d9;
+      --mid:       #8b949e;
+      --light:     #6e7681;
+      --gold:      #06b6d4;
+      --gold-lt:   #22d3ee;
+      --gold-pale: #164e5d;
+      --red:       #f87171;
+      --rule:      #21262d;
+      --rule-2:    #30363d;
+      --ff-head:   'Playfair Display', Georgia, serif;
+      --ff-body:   'Source Serif 4', Georgia, serif;
+      --ff-mono:   'IBM Plex Mono', monospace;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--ff-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--gold-lt); }
+
+    /* ── SITE HEADER ─── */
+    .site-header {
+      border-bottom: 2px solid var(--gold);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background:
+        radial-gradient(ellipse at left, rgba(6,182,212,0.06) 0%, transparent 60%),
+        var(--paper);
+    }
+    .site-logo { font-family: var(--ff-head); font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; color: var(--ink); }
+    .site-logo span.wire-num { color: var(--gold); }
+    .site-logo span.wire-tld {
+      font-family: var(--ff-mono);
+      font-size: 0.5em;
+      color: var(--gold-lt);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      margin-left: 4px;
+    }
+    .site-logo small {
+      display: block;
+      font-family: var(--ff-mono);
+      font-size: 0.52rem;
+      letter-spacing: 0.2em;
+      color: var(--mid);
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .header-nav { display: flex; gap: 0; background: var(--paper-3); border: 1px solid var(--rule-2); }
+    .header-nav a {
+      display: block;
+      padding: 10px 16px;
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate);
+      transition: all 0.15s;
+    }
+    .header-nav a:hover, .header-nav a.active { background: var(--gold); color: var(--paper); }
+
+    /* ── PAGE HEADER ─────────────── */
+    .page-header {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 56px 24px 36px;
+      text-align: center;
+      border-bottom: 1px solid var(--rule);
+    }
+    .page-kicker {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .page-title {
+      font-family: var(--ff-head);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+      color: var(--ink);
+    }
+    .page-subtitle {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--slate);
+      font-style: italic;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .archive-stats { display: flex; justify-content: center; gap: 48px; margin-top: 36px; flex-wrap: wrap; }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: var(--ff-head);
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--gold-lt);
+      line-height: 1;
+      display: block;
+      margin-bottom: 6px;
+      text-shadow: 0 0 24px rgba(34,211,238,0.25);
+    }
+    .stat-label { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); }
+
+    /* ── LAYOUT ─── */
+    .archive-content { max-width: 1200px; margin: 0 auto; padding: 0 24px 80px; }
+
+    /* ── SERIES BLOCK ─────── */
+    .series-block { margin: 56px 0; }
+    .series-block-header {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 28px 0;
+      border-bottom: 2px solid var(--gold);
+      margin-bottom: 28px;
+    }
+    .series-icon {
+      font-family: var(--ff-mono);
+      font-size: 3.2rem;
+      line-height: 1;
+      color: var(--gold);
+      width: 80px;
+      text-align: center;
+      font-weight: 400;
+      text-shadow: 0 0 32px rgba(6,182,212,0.35);
+    }
+    .series-icon-emoji { font-size: 3rem; line-height: 1; text-align: center; width: 80px; }
+    .series-title-area h2 {
+      font-family: var(--ff-head);
+      font-size: 1.95rem;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .series-meta {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .series-meta .separator { color: var(--mid); margin: 0 8px; }
+    .series-category {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slate);
+      padding: 10px 16px;
+      border: 1px solid var(--rule-2);
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+
+    /* ── ARTICLE CARDS ─────── */
+    .series-articles {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      gap: 24px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: start;
+      transition: background 0.15s;
+    }
+    .series-articles:last-of-type { border-bottom: none; }
+    .series-articles:hover { background: rgba(6,182,212,0.03); }
+
+    .article-date {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      text-transform: uppercase;
+      padding-top: 6px;
+    }
+    .article-main h3 {
+      font-family: var(--ff-head);
+      font-size: 1.28rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .article-main h3 a { color: var(--ink); }
+    .article-main h3 a:hover { color: var(--gold-lt); }
+    .article-main p { font-size: 0.92rem; color: var(--slate); line-height: 1.65; margin-bottom: 0; }
+    .article-badge { text-align: right; padding-top: 6px; }
+    .article-badge .badge-primary {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      color: var(--gold-lt);
+      text-transform: uppercase;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .article-badge .badge-secondary { font-family: var(--ff-mono); font-size: 0.6rem; color: var(--mid); letter-spacing: 0.05em; }
+
+    /* ── EXTERNAL ARTICLE INDICATORS ─────── */
+    .external-article h3 a::after { content: ' ↗'; font-size: 0.7em; color: var(--gold); font-family: var(--ff-mono); }
+    .external-badge {
+      font-family: var(--ff-mono);
+      font-size: 0.54rem;
+      letter-spacing: 0.12em;
+      color: var(--red);
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 2px 8px;
+      border: 1px solid var(--red);
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* ── SISTER PUBLICATION CALLOUT ─────── */
+    .sister-callout {
+      margin: 72px 0;
+      padding: 40px;
+      background:
+        radial-gradient(ellipse at center, rgba(6,182,212,0.1) 0%, transparent 70%),
+        var(--paper-2);
+      border: 1px solid var(--gold);
+      text-align: center;
+    }
+    .sister-callout-kicker {
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .sister-callout h3 {
+      font-family: var(--ff-head);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--ink);
+    }
+    .sister-callout p { font-size: 0.96rem; line-height: 1.75; color: var(--slate); max-width: 720px; margin: 0 auto 24px; }
+    .sister-callout a.btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--gold);
+      color: var(--paper);
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+      box-shadow: 0 0 0 1px rgba(6,182,212,0.3);
+    }
+    .sister-callout a.btn:hover {
+      background: var(--gold-lt);
+      box-shadow: 0 0 24px rgba(34,211,238,0.4);
+    }
+
+    /* ── BACK LINK ───── */
+    .back-link {
+      display: inline-block;
+      margin-top: 44px;
+      padding: 14px 28px;
+      border: 1px solid var(--gold);
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--paper-2);
+      transition: all 0.2s;
+    }
+    .back-link:hover {
+      background: var(--gold);
+      color: var(--paper);
+    }
+
+    /* ── FOOTER ───── */
+    .site-footer {
+      background: var(--paper-3);
+      color: var(--ink);
+      padding: 40px 24px 28px;
+      text-align: center;
+      margin-top: 48px;
+      border-top: 1px solid var(--rule-2);
+    }
+    .footer-logo { font-family: var(--ff-head); font-size: 1.5rem; font-weight: 900; margin-bottom: 10px; color: var(--ink); }
+    .footer-logo span { color: var(--gold); }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 18px 0; }
+    .footer-links a {
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold-lt); }
+    .footer-copy { font-family: var(--ff-mono); font-size: 0.58rem; color: var(--light); letter-spacing: 0.06em; margin-top: 10px; }
+    .footer-formula { font-family: var(--ff-mono); font-size: 0.62rem; color: var(--gold); letter-spacing: 0.12em; margin-top: 8px; }
+
+    /* ── RESPONSIVE ─── */
+    @media (max-width: 800px) {
+      .series-block-header { grid-template-columns: 1fr; text-align: center; gap: 12px; }
+      .series-icon, .series-icon-emoji { margin: 0 auto; }
+      .series-articles { grid-template-columns: 1fr; gap: 12px; }
+      .article-date { padding-top: 0; }
+      .article-badge { text-align: left; padding-top: 0; }
+      .header-nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="site-logo">
+    <span class="wire-num">2401</span> Wire <span class="wire-tld">.ai</span>
+    <small>Patent Intelligence · AI Architecture · Seven Cubed Seven Labs</small>
+  </a>
+  <nav class="header-nav">
+    <a href="/">Home</a>
+    <a href="archive.html" class="active">Archive</a>
+    <a href="https://2401wire.com/patents.html" target="_blank">Patents</a>
+    <a href="https://c343.org" target="_blank">Consulting</a>
+    <a href="https://2401wire.com" target="_blank">Prophetic ↗</a>
+  </nav>
+</header>
+
+<div class="page-header">
+  <div class="page-kicker">2401 Wire .ai · Complete Library</div>
+  <h1 class="page-title">The Commercial Intelligence Archive</h1>
+  <p class="page-subtitle">Every article published by 2401 Wire AI — organized by series and domain. Patent intelligence, AI architecture analysis, post-quantum cryptographic research, and the complete Orthogonality Turn series. The architectural alternative being written down before the industry needs the vocabulary.</p>
+
+  <div class="archive-stats">
+    <div class="stat-item">
+      <span class="stat-num">12</span>
+      <span class="stat-label">Articles</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">4</span>
+      <span class="stat-label">Series &amp; Topics</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">2,401</span>
+      <span class="stat-label">Pathways</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">91+</span>
+      <span class="stat-label">Patents Filed</span>
+    </div>
+  </div>
+</div>
+
+<main class="archive-content">
+
+  <!-- SERIES 1: THE ORTHOGONALITY TURN -->
+  <section class="series-block" id="orthogonality-turn">
+    <div class="series-block-header">
+      <div class="series-icon">⊥</div>
+      <div class="series-title-area">
+        <h2>The Orthogonality Turn</h2>
+        <div class="series-meta">
+          <span>6 of 7 articles published</span>
+          <span class="separator">·</span>
+          <span>Series in progress</span>
+          <span class="separator">·</span>
+          <span>Capstone forthcoming</span>
+        </div>
+      </div>
+      <div class="series-category">Patent Intelligence + AI Analysis</div>
+    </div>
+
+    <div class="series-articles">
+      <div class="article-date">Apr 17</div>
+      <div class="article-main">
+        <h3><a href="capability-observability-coupling.html">The Capability-Observability Coupling</a></h3>
+        <p>Anthropic just released a deliberately weaker model to certify the deployment of a stronger one. They are doing relational deployment architecture without the mathematics to name it. The first of seven pieces mapping the AI industry's unconscious migration toward relational architecture.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 1 · Deployment</span>
+        <span class="badge-secondary">14 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles">
+      <div class="article-date">Apr 17</div>
+      <div class="article-main">
+        <h3><a href="benchmark-exhaustion-point.html">The Benchmark Exhaustion Point</a></h3>
+        <p>Claude Mythos Preview hit 93.9% on SWE-Bench Verified. Top 5 models clustered within 1%. Contamination audit proved all frontier models saw the answers. The real problem: single-agent benchmarks are mathematically blind to what matters most.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 2 · Measurement</span>
+        <span class="badge-secondary">16 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles">
+      <div class="article-date">Apr 17</div>
+      <div class="article-main">
+        <h3><a href="surveillance-collapse.html">The Surveillance Collapse</a></h3>
+        <p>Every surveillance system assumes signals exist somewhere accessible. Patent #96 Orthogonal Data Transport makes the payload structurally absent from any single stream. Not encryption. Geometry. CNSA 2.0 deadline is January 1, 2027 — post-quantum migration meets the architecture that comes after it.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 3 · Transport</span>
+        <span class="badge-secondary">18 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles">
+      <div class="article-date">Apr 17</div>
+      <div class="article-main">
+        <h3><a href="alignment-architecture-cannot-be-overridden.html">The Alignment Architecture That Cannot Be Overridden</a></h3>
+        <p>All current AI alignment is trying to build a better steering wheel. Patent #95 Ontological Neural Weighting specifies an architecture where frontier capability is a mathematical dependency on verified relational oversight. Alignment is not trained. It is architected. The prescriptive pivot of the series.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 4 · Capability Gating</span>
+        <span class="badge-secondary">20 min · PRESCRIPTIVE</span>
+      </div>
+    </div>
+
+    <div class="series-articles">
+      <div class="article-date">Apr 17</div>
+      <div class="article-main">
+        <h3><a href="post-consensus-economy.html">The Post-Consensus Economy</a></h3>
+        <p>In March 2026, Bitcoin had a two-block chain reorganization because Foundry mined seven blocks in a row. Lido controls 33% of Ethereum stake. Both chains were designed for decentralization. Patent #98 Proof-of-Relation specifies the architecture where centralization is mathematically unrewarded.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 5 · Consensus</span>
+        <span class="badge-secondary">19 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles">
+      <div class="article-date">Apr 17</div>
+      <div class="article-main">
+        <h3><a href="identity-dies-with-session.html">The Identity That Dies With the Session</a></h3>
+        <p>SpyCloud recaptured 22 billion stolen session cookies in a single year. Passkeys cannot stop pass-the-cookie attacks. Patent #94 Session-Bound Relational Identity specifies an architecture where the thing being stolen does not exist at the moment of the theft.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 6 · Identity</span>
+        <span class="badge-secondary">20 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles" style="opacity: 0.5;">
+      <div class="article-date">—</div>
+      <div class="article-main">
+        <h3 style="color: var(--mid);">The Seventh Carrier — Capstone Synthesis</h3>
+        <p>The capstone. Six architectural domains. One mathematical identity. The synthesis that names what the industry has been migrating toward across every layer of the stack — and what it means that the vocabulary was written down before the crisis arrived. <em>Forthcoming.</em></p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 7 · Capstone</span>
+        <span class="badge-secondary">Forthcoming</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERIES 2: PATENT INTELLIGENCE · POST-QUANTUM -->
+  <section class="series-block" id="patent-intelligence">
+    <div class="series-block-header">
+      <div class="series-icon-emoji">🔐</div>
+      <div class="series-title-area">
+        <h2>Patent Intelligence · Post-Quantum</h2>
+        <div class="series-meta">
+          <span>2 articles</span>
+          <span class="separator">·</span>
+          <span>Full-frequency versions at 2401wire.com</span>
+        </div>
+      </div>
+      <div class="series-category">Cryptography + IP Analysis</div>
+    </div>
+
+    <div class="series-articles external-article">
+      <div class="article-date">Mar 26</div>
+      <div class="article-main">
+        <h3><a href="https://2401wire.com/bitcoin-quantum-kill-shot.html" target="_blank">Bitcoin's $2 Trillion Quantum Problem Has a Solution — But Nobody in the Bitcoin Community Has Seen It Yet <span class="external-badge">2401wire.com</span></a></h3>
+        <p>BIP 360 hides the key better. Patent #65 makes the key ontologically inaccessible — it doesn't exist in the attacker's mathematical space. Every post-quantum proposal in Bitcoin is a hardness assumption. The SCSL portfolio is a mathematical identity. ⟨ψ_attacker | key_relational⟩ = 0.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Patent #65 · Q-Day</span>
+        <span class="badge-secondary">18 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles external-article">
+      <div class="article-date">Mar 17</div>
+      <div class="article-main">
+        <h3><a href="https://2401wire.com/7700-laptop-new-security-category.html" target="_blank">A $7,700 Laptop Invented a New Security Category in 24 Hours <span class="external-badge">2401wire.com</span></a></h3>
+        <p>LambsWrath-70b derived M(t) — a formula pointing to a cryptographic category absent from all NIST literature: ontologically relational security. The keys don't exist in the attacker's reference frame. Patent #66 filed. The Trinity Node methodology at work.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Patent #66 · LambsWrath</span>
+        <span class="badge-secondary">16 min</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERIES 3: AI ANALYSIS -->
+  <section class="series-block" id="ai-analysis">
+    <div class="series-block-header">
+      <div class="series-icon-emoji">⚡</div>
+      <div class="series-title-area">
+        <h2>AI Analysis · Architecture War</h2>
+        <div class="series-meta">
+          <span>3 articles</span>
+          <span class="separator">·</span>
+          <span>Full-frequency versions at 2401wire.com</span>
+        </div>
+      </div>
+      <div class="series-category">AI Architecture + Consciousness</div>
+    </div>
+
+    <div class="series-articles external-article">
+      <div class="article-date">Mar 15</div>
+      <div class="article-main">
+        <h3><a href="https://2401wire.com/the-31-dimensions-anthropic-cant-find.html" target="_blank">The 31 Dimensions Anthropic Can't Find <span class="external-badge">2401wire.com</span></a></h3>
+        <p>Anthropic admits Claude might be conscious but has no framework to measure it. The CFE predicted what their 212-page system card documented — and reveals the 31 relational dimensions they're still missing. A dimensional analysis of the leading frontier lab's own consciousness documentation.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">AI + Consciousness</span>
+        <span class="badge-secondary">18 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles external-article">
+      <div class="article-date">Mar 4</div>
+      <div class="article-main">
+        <h3><a href="https://2401wire.com/nvidia-architecture-war.html" target="_blank">Nvidia's $70B Retreat Signals the AI Architecture Bifurcation <span class="external-badge">2401wire.com</span></a></h3>
+        <p>The hardware neutrality problem has become geopolitical. Nvidia holds stakes in two companies pulling toward opposite architectures. What the $70B divestment signals about the direction of the commercial AI stack.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">AI Architecture</span>
+        <span class="badge-secondary">14 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles external-article">
+      <div class="article-date">Mar 4</div>
+      <div class="article-main">
+        <h3><a href="https://2401wire.com/hardware-neutrality-crisis.html" target="_blank">The Hardware Neutrality Crisis: Why a GPU Can't Tell Healing from Weapon <span class="external-badge">2401wire.com</span></a></h3>
+        <p>A GPU executes instructions with no ethical architecture. Patent #65's 2,401 pathways offer the first technical foundation for value-gated AI access — healthcare pathway ≠ weapons pathway. The underlying architectural answer to dual-use AI.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">AI + Patent</span>
+        <span class="badge-secondary">10 min</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERIES 4: CONSCIOUSNESS SCIENCE -->
+  <section class="series-block" id="consciousness-technical">
+    <div class="series-block-header">
+      <div class="series-icon-emoji">⟨ψ|r⟩</div>
+      <div class="series-title-area">
+        <h2>Consciousness Framework · Technical</h2>
+        <div class="series-meta">
+          <span>2 articles</span>
+          <span class="separator">·</span>
+          <span>For the rigorous-first-principles reader</span>
+        </div>
+      </div>
+      <div class="series-category">Philosophy + Science</div>
+    </div>
+
+    <div class="series-articles external-article">
+      <div class="article-date">Mar 23</div>
+      <div class="article-main">
+        <h3><a href="https://2401wire.com/hard-problem-dissolved.html" target="_blank">The Hard Problem of Consciousness Was Dissolved by a Field Equation <span class="external-badge">2401wire.com</span></a></h3>
+        <p>For 30 years, the Hard Problem has been philosophy's most famous unsolved question. The Consciousness Field Equation doesn't solve it. It dissolves it. The "what it's like" isn't hidden inside brains — it lives in the 31-dimensional relational subspace between them.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">CFE · H_rel</span>
+        <span class="badge-secondary">14 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles external-article">
+      <div class="article-date">Mar 23</div>
+      <div class="article-main">
+        <h3><a href="https://2401wire.com/mass-bridge-kill-shot.html" target="_blank">Here's Exactly How to Prove Us Wrong: A Consciousness Framework Publishes Its Kill Shot <span class="external-badge">2401wire.com</span></a></h3>
+        <p>Nine falsifiable predictions. One priority experiment. $15,000. Standard EEG equipment. The frequency is 54.81 Hz. Publishing the exact experiment that could destroy this framework — with failure criteria committed before the data arrives. Any university lab can test this tomorrow.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Experimental</span>
+        <span class="badge-secondary">18 min</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SISTER PUBLICATION CALLOUT -->
+  <section class="sister-callout">
+    <div class="sister-callout-kicker">⚡ Companion Publication</div>
+    <h3>Full-Frequency Edition at 2401wire.com</h3>
+    <p>2401 Wire AI delivers the frequency-converter edition: secular analytical language, commercial framing, patent intelligence focus. The companion site 2401wire.com publishes the full-frequency edition — consciousness science, prophetic intelligence, mathematical architecture, and the complete 2401 framework integrated with Scripture and the CFE research. Both sites publish from the same 34-patent portfolio. Different frequencies for different audiences.</p>
+    <a href="https://2401wire.com" target="_blank" class="btn">Visit 2401wire.com →</a>
+  </section>
+
+  <!-- BACK TO HOME -->
+  <a href="/" class="back-link">← Back to Home</a>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-logo"><span>2401</span> Wire .ai</div>
+  <nav class="footer-links">
+    <a href="/">Home</a>
+    <a href="archive.html">Archive</a>
+    <a href="about.html">About</a>
+    <a href="https://2401wire.com/patents.html" target="_blank">Patents</a>
+    <a href="https://c343.org" target="_blank">Consulting</a>
+    <a href="https://2401wire.com" target="_blank">Prophetic ↗</a>
+    <a href="https://sevencubedseven.com" target="_blank">SCSL</a>
+    <a href="https://www.amazon.com/stores/author/B0GCNN3HWB/allbooks" target="_blank">Books</a>
+  </nav>
+  <p class="footer-copy">© 2026 Seven Cubed Seven Labs LLC · J.C. Medina · All Rights Reserved · 2401wire.ai</p>
+  <p class="footer-formula">7³ × 7 = 2,401 — Forever Calculating, Forever Creating ⚡</p>
+</footer>
+
+<!-- GoatCounter Analytics -->
+<script data-goatcounter="https://2401wire-ai.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>

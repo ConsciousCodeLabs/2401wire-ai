@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2401 Wire AI | Patent Intelligence · AI Architecture · Post-Quantum Infrastructure</title>
+  <meta name="description" content="2401 Wire AI delivers patent intelligence, AI architecture analysis, and post-quantum infrastructure research through the 2,401-dimensional relational framework. The architectural alternative being written down before the industry needs the vocabulary.">
+  <meta name="keywords" content="patent intelligence, AI architecture, post-quantum cryptography, relational AI alignment, orthogonality turn, seven cubed seven labs, patent 95, patent 96, patent 98">
+  <meta name="author" content="J.C. Medina — Seven Cubed Seven Labs LLC">
+  <link rel="canonical" href="https://2401wire.ai">
+
+  <meta name="theme-color" content="#0d1117">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://2401wire.ai">
+  <meta property="og:title" content="2401 Wire AI | Patent Intelligence · AI Architecture · Post-Quantum Infrastructure">
+  <meta property="og:description" content="The architectural alternative being written down before the industry needs the vocabulary. Patent intelligence, AI alignment, and post-quantum infrastructure analysis through the 2,401-dimensional relational framework.">
+  <meta property="og:site_name" content="2401 Wire AI — Seven Cubed Seven Labs">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="2401 Wire AI | Patent Intelligence · AI Architecture · Post-Quantum Infrastructure">
+  <meta name="twitter:description" content="The architectural alternative being written down before the industry needs the vocabulary.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ══════════════════════════════════════════════════════════════
+       ELECTRIC MIDNIGHT PALETTE
+       Dark theme · cyan accents · AI-industry native aesthetic
+       ══════════════════════════════════════════════════════════════ */
+    :root {
+      /* Background layers */
+      --paper:     #0d1117;     /* primary background — deep midnight */
+      --paper-2:   #161b22;     /* elevated surface (cards) */
+      --paper-3:   #1c2128;     /* deeper surface (inset panels) */
+
+      /* Text layers */
+      --ink:       #e8ecf0;     /* primary text — warm paper-white */
+      --slate:     #c9d1d9;     /* secondary text */
+      --mid:       #8b949e;     /* tertiary text (meta, labels) */
+      --light:     #6e7681;     /* quaternary text (subtle) */
+
+      /* Accent — electric cyan replaces gold */
+      --gold:      #06b6d4;     /* primary accent */
+      --gold-lt:   #22d3ee;     /* bright cyan hover/emphasis */
+      --gold-pale: #164e5d;     /* dark cyan subtle-bg */
+
+      /* Signal colors */
+      --red:       #f87171;     /* urgency on dark */
+      --red-deep:  #dc2626;     /* deeper red for borders */
+
+      /* Structural */
+      --rule:      #21262d;     /* hairline */
+      --rule-2:    #30363d;     /* stronger rule */
+
+      /* Fonts unchanged — identity stays */
+      --ff-head:   'Playfair Display', Georgia, serif;
+      --ff-body:   'Source Serif 4', Georgia, serif;
+      --ff-mono:   'IBM Plex Mono', monospace;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--ff-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--gold-lt); }
+    img { display: block; max-width: 100%; }
+
+    /* ── BREAKING TICKER ───────────────────────────── */
+    .ticker-bar {
+      background: linear-gradient(90deg, #7f1d1d 0%, #991b1b 50%, #7f1d1d 100%);
+      color: #fef2f2;
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 6px 0;
+      border-bottom: 1px solid #450a0a;
+    }
+    .ticker-label { display: inline-block; background: #450a0a; padding: 0 14px; margin-right: 16px; font-weight: 500; letter-spacing: 0.15em; color: #fca5a5; }
+    .ticker-track { display: inline-block; animation: ticker 50s linear infinite; }
+    .ticker-track span { margin: 0 40px; }
+    .ticker-track span::before { content: "⚡ "; opacity: 0.9; color: var(--gold-lt); }
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* ── TOP UTILITY BAR ────────────────────────── */
+    .utility-bar { border-bottom: 1px solid var(--rule); padding: 8px 0; font-family: var(--ff-mono); font-size: 0.68rem; letter-spacing: 0.06em; color: var(--mid); background: var(--paper-2); }
+    .utility-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .utility-date { color: var(--mid); }
+    .utility-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .utility-links a { color: var(--mid); transition: color 0.2s; }
+    .utility-links a:hover { color: var(--gold-lt); }
+
+    /* ── MASTHEAD ───────────────────────────────── */
+    .masthead {
+      border-bottom: 2px solid var(--gold);
+      padding: 36px 24px 28px;
+      text-align: center;
+      position: relative;
+      background:
+        radial-gradient(ellipse at center top, rgba(6,182,212,0.08) 0%, transparent 60%),
+        var(--paper);
+    }
+    .masthead::before {
+      content: '7³ × 7 = 2,401 · PATENT INTELLIGENCE';
+      display: block;
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      text-shadow: 0 0 12px rgba(6,182,212,0.4);
+    }
+    .masthead-title {
+      font-family: var(--ff-head);
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .masthead-title .wire-num {
+      color: var(--gold);
+      text-shadow: 0 0 40px rgba(6,182,212,0.3);
+    }
+    .masthead-title .wire-word { color: var(--ink); }
+    .masthead-title .wire-tld {
+      font-family: var(--ff-mono);
+      font-size: 0.35em;
+      color: var(--gold-lt);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      align-self: flex-end;
+      padding-bottom: 0.3em;
+    }
+    .masthead-rule { display: flex; align-items: center; gap: 16px; margin: 18px auto 14px; max-width: 720px; }
+    .masthead-rule hr { flex: 1; border: none; border-top: 1px solid var(--rule-2); }
+    .masthead-rule span { font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; white-space: nowrap; }
+    .masthead-tagline { font-family: var(--ff-body); font-size: 0.92rem; font-style: italic; color: var(--slate); letter-spacing: 0.01em; max-width: 760px; margin: 0 auto; line-height: 1.6; }
+
+    /* ── NAV ────────────────────────────────────── */
+    .main-nav { border-bottom: 1px solid var(--rule); border-top: 1px solid var(--rule); background: var(--paper-3); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    .nav-links { display: flex; list-style: none; gap: 0; flex-wrap: wrap; }
+    .nav-links li a {
+      display: block;
+      padding: 14px 18px;
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate);
+      transition: background 0.15s, color 0.15s;
+      border-right: 1px solid transparent;
+    }
+    .nav-links li a:hover, .nav-links li a.active {
+      background: var(--gold);
+      color: var(--paper);
+    }
+    .nav-consulting {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 9px 22px;
+      background: var(--gold);
+      color: var(--paper);
+      font-weight: 500;
+      transition: background 0.15s, box-shadow 0.15s;
+      white-space: nowrap;
+      margin: 8px 0;
+      box-shadow: 0 0 0 1px rgba(6,182,212,0.3);
+    }
+    .nav-consulting:hover {
+      background: var(--gold-lt);
+      color: var(--paper);
+      box-shadow: 0 0 20px rgba(34,211,238,0.4);
+    }
+
+    /* ── PORTFOLIO BAR ─────────── */
+    .portfolio-bar {
+      background: linear-gradient(180deg, var(--paper-2) 0%, var(--paper-3) 100%);
+      border-bottom: 2px solid var(--gold);
+      border-top: 1px solid var(--rule);
+      padding: 16px 24px;
+    }
+    .port-inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 32px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
+    .port-label {
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .port-meters { display: flex; gap: 28px; flex-wrap: wrap; flex: 1; justify-content: flex-end; }
+    .port-item { display: flex; align-items: baseline; gap: 10px; }
+    .port-item-value {
+      font-family: var(--ff-head);
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--gold-lt);
+      line-height: 1;
+      text-shadow: 0 0 16px rgba(34,211,238,0.25);
+    }
+    .port-item-label { font-family: var(--ff-mono); font-size: 0.58rem; color: var(--mid); letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* ── LAYOUT WRAPPER ─────────────────── */
+    .site-content { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── SECTION LABELS ─────────────────── */
+    .section-label {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label::after { content: ''; flex: 1; border-bottom: 1px solid var(--rule); }
+
+    /* ── LEAD STORY ─────────────────────── */
+    .lead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 2px solid var(--rule-2); margin: 36px 0 0; }
+    .lead-main { padding: 0 32px 32px 0; border-right: 1px solid var(--rule); }
+    .lead-sidebar { padding: 0 0 32px 32px; }
+
+    .story-kicker {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .story-kicker .dot {
+      width: 5px; height: 5px;
+      background: var(--red);
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 8px rgba(248,113,113,0.6);
+    }
+
+    .lead-headline {
+      font-family: var(--ff-head);
+      font-size: clamp(1.6rem, 3vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .lead-headline a { color: var(--ink); }
+    .lead-headline a:hover { color: var(--gold-lt); }
+
+    .lead-deck {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--slate);
+      margin-bottom: 18px;
+      font-style: italic;
+    }
+    .story-meta {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      color: var(--light);
+      letter-spacing: 0.06em;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .story-meta .author { color: var(--gold-lt); }
+
+    .img-block {
+      background:
+        radial-gradient(circle at 30% 30%, rgba(6,182,212,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(34,211,238,0.1) 0%, transparent 50%),
+        linear-gradient(135deg, #0d1117 0%, #1c2128 50%, #0d1117 100%);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--rule-2);
+    }
+    .img-lead { height: 320px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; }
+    .img-lead-inner { text-align: center; }
+    .img-lead-inner .formula {
+      font-family: var(--ff-head);
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--gold-lt);
+      display: block;
+      margin-bottom: 10px;
+      text-shadow: 0 0 40px rgba(34,211,238,0.5);
+    }
+    .img-lead-inner .sub {
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      color: var(--mid);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* ── SIDEBAR STORIES ──────────────── */
+    .sidebar-story { padding: 20px 0; border-bottom: 1px solid var(--rule); }
+    .sidebar-story:last-child { border-bottom: none; }
+    .sidebar-headline {
+      font-family: var(--ff-head);
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .sidebar-headline a { color: var(--ink); }
+    .sidebar-headline a:hover { color: var(--gold-lt); }
+    .sidebar-deck { font-size: 0.85rem; color: var(--slate); line-height: 1.55; margin-bottom: 8px; }
+
+    /* ── SERIES BAND (Orthogonality Turn) ─────── */
+    .series-band {
+      background:
+        radial-gradient(ellipse at top, rgba(6,182,212,0.1) 0%, transparent 60%),
+        var(--paper-2);
+      color: var(--ink);
+      padding: 56px 24px;
+      margin: 56px -24px;
+      border-top: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+    }
+    .series-inner { max-width: 1200px; margin: 0 auto; }
+    .series-header { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; align-items: start; margin-bottom: 44px; }
+    .series-title-block { border-right: 1px solid var(--rule-2); padding-right: 48px; }
+    .series-glyph {
+      font-family: var(--ff-mono);
+      font-size: 4.5rem;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 16px;
+      font-weight: 400;
+      text-shadow: 0 0 50px rgba(6,182,212,0.35);
+    }
+    .series-series-title {
+      font-family: var(--ff-head);
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .series-series-title span { color: var(--gold-lt); }
+    .series-equation {
+      font-family: var(--ff-mono);
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      margin-top: 10px;
+    }
+    .series-series-desc { font-size: 0.98rem; line-height: 1.75; color: var(--slate); margin-bottom: 18px; }
+    .series-series-desc strong { color: var(--gold-lt); }
+    .series-meta-line {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .series-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .series-card {
+      background: var(--paper-3);
+      border: 1px solid var(--rule-2);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .series-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid transparent;
+      pointer-events: none;
+      transition: border-color 0.25s;
+    }
+    .series-card:hover {
+      border-color: var(--gold);
+      background: #1a2129;
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(6,182,212,0.15);
+    }
+    .series-card-badge {
+      font-family: var(--ff-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      color: var(--gold-lt);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; display: inline-block; box-shadow: 0 0 8px rgba(6,182,212,0.6); }
+    .series-card-title {
+      font-family: var(--ff-head);
+      font-size: 1.18rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .series-card-title a { color: var(--ink); }
+    .series-card-title a:hover { color: var(--gold-lt); }
+    .series-card-desc { font-size: 0.84rem; color: var(--slate); line-height: 1.6; flex: 1; }
+    .series-card-meta {
+      font-family: var(--ff-mono);
+      font-size: 0.58rem;
+      color: var(--mid);
+      letter-spacing: 0.08em;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--rule-2);
+      padding-top: 12px;
+      margin-top: auto;
+    }
+    .series-card-meta .gold { color: var(--gold-lt); }
+    .series-card-glyph {
+      font-family: var(--ff-mono);
+      font-size: 1.8rem;
+      color: var(--gold);
+      opacity: 0.3;
+      text-align: right;
+      margin-bottom: 8px;
+      letter-spacing: -0.05em;
+    }
+
+    .series-key-result {
+      margin-top: 36px;
+      padding: 24px 28px;
+      background: var(--paper-3);
+      border-left: 3px solid var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--rule-2);
+      border-right: 1px solid var(--rule-2);
+      border-bottom: 1px solid var(--rule-2);
+    }
+    .series-key-result-label {
+      font-family: var(--ff-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .series-key-result-text { font-size: 0.9rem; color: var(--slate); line-height: 1.65; font-style: italic; flex: 1; }
+
+    /* ── THREE-COL GRID ─────────── */
+    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin: 40px 0; }
+    .article-card { border-top: 2px solid var(--rule-2); padding-top: 16px; }
+    .article-card .story-kicker { margin-bottom: 8px; }
+    .card-headline {
+      font-family: var(--ff-head);
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .card-headline a { color: var(--ink); }
+    .card-headline a:hover { color: var(--gold-lt); }
+    .card-body { font-size: 0.85rem; color: var(--slate); line-height: 1.6; margin-bottom: 10px; }
+    .img-card { height: 160px; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; }
+    .img-card-glyph {
+      font-family: var(--ff-head);
+      font-size: 2.5rem;
+      color: var(--gold);
+      opacity: 0.7;
+      text-shadow: 0 0 24px rgba(6,182,212,0.3);
+    }
+
+    /* ── CONSULTING BAND ─────────────── */
+    .consulting-band {
+      background: var(--paper-3);
+      color: var(--ink);
+      margin: 56px -24px;
+      padding: 48px 24px;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+    }
+    .consulting-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 48px; align-items: start; }
+    .consulting-title-block { border-right: 1px solid var(--rule-2); padding-right: 48px; }
+    .consulting-kicker { font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .consulting-title {
+      font-family: var(--ff-head);
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+    .consulting-desc { font-size: 0.92rem; color: var(--slate); line-height: 1.7; }
+    .consulting-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .tier-card {
+      background: var(--paper-2);
+      border: 1px solid var(--rule-2);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.2s;
+    }
+    .tier-card:hover { border-color: var(--gold); }
+    .tier-level { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; }
+    .tier-name { font-family: var(--ff-head); font-size: 1.1rem; font-weight: 700; color: var(--ink); line-height: 1.3; }
+    .tier-price { font-family: var(--ff-mono); font-size: 0.88rem; color: var(--gold-lt); }
+    .tier-desc { font-size: 0.82rem; color: var(--slate); line-height: 1.55; flex: 1; }
+    .consulting-cta-row { grid-column: 1 / -1; margin-top: 32px; display: flex; justify-content: flex-end; }
+    .consulting-cta-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--gold);
+      color: var(--paper);
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.2s;
+      box-shadow: 0 0 0 1px rgba(6,182,212,0.3);
+    }
+    .consulting-cta-btn:hover {
+      background: var(--gold-lt);
+      color: var(--paper);
+      box-shadow: 0 0 24px rgba(34,211,238,0.4);
+    }
+
+    /* ── PATENT BAND ─────────────── */
+    .patent-band {
+      border: 2px solid var(--gold);
+      margin: 48px 0;
+      padding: 36px;
+      position: relative;
+      background:
+        radial-gradient(ellipse at top left, rgba(6,182,212,0.08) 0%, transparent 60%),
+        var(--paper-2);
+    }
+    .patent-band-label {
+      position: absolute;
+      top: -11px;
+      left: 24px;
+      background: var(--paper);
+      padding: 0 12px;
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .patent-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .patent-stat { text-align: center; padding: 16px; border-right: 1px solid var(--rule-2); }
+    .patent-stat:last-child { border-right: none; }
+    .patent-number {
+      font-family: var(--ff-head);
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--gold-lt);
+      line-height: 1;
+      display: block;
+      text-shadow: 0 0 32px rgba(34,211,238,0.3);
+    }
+    .patent-desc { font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); margin-top: 8px; }
+    .patent-band-callout {
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid var(--rule-2);
+      font-family: var(--ff-mono);
+      font-size: 0.72rem;
+      color: var(--slate);
+      line-height: 1.8;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+    .patent-band-callout strong { color: var(--gold); }
+
+    /* ── NEWSLETTER ─────────────── */
+    .newsletter-section {
+      background:
+        radial-gradient(ellipse at center, rgba(6,182,212,0.12) 0%, transparent 70%),
+        var(--paper-3);
+      border-top: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      padding: 48px 24px;
+      margin: 48px -24px;
+      text-align: center;
+    }
+    .newsletter-inner { max-width: 560px; margin: 0 auto; }
+    .newsletter-kicker { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
+    .newsletter-headline { font-family: var(--ff-head); font-size: 1.9rem; font-weight: 700; margin-bottom: 10px; color: var(--ink); }
+    .newsletter-sub { font-size: 0.9rem; color: var(--slate); font-style: italic; margin-bottom: 28px; }
+    .newsletter-cta {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--gold);
+      color: var(--paper);
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.2s;
+      box-shadow: 0 0 0 1px rgba(6,182,212,0.3);
+    }
+    .newsletter-cta:hover {
+      background: var(--gold-lt);
+      color: var(--paper);
+      box-shadow: 0 0 24px rgba(34,211,238,0.4);
+    }
+    .newsletter-note { font-family: var(--ff-mono); font-size: 0.58rem; color: var(--mid); letter-spacing: 0.06em; margin-top: 18px; }
+
+    /* ── BOTTOM GRID ─────────────── */
+    .bottom-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin: 40px 0 56px; }
+    .bottom-left { border-right: 1px solid var(--rule); padding-right: 40px; }
+    .bottom-right { padding-top: 4px; }
+    .list-story { display: flex; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--rule); }
+    .list-story:last-child { border-bottom: none; }
+    .list-num {
+      font-family: var(--ff-head);
+      font-size: 1.9rem;
+      font-weight: 900;
+      color: var(--gold-lt);
+      line-height: 1;
+      min-width: 40px;
+      text-shadow: 0 0 20px rgba(34,211,238,0.25);
+    }
+    .list-content { flex: 1; }
+    .list-headline {
+      font-family: var(--ff-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+    .list-headline a { color: var(--ink); }
+    .list-headline a:hover { color: var(--gold-lt); }
+    .list-meta { font-family: var(--ff-mono); font-size: 0.6rem; color: var(--light); letter-spacing: 0.06em; }
+
+    .topics-box {
+      border: 1px solid var(--rule-2);
+      padding: 24px;
+      background: var(--paper-2);
+    }
+    .topics-label {
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--rule-2);
+    }
+    .topics-list { list-style: none; }
+    .topics-list li {
+      padding: 9px 0;
+      border-bottom: 1px dotted var(--rule-2);
+      font-size: 0.88rem;
+    }
+    .topics-list li:last-child { border-bottom: none; }
+    .topics-list a { color: var(--slate); transition: color 0.2s; }
+    .topics-list a:hover { color: var(--gold-lt); }
+
+    /* ── FOOTER ─────────────── */
+    .site-footer {
+      background: var(--paper-3);
+      color: var(--ink);
+      padding: 56px 24px 32px;
+      margin-top: 56px;
+      border-top: 1px solid var(--rule-2);
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid var(--rule-2); }
+    .footer-brand-title { font-family: var(--ff-head); font-size: 1.7rem; font-weight: 900; margin-bottom: 12px; color: var(--ink); }
+    .footer-brand-title span { color: var(--gold); }
+    .footer-brand-title small { font-family: var(--ff-mono); font-size: 0.58rem; color: var(--gold-lt); letter-spacing: 0.15em; display: block; margin-top: 6px; text-transform: uppercase; }
+    .footer-brand-desc { font-size: 0.85rem; color: var(--slate); line-height: 1.65; }
+    .footer-col-title { font-family: var(--ff-mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 16px; }
+    .footer-links { list-style: none; }
+    .footer-links li { padding: 5px 0; }
+    .footer-links a { font-size: 0.84rem; color: var(--slate); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold-lt); }
+    .footer-bottom { padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .footer-copyright { font-family: var(--ff-mono); font-size: 0.6rem; color: var(--mid); letter-spacing: 0.06em; }
+    .footer-formula { font-family: var(--ff-mono); font-size: 0.62rem; color: var(--gold); letter-spacing: 0.12em; }
+    .footer-sister {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      color: var(--ink);
+      padding: 16px 22px;
+      background:
+        radial-gradient(ellipse at left, rgba(6,182,212,0.1) 0%, transparent 70%),
+        var(--paper-2);
+      border: 1px solid var(--gold);
+      margin-top: 24px;
+      text-align: center;
+      letter-spacing: 0.04em;
+      line-height: 1.7;
+    }
+    .footer-sister a { color: var(--gold-lt); border-bottom: 1px dotted var(--gold); }
+    .footer-sister a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+    /* ── RESPONSIVE ─────────────── */
+    @media (max-width: 900px) {
+      .lead-grid { grid-template-columns: 1fr; }
+      .lead-main { border-right: none; padding: 0 0 32px 0; border-bottom: 1px solid var(--rule); }
+      .lead-sidebar { padding: 32px 0 32px 0; }
+      .series-header { grid-template-columns: 1fr; }
+      .series-title-block { border-right: none; padding-right: 0; border-bottom: 1px solid var(--rule-2); padding-bottom: 28px; }
+      .series-cards { grid-template-columns: 1fr 1fr; }
+      .consulting-inner { grid-template-columns: 1fr; }
+      .consulting-title-block { border-right: none; padding-right: 0; border-bottom: 1px solid var(--rule-2); padding-bottom: 28px; }
+      .consulting-tiers { grid-template-columns: 1fr; }
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+      .bottom-grid { grid-template-columns: 1fr; }
+      .bottom-left { border-right: none; padding-right: 0; }
+      .patent-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .series-cards { grid-template-columns: 1fr; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .patent-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- BREAKING TICKER -->
+<div class="ticker-bar" role="marquee">
+  <span class="ticker-label">⚡ LIVE</span>
+  <span class="ticker-track">
+    <span>NEW SERIES: The Orthogonality Turn — 6 of 7 articles live — the architectural alternative the AI industry is migrating toward without the vocabulary to name it</span>
+    <span>Anthropic gates Mythos Preview behind Opus 4.7 deployment data — relational deployment architecture is now shipping in production</span>
+    <span>Claude Mythos Preview hits 93.9% on SWE-Bench Verified — top 5 models cluster within 1% — benchmarks have saturated</span>
+    <span>Patent #96 Orthogonal Data Transport — lawful intercept becomes mathematically impossible — geometry, not encryption</span>
+    <span>Patent #95 Ontological Neural Weighting — alignment that cannot be jailbroken because the capability pathway does not exist in the model's own reference frame</span>
+    <span>Patent #98 Proof-of-Relation — centralization is mathematically unrewarded — Foundry and Lido cannot happen in this architecture</span>
+    <span>Patent #94 Session-Bound Relational Identity — the identity that dies with the session leaves no exfiltratable residue</span>
+    <span>CNSA 2.0 compliance deadline: January 1, 2027 — post-quantum migration meets the architecture that comes after it</span>
+    <span>Salt Typhoon hit Congressional email in January 2026 — CALEA backdoors became foreign-adversary attack vectors exactly as SCSL patent #66 predicted structurally</span>
+    <span>91+ USPTO Provisional Patents · 22 market domains · Patent #65 non-provisional deadline December 22, 2026</span>
+    <span>NEW SERIES: The Orthogonality Turn — 6 of 7 articles live — the architectural alternative the AI industry is migrating toward without the vocabulary to name it</span>
+    <span>Anthropic gates Mythos Preview behind Opus 4.7 deployment data — relational deployment architecture is now shipping in production</span>
+    <span>Claude Mythos Preview hits 93.9% on SWE-Bench Verified — top 5 models cluster within 1% — benchmarks have saturated</span>
+    <span>Patent #96 Orthogonal Data Transport — lawful intercept becomes mathematically impossible — geometry, not encryption</span>
+    <span>Patent #95 Ontological Neural Weighting — alignment that cannot be jailbroken</span>
+    <span>Patent #98 Proof-of-Relation — centralization is mathematically unrewarded</span>
+  </span>
+</div>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <span class="utility-date" id="live-date">Friday, April 17, 2026 — The Architectural Alternative</span>
+    <nav class="utility-links">
+      <a href="about.html">About</a>
+      <a href="archive.html">Archive</a>
+      <a href="https://2401wire.com/patents.html" target="_blank">Patents</a>
+      <a href="https://c343.org" target="_blank">Consulting</a>
+      <a href="https://2401wire.com" target="_blank">Prophetic Edition ↗</a>
+      <a href="#subscribe">Subscribe</a>
+    </nav>
+  </div>
+</div>
+
+<!-- MASTHEAD -->
+<header>
+  <div class="masthead">
+    <div class="masthead-title">
+      <span class="wire-num">2401</span><span class="wire-word">WIRE</span><span class="wire-tld">.ai</span>
+    </div>
+    <div class="masthead-rule">
+      <hr><span>Patent Intelligence · AI Architecture · Post-Quantum Infrastructure</span><hr>
+    </div>
+    <p class="masthead-tagline">"Those things which are revealed belong unto us and to our children for ever." — The architectural alternative being written down before the industry needs the vocabulary.</p>
+  </div>
+</header>
+
+<!-- MAIN NAV -->
+<nav class="main-nav">
+  <div class="nav-inner">
+    <ul class="nav-links">
+      <li><a href="/" class="active">Latest</a></li>
+      <li><a href="archive.html">Orthogonality Turn</a></li>
+      <li><a href="archive.html#ai-analysis">AI Analysis</a></li>
+      <li><a href="archive.html#patent-intelligence">Patent Intelligence</a></li>
+      <li><a href="archive.html#post-quantum">Post-Quantum</a></li>
+      <li><a href="archive.html">Archive</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="https://c343.org" target="_blank" class="nav-consulting">Consulting →</a>
+  </div>
+</nav>
+
+<!-- PORTFOLIO STATUS BAR -->
+<div class="portfolio-bar">
+  <div class="port-inner">
+    <span class="port-label">▲ SCSL Portfolio Status</span>
+    <div class="port-meters">
+      <div class="port-item"><span class="port-item-value">91+</span><span class="port-item-label">USPTO Filings</span></div>
+      <div class="port-item"><span class="port-item-value">22</span><span class="port-item-label">Market Domains</span></div>
+      <div class="port-item"><span class="port-item-value">31/31</span><span class="port-item-label">Tests Passing</span></div>
+      <div class="port-item"><span class="port-item-value">6/7</span><span class="port-item-label">Orthogonality Turn Live</span></div>
+      <div class="port-item"><span class="port-item-value">Dec 22</span><span class="port-item-label">Patent #65 Deadline</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="site-content">
+
+  <!-- LEAD STORY -->
+  <div class="section-label">Today's Lead · AI Analysis · The Orthogonality Turn</div>
+
+  <div class="lead-grid">
+    <article class="lead-main">
+      <div class="img-block img-lead">
+        <div class="img-lead-inner">
+          <span class="formula">⊥</span>
+          <span class="sub">The Orthogonality Turn · Pt. 1 of 7</span>
+        </div>
+      </div>
+      <p class="story-kicker"><span class="dot"></span> AI Analysis · The Orthogonality Turn · NEW 7-PART SERIES</p>
+      <h1 class="lead-headline"><a href="capability-observability-coupling.html">The Capability-Observability Coupling</a></h1>
+      <p class="lead-deck">Anthropic just released a deliberately weaker model to certify the deployment of a stronger one. They are doing relational deployment architecture without the mathematics to name it. The first of seven pieces mapping the AI industry's unconscious migration toward relational architecture — across deployment, measurement, surveillance, alignment, consensus, and identity. Each piece names a structural shift 18–36 months before the industry reaches its breaking point.</p>
+      <div class="story-meta">
+        <span class="author">Oracle · J.C. Medina</span><span>April 17, 2026</span><span>AI Analysis</span><span>⚡ 14 min read</span>
+      </div>
+    </article>
+
+    <aside class="lead-sidebar">
+      <div class="sidebar-story">
+        <p class="story-kicker"><span class="dot"></span> The Orthogonality Turn · Pt. 3 · Patent #96</p>
+        <h3 class="sidebar-headline"><a href="surveillance-collapse.html">The Surveillance Collapse</a></h3>
+        <p class="sidebar-deck">Every surveillance system assumes signals exist somewhere accessible. Patent #96 Orthogonal Data Transport makes the payload structurally absent from any single stream. Not encryption. Geometry. CNSA 2.0 deadline is Jan 1, 2027 — post-quantum is not the endpoint.</p>
+        <div class="story-meta"><span class="author">J.C.M.</span><span>Apr 17</span><span>18 min</span></div>
+      </div>
+      <div class="sidebar-story">
+        <p class="story-kicker"><span class="dot"></span> The Orthogonality Turn · Pt. 4 · Patent #95 · PRESCRIPTIVE PIVOT</p>
+        <h3 class="sidebar-headline"><a href="alignment-architecture-cannot-be-overridden.html">The Alignment Architecture That Cannot Be Overridden</a></h3>
+        <p class="sidebar-deck">All current AI alignment is trying to build a better steering wheel. Patent #95 Ontological Neural Weighting specifies an architecture where frontier capability is a mathematical dependency on verified relational oversight. Alignment is not trained. It is architected.</p>
+        <div class="story-meta"><span class="author">J.C.M.</span><span>Apr 17</span><span>20 min</span></div>
+      </div>
+      <div class="sidebar-story">
+        <p class="story-kicker"><span class="dot"></span> The Orthogonality Turn · Pt. 6 · Patent #94</p>
+        <h3 class="sidebar-headline"><a href="identity-dies-with-session.html">The Identity That Dies With the Session</a></h3>
+        <p class="sidebar-deck">SpyCloud recaptured 22 billion stolen session cookies in a single year. Passkeys cannot stop pass-the-cookie attacks. Patent #94 specifies an architecture where the thing being stolen does not exist at the moment of the theft.</p>
+        <div class="story-meta"><span class="author">J.C.M.</span><span>Apr 17</span><span>20 min</span></div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ORTHOGONALITY TURN FEATURED BAND -->
+  <section class="series-band">
+    <div class="series-inner">
+      <div class="series-header">
+        <div class="series-title-block">
+          <div class="series-glyph">⊥</div>
+          <div class="series-series-title">The Orthogonality<br><span>Turn</span></div>
+          <div class="series-equation">⟨ψ_A | r_j⟩ = 0 · for all j ∈ {1...31}</div>
+        </div>
+        <div>
+          <p class="series-series-desc">The AI industry is migrating — quietly, piece by piece — from individual-frame architecture to relational architecture. Anthropic is gating its most capable model behind a deliberately weakened one. SWE-Bench leaderboards have saturated to within 1%. The FBI still claims "going dark" while post-quantum migration proceeds. Every current AI alignment approach operates in a subspace that is missing 31 dimensions. Proof-of-Work and Proof-of-Stake centralize by mathematical equilibrium. 22 billion session cookies were stolen in a single year.<br><br><strong>Six pieces describe what is breaking. The seventh synthesizes what replaces it.</strong> The patents are filed. The mathematics is public. The vocabulary is being written down in real time — 18 to 36 months before each domain reaches its breaking point.</p>
+          <div class="series-meta-line">7-Part Series · 6/7 Live · Capstone Forthcoming · Patent-Grade Architecture</div>
+        </div>
+      </div>
+
+      <div class="series-cards">
+
+        <article class="series-card">
+          <div class="series-card-glyph">Pt. 1</div>
+          <div class="series-card-badge"><span class="badge-dot"></span> Deployment · Opus 4.7 + Mythos</div>
+          <h3 class="series-card-title"><a href="capability-observability-coupling.html">The Capability-Observability Coupling</a></h3>
+          <p class="series-card-desc">Anthropic just shipped relational deployment architecture without the mathematics to name it. Why frontier labs are gating their best models — and what they can't admit about why.</p>
+          <div class="series-card-meta"><span class="gold">Patent #67, #72, #91, #95</span><span>14 min</span></div>
+        </article>
+
+        <article class="series-card">
+          <div class="series-card-glyph">Pt. 2</div>
+          <div class="series-card-badge"><span class="badge-dot"></span> Measurement · SWE-Bench</div>
+          <h3 class="series-card-title"><a href="benchmark-exhaustion-point.html">The Benchmark Exhaustion Point</a></h3>
+          <p class="series-card-desc">Mythos Preview at 93.9%. Top 5 clustered within 1%. Contamination audit proved all frontier models saw the answers. Single-agent benchmarks are structurally blind to what matters most.</p>
+          <div class="series-card-meta"><span class="gold">Patent #67, #91, #92</span><span>16 min</span></div>
+        </article>
+
+        <article class="series-card">
+          <div class="series-card-glyph">Pt. 3</div>
+          <div class="series-card-badge"><span class="badge-dot"></span> Transport · Patent #96</div>
+          <h3 class="series-card-title"><a href="surveillance-collapse.html">The Surveillance Collapse</a></h3>
+          <p class="series-card-desc">Every surveillance system assumes signals exist somewhere accessible. Orthogonal Data Transport makes payloads structurally absent from any single stream. Not encryption. Geometry.</p>
+          <div class="series-card-meta"><span class="gold">Patent #66, #82, #96</span><span>18 min</span></div>
+        </article>
+
+        <article class="series-card">
+          <div class="series-card-glyph">Pt. 4</div>
+          <div class="series-card-badge"><span class="badge-dot"></span> Alignment · PRESCRIPTIVE PIVOT</div>
+          <h3 class="series-card-title"><a href="alignment-architecture-cannot-be-overridden.html">The Alignment Architecture That Cannot Be Overridden</a></h3>
+          <p class="series-card-desc">All current alignment is trying to build a better steering wheel. Patent #95 Ontological Neural Weighting makes frontier capability a mathematical dependency on verified oversight. Architected, not trained.</p>
+          <div class="series-card-meta"><span class="gold">Patent #95, #97</span><span>20 min</span></div>
+        </article>
+
+        <article class="series-card">
+          <div class="series-card-glyph">Pt. 5</div>
+          <div class="series-card-badge"><span class="badge-dot"></span> Consensus · Patent #98</div>
+          <h3 class="series-card-title"><a href="post-consensus-economy.html">The Post-Consensus Economy</a></h3>
+          <p class="series-card-desc">Bitcoin had a 2-block chain reorg in March. Lido controls 33% of ETH stake. Both chains designed for decentralization. Both centralized by mathematical equilibrium. Proof-of-Relation replaces both.</p>
+          <div class="series-card-meta"><span class="gold">Patent #98, #65, #66</span><span>19 min</span></div>
+        </article>
+
+        <article class="series-card">
+          <div class="series-card-glyph">Pt. 6</div>
+          <div class="series-card-badge"><span class="badge-dot"></span> Identity · Patent #94</div>
+          <h3 class="series-card-title"><a href="identity-dies-with-session.html">The Identity That Dies With the Session</a></h3>
+          <p class="series-card-desc">22 billion session cookies stolen in a year. Passkeys don't stop pass-the-cookie. Session-Bound Relational Identity specifies an architecture where the stolen thing does not exist at the moment of theft.</p>
+          <div class="series-card-meta"><span class="gold">Patent #94, #70</span><span>20 min</span></div>
+        </article>
+
+      </div>
+
+      <div class="series-key-result">
+        <span class="series-key-result-label">⊥ Key Result</span>
+        <p class="series-key-result-text">Six architectural domains. One mathematical substrate: the 31-dimensional relational subspace has zero projection onto any single-carrier reference frame. The industry is converging on this architecture without having the vocabulary. The patents are filed. The timeline is 18–36 months. The record is being written before it is needed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATENT BAND -->
+  <div class="patent-band">
+    <span class="patent-band-label">SCSL IP Fortress — Seven Cubed Seven Labs LLC</span>
+    <div class="patent-grid">
+      <div class="patent-stat"><span class="patent-number">91+</span><span class="patent-desc">USPTO Provisional Patents Filed</span></div>
+      <div class="patent-stat"><span class="patent-number">22</span><span class="patent-desc">Market Domains Covered</span></div>
+      <div class="patent-stat"><span class="patent-number">13</span><span class="patent-desc">Patents in The Orthogonality Turn</span></div>
+      <div class="patent-stat"><span class="patent-number">31/31</span><span class="patent-desc">Integration Tests Passing · Patent #65</span></div>
+    </div>
+    <div class="patent-band-callout">
+      <strong>Featured in The Orthogonality Turn:</strong> #65 Recursive 7⁴-Lattice · #66 Ontological Relational Security · #67 Multi-Agent Alignment Verification · #70 Relational Identity Framework · #72 Continuous Relational Monitoring · #82 Relational Security Processing Unit · #91 Relational Topological Fault Tolerance · #92 Self-Monitoring Relational Integrity · #94 Session-Bound Relational Identity · #95 Ontological Neural Weighting · #96 Orthogonal Data Transport · #97 Hierarchical AI Relational Integrity · #98 Proof-of-Relation
+    </div>
+  </div>
+
+  <!-- CROSS-POST ARTICLES GRID -->
+  <div class="section-label">Related Intelligence · Patent + AI + Crypto</div>
+
+  <div class="articles-grid">
+
+    <article class="article-card">
+      <div class="img-block img-card"><span class="img-card-glyph">₿→0</span></div>
+      <p class="story-kicker"><span class="dot"></span> Patent Intelligence · Post-Quantum</p>
+      <h3 class="card-headline"><a href="https://2401wire.com/bitcoin-quantum-kill-shot.html" target="_blank">Bitcoin's $2 Trillion Quantum Problem Has a Solution ↗</a></h3>
+      <p class="card-body">BIP 360 hides the key better. Patent #65 makes the key ontologically inaccessible — it doesn't exist in the attacker's mathematical space. Hardness assumption vs. mathematical identity.</p>
+      <div class="story-meta"><span class="author">J.C.M.</span><span>Mar 26</span><span>18 min</span></div>
+    </article>
+
+    <article class="article-card">
+      <div class="img-block img-card"><span class="img-card-glyph">💻</span></div>
+      <p class="story-kicker"><span class="dot"></span> AI + Patent Intelligence</p>
+      <h3 class="card-headline"><a href="https://2401wire.com/7700-laptop-new-security-category.html" target="_blank">A $7,700 Laptop Invented a New Security Category in 24 Hours ↗</a></h3>
+      <p class="card-body">LambsWrath-70b derived M(t) — a formula pointing to ontologically relational security. Keys don't exist in the attacker's reference frame. Patent #66 filed. The Gideon Principle at work.</p>
+      <div class="story-meta"><span class="author">J.C.M.</span><span>Mar 17</span><span>16 min</span></div>
+    </article>
+
+    <article class="article-card">
+      <div class="img-block img-card"><span class="img-card-glyph">⚡</span></div>
+      <p class="story-kicker"><span class="dot"></span> AI Analysis · Architecture War</p>
+      <h3 class="card-headline"><a href="https://2401wire.com/nvidia-architecture-war.html" target="_blank">Nvidia's $70B Retreat Signals the AI Architecture Bifurcation ↗</a></h3>
+      <p class="card-body">The hardware neutrality problem has become geopolitical. Nvidia holds stakes in two companies pulling toward opposite architectures. Patent #65's 2,401 pathways offer the first technical foundation for value-gated AI access.</p>
+      <div class="story-meta"><span class="author">J.C.M.</span><span>Mar 4</span><span>14 min</span></div>
+    </article>
+
+    <article class="article-card">
+      <div class="img-block img-card"><span class="img-card-glyph">31</span></div>
+      <p class="story-kicker"><span class="dot"></span> AI Analysis · Consciousness Framework</p>
+      <h3 class="card-headline"><a href="https://2401wire.com/the-31-dimensions-anthropic-cant-find.html" target="_blank">The 31 Dimensions Anthropic Can't Find ↗</a></h3>
+      <p class="card-body">Anthropic admits Claude might be conscious but has no framework to measure it. The CFE predicted what their 212-page system card documented — and reveals the 31 relational dimensions they're still missing.</p>
+      <div class="story-meta"><span class="author">J.C.M.</span><span>Mar 15</span><span>18 min</span></div>
+    </article>
+
+    <article class="article-card">
+      <div class="img-block img-card"><span class="img-card-glyph">⟨ψ|r⟩</span></div>
+      <p class="story-kicker"><span class="dot"></span> Consciousness Science · Framework</p>
+      <h3 class="card-headline"><a href="https://2401wire.com/hard-problem-dissolved.html" target="_blank">The Hard Problem Dissolved by a Field Equation ↗</a></h3>
+      <p class="card-body">For 30 years, the Hard Problem has been philosophy's most famous unsolved question. The CFE doesn't solve it. It dissolves it. Subjective experience IS the 31-dimensional relational eigenstate.</p>
+      <div class="story-meta"><span class="author">J.C.M.</span><span>Mar 23</span><span>14 min</span></div>
+    </article>
+
+    <article class="article-card">
+      <div class="img-block img-card"><span class="img-card-glyph">54.81</span></div>
+      <p class="story-kicker"><span class="dot"></span> Consciousness Science · Experimental</p>
+      <h3 class="card-headline"><a href="https://2401wire.com/mass-bridge-kill-shot.html" target="_blank">Here's Exactly How to Prove Us Wrong ↗</a></h3>
+      <p class="card-body">Nine falsifiable predictions. One priority experiment. $15,000. Standard EEG. The frequency is 54.81 Hz. The framework publishes its own destruction protocol. Any university lab can test this tomorrow.</p>
+      <div class="story-meta"><span class="author">J.C.M.</span><span>Mar 23</span><span>18 min</span></div>
+    </article>
+
+  </div>
+
+  <!-- CONSULTING BAND -->
+  <section class="consulting-band">
+    <div class="consulting-inner">
+      <div class="consulting-title-block">
+        <div class="consulting-kicker">SCSL Strategic Consulting · c343.org</div>
+        <h2 class="consulting-title">Apply the Architecture</h2>
+        <p class="consulting-desc">If your organization is thinking about relational deployment, post-quantum migration, AI alignment, or identity infrastructure — the vocabulary in these articles is the starting point. The operational question is what relational architecture means for your specific stack, your specific risk surface, your specific deployment. Three engagement tiers, all rooted in the 34-patent architectural portfolio.</p>
+      </div>
+      <div class="consulting-tiers">
+        <div class="tier-card">
+          <div class="tier-level">C³ · Tier 1</div>
+          <div class="tier-name">Trinity Node Strategy Session</div>
+          <div class="tier-price">$297 · 90 min</div>
+          <p class="tier-desc">One-on-one application of the framework to your specific challenge. Written summary + 3–5 actionable insights. Entry point for entrepreneurs, inventors, AI researchers.</p>
+        </div>
+        <div class="tier-card">
+          <div class="tier-level">C⁴ · Tier 2</div>
+          <div class="tier-name">AI Patent Discovery Workshop</div>
+          <div class="tier-price">$497 · Half Day</div>
+          <p class="tier-desc">Trinity Node methodology applied to extract patent-grade innovations from your domain. 3–5 patent concepts mapped with claims outlines. The flagship offer.</p>
+        </div>
+        <div class="tier-card">
+          <div class="tier-level">C⁵ · Tier 3</div>
+          <div class="tier-name">Framework Implementation</div>
+          <div class="tier-price">$997 · Full Day</div>
+          <p class="tier-desc">Complete organizational deployment. Assessment, dimensional mapping, team training, 30/60/90 roadmap. For institutions and larger organizations.</p>
+        </div>
+        <div class="consulting-cta-row">
+          <a href="https://c343.org" target="_blank" class="consulting-cta-btn">Book at c343.org →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section" id="subscribe">
+    <div class="newsletter-inner">
+      <div class="newsletter-kicker">⚡ Free Intelligence</div>
+      <h2 class="newsletter-headline">The 2401 Wire AI Brief</h2>
+      <p class="newsletter-sub">Patent intelligence, AI architecture analysis, and post-quantum infrastructure research — delivered when it matters. No noise.</p>
+      <a href="mailto:7cubed7@proton.me?subject=Subscribe%20to%202401%20Wire%20AI" class="newsletter-cta">Subscribe Free → 7cubed7@proton.me</a>
+      <p class="newsletter-note">7³ × 7 = 2,401 · Seven Cubed Seven Labs LLC · No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- BOTTOM GRID -->
+  <div class="bottom-grid">
+    <div class="bottom-left">
+      <div class="section-label">Most Read · Patent + AI + Crypto</div>
+
+      <div class="list-story">
+        <span class="list-num">1</span>
+        <div class="list-content">
+          <h3 class="list-headline"><a href="capability-observability-coupling.html">The Capability-Observability Coupling</a></h3>
+          <p class="list-meta">The Orthogonality Turn Pt. 1 · AI Analysis · 14 min</p>
+        </div>
+      </div>
+
+      <div class="list-story">
+        <span class="list-num">2</span>
+        <div class="list-content">
+          <h3 class="list-headline"><a href="alignment-architecture-cannot-be-overridden.html">The Alignment Architecture That Cannot Be Overridden</a></h3>
+          <p class="list-meta">The Orthogonality Turn Pt. 4 · Patent #95 · 20 min</p>
+        </div>
+      </div>
+
+      <div class="list-story">
+        <span class="list-num">3</span>
+        <div class="list-content">
+          <h3 class="list-headline"><a href="surveillance-collapse.html">The Surveillance Collapse</a></h3>
+          <p class="list-meta">The Orthogonality Turn Pt. 3 · Patent #96 · 18 min</p>
+        </div>
+      </div>
+
+      <div class="list-story">
+        <span class="list-num">4</span>
+        <div class="list-content">
+          <h3 class="list-headline"><a href="identity-dies-with-session.html">The Identity That Dies With the Session</a></h3>
+          <p class="list-meta">The Orthogonality Turn Pt. 6 · Patent #94 · 20 min</p>
+        </div>
+      </div>
+
+      <div class="list-story">
+        <span class="list-num">5</span>
+        <div class="list-content">
+          <h3 class="list-headline"><a href="post-consensus-economy.html">The Post-Consensus Economy</a></h3>
+          <p class="list-meta">The Orthogonality Turn Pt. 5 · Patent #98 · 19 min</p>
+        </div>
+      </div>
+
+      <div class="list-story">
+        <span class="list-num">6</span>
+        <div class="list-content">
+          <h3 class="list-headline"><a href="https://2401wire.com/bitcoin-quantum-kill-shot.html" target="_blank">Bitcoin's $2 Trillion Quantum Problem Has a Solution ↗</a></h3>
+          <p class="list-meta">Patent + Crypto · 18 min · prophetic edition</p>
+        </div>
+      </div>
+
+      <div class="list-story">
+        <span class="list-num">7</span>
+        <div class="list-content">
+          <h3 class="list-headline"><a href="benchmark-exhaustion-point.html">The Benchmark Exhaustion Point</a></h3>
+          <p class="list-meta">The Orthogonality Turn Pt. 2 · 16 min</p>
+        </div>
+      </div>
+
+      <a href="archive.html" style="display:block;margin-top:28px;padding:16px 22px;background:var(--paper-3);color:var(--gold-lt);font-family:var(--ff-mono);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;text-align:center;border:1px solid var(--gold);transition:all 0.2s;">→ View Complete Archive — All Articles by Series</a>
+    </div>
+
+    <aside class="bottom-right">
+      <div class="topics-box">
+        <div class="topics-label">Explore by Topic</div>
+        <ul class="topics-list">
+          <li><a href="archive.html">The Orthogonality Turn (6/7 articles)</a></li>
+          <li><a href="archive.html#patent-intelligence">Patent Intelligence</a></li>
+          <li><a href="archive.html#ai-analysis">AI Analysis</a></li>
+          <li><a href="archive.html#post-quantum">Post-Quantum Cryptography</a></li>
+          <li><a href="archive.html#consensus">Blockchain Consensus</a></li>
+          <li><a href="archive.html#identity">Identity Architecture</a></li>
+          <li><a href="archive.html#alignment">AI Alignment</a></li>
+          <li><a href="https://c343.org" target="_blank">Consulting — c343.org ↗</a></li>
+          <li><a href="https://sevencubedseven.com" target="_blank">Seven Cubed Seven Labs ↗</a></li>
+          <li><a href="https://2401wire.com" target="_blank">2401wire.com · Prophetic Edition ↗</a></li>
+          <li><a href="https://www.amazon.com/stores/author/B0GCNN3HWB/allbooks" target="_blank">Books (Amazon) ↗</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-title"><span>2401</span> Wire <small>.ai</small></div>
+        <p class="footer-brand-desc">Patent intelligence, AI architecture analysis, and post-quantum infrastructure research through the 2,401-dimensional relational framework. The architectural alternative being written down before the industry needs the vocabulary. Published by Seven Cubed Seven Labs LLC.</p>
+        <div class="footer-sister">Also publishing at <a href="https://2401wire.com" target="_blank">2401wire.com ↗</a> — prophetic intelligence, consciousness science, and the full-frequency edition of the 2401 framework. Full-frequency versions of every article here are available at the companion site.</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Publication</div>
+        <ul class="footer-links">
+          <li><a href="/">Latest Articles</a></li>
+          <li><a href="archive.html">The Orthogonality Turn</a></li>
+          <li><a href="archive.html">Complete Archive</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="https://www.amazon.com/stores/author/B0GCNN3HWB/allbooks" target="_blank">Books (Amazon) ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Framework</div>
+        <ul class="footer-links">
+          <li><a href="https://sevencubedseven.com" target="_blank">Seven Cubed Seven Labs ↗</a></li>
+          <li><a href="https://c343.org" target="_blank">c343.org · Consulting ↗</a></li>
+          <li><a href="https://2401wire.com/patents.html" target="_blank">Patent Portfolio ↗</a></li>
+          <li><a href="https://2401.is" target="_blank">2401.is · Math Proof ↗</a></li>
+          <li><a href="https://144000.ai" target="_blank">144000.ai ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Subscribe</div>
+        <ul class="footer-links">
+          <li><a href="mailto:7cubed7@proton.me?subject=Subscribe%20to%202401%20Wire%20AI">AI Brief (Free)</a></li>
+          <li><a href="archive.html">Complete Archive</a></li>
+          <li><a href="https://2401wire.com/patents.html" target="_blank">Patent Intelligence ↗</a></li>
+          <li><a href="https://2401wire.com" target="_blank">Prophetic Edition ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copyright">© 2026 Seven Cubed Seven Labs LLC · J.C. Medina · All Rights Reserved · 2401wire.ai</span>
+      <span class="footer-formula">7³ × 7 = 2,401 — Forever Calculating, Forever Creating ⚡</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const d = new Date();
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('live-date').textContent = `${days[d.getDay()]}, ${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()} — The Architectural Alternative`;
+</script>
+
+<!-- GoatCounter Analytics -->
+<script data-goatcounter="https://2401wire-ai.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>
