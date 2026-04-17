@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d1117">
+
+  <title>The Surveillance Collapse | 2401 Wire</title>
+  <meta name="description" content="Every surveillance system in existence assumes signals eventually exist somewhere accessible. A protocol has been filed that makes the payload structurally absent from any single stream. The surveillance architecture of the 20th and 21st centuries has never had to deal with this object. It does now.">
+  <meta name="keywords" content="orthogonal data transport, surveillance collapse, lawful intercept, Salt Typhoon, CNSA 2.0, post-quantum cryptography, Patent #96, Patent #66, orthogonality turn, 2401 wire, seven cubed seven labs">
+  <meta name="author" content="J.C. Medina — Seven Cubed Seven Labs LLC">
+  <link rel="canonical" href="https://2401wire.com/surveillance-collapse.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://2401wire.com/surveillance-collapse.html">
+  <meta property="og:title" content="The Surveillance Collapse — When the Signal Doesn't Exist to Be Captured">
+  <meta property="og:description" content="The Five Eyes, the Great Firewall, Pegasus, and every bulk-collection system all assume signals eventually exist somewhere accessible. Orthogonal transport is the protocol that makes that assumption false. Here is what happens next.">
+  <meta property="og:site_name" content="2401 Wire — Seven Cubed Seven Labs">
+  <meta property="article:author" content="J.C. Medina">
+  <meta property="article:published_time" content="2026-04-17">
+  <meta property="article:section" content="AI Analysis">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Surveillance Collapse — When the Signal Doesn't Exist to Be Captured">
+  <meta name="twitter:description" content="A protocol whose payload is structurally absent from every single-channel capture. Not encryption. Geometry. The surveillance apparatus has never dealt with this object before.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      /* Background layers */
+      --paper:     #0d1117;     /* primary background — deep midnight */
+      --paper-2:   #161b22;     /* elevated surface (cards, callouts) */
+      --paper-3:   #1c2128;     /* deeper surface (sources section) */
+      /* Text layers */
+      --ink:       #e8ecf0;     /* primary text — warm paper-white */
+      --slate:     #c9d1d9;     /* secondary text */
+      --mid:       #8b949e;     /* tertiary text */
+      --light:     #6e7681;     /* quaternary text */
+      /* Accent — electric cyan replaces gold */
+      --gold:      #06b6d4;     /* primary accent */
+      --gold-lt:   #22d3ee;     /* bright cyan hover/emphasis */
+      --gold-pale: #164e5d;     /* dark cyan subtle-bg (replaces light cream) */
+      /* Signal & structural */
+      --red:       #f87171;     /* urgency on dark */
+      --rule:      #21262d;     /* hairline rules */
+      --rule-2:    #30363d;     /* stronger rules */
+      /* Fonts unchanged */
+      --ff-head:   'Playfair Display', Georgia, serif;
+      --ff-body:   'Source Serif 4', Georgia, serif;
+      --ff-mono:   'IBM Plex Mono', monospace;
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--ff-body); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--gold); }
+
+    .site-header { border-bottom: 2px solid var(--gold); padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: radial-gradient(ellipse at left, rgba(6,182,212,0.06) 0%, transparent 60%), var(--paper); }
+    .site-logo { font-family: var(--ff-head); font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; }
+    .site-logo { color: var(--ink); } .site-logo span { color: var(--gold); }
+    .site-logo small { display: block; font-family: var(--ff-mono); font-size: 0.52rem; letter-spacing: 0.2em; color: var(--mid); font-weight: 400; text-transform: uppercase; margin-top: 2px; }
+    .header-nav { display: flex; gap: 0; background: var(--paper-3); border: 1px solid var(--rule-2); }
+    .header-nav a { display: block; padding: 9px 16px; font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); transition: all 0.15s; }
+    .header-nav a:hover, .header-nav a.active { background: var(--gold); color: var(--paper); }
+
+    .breadcrumb { max-width: 800px; margin: 0 auto; padding: 18px 24px 0; font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--mid); text-transform: uppercase; }
+    .breadcrumb a { color: var(--gold); }
+    .breadcrumb span { margin: 0 8px; }
+
+    .article-wrap { max-width: 800px; margin: 0 auto; padding: 0 24px 80px; }
+
+    .article-header { border-bottom: 2px solid var(--gold); padding-bottom: 30px; margin-bottom: 40px; margin-top: 28px; }
+    .article-section { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .article-section::before { content: ''; display: inline-block; width: 5px; height: 5px; background: var(--red); border-radius: 50%; }
+    .article-headline { font-family: var(--ff-head); font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 18px; }
+    .article-deck { font-size: 1.2rem; line-height: 1.6; color: var(--slate); font-style: italic; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--rule-2); }
+    .article-meta-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .article-byline { display: flex; align-items: center; gap: 14px; }
+    .byline-avatar { width: 44px; height: 44px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--ff-head); font-size: 1.1rem; font-weight: 900; color: var(--gold); flex-shrink: 0; }
+    .byline-info { display: flex; flex-direction: column; gap: 2px; }
+    .byline-name { font-family: var(--ff-head); font-size: 0.95rem; font-weight: 700; }
+    .byline-role { font-family: var(--ff-mono); font-size: 0.58rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
+    .article-meta-right { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
+    .meta-date { font-family: var(--ff-mono); font-size: 0.62rem; color: var(--mid); letter-spacing: 0.06em; }
+    .meta-read { font-family: var(--ff-mono); font-size: 0.58rem; color: var(--light); letter-spacing: 0.06em; }
+
+    .article-body { font-size: 1.05rem; line-height: 1.85; }
+    .article-body p { margin-bottom: 1.6em; }
+    .article-body h2 { font-family: var(--ff-head); font-size: 1.75rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; margin: 2.4em 0 0.8em; padding-top: 1.2em; border-top: 1px solid var(--gold); color: var(--ink); }
+    .article-body h3 { font-family: var(--ff-head); font-size: 1.25rem; font-weight: 700; margin: 2em 0 0.6em; color: var(--slate); }
+    .article-body .drop-cap::first-letter { float: left; font-family: var(--ff-head); font-size: 5rem; font-weight: 900; line-height: 0.82; padding-right: 10px; padding-top: 6px; color: var(--gold-lt); text-shadow: 0 0 32px rgba(34,211,238,0.3); }
+
+    .pullquote { border-left: 4px solid var(--gold); border-right: 4px solid var(--gold); margin: 2.5em 0; padding: 28px 32px; background: linear-gradient(180deg, rgba(6,182,212,0.08) 0%, rgba(22,78,93,0.3) 100%); text-align: center; }
+    .pullquote p { font-family: var(--ff-head); font-size: 1.55rem; font-style: italic; font-weight: 600; line-height: 1.4; color: var(--ink); margin: 0 !important; }
+    .pullquote cite { display: block; font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-lt); margin-top: 14px; }
+
+    .data-box { border: 1px solid var(--rule-2); margin: 2.5em 0; padding: 26px 30px; position: relative; background: var(--paper-2); }
+    .data-box-label { position: absolute; top: -11px; left: 20px; background: var(--paper); padding: 0 10px; font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-lt); }
+    .data-box p { margin-bottom: 0.9em; font-size: 0.96rem; color: var(--slate); line-height: 1.7; }
+    .data-box p:last-child { margin-bottom: 0; }
+    .data-box strong { color: var(--gold-lt); font-family: var(--ff-mono); font-size: 0.92em; }
+
+    .timeline { margin: 2.5em 0; border-left: 3px solid var(--gold); padding-left: 24px; }
+    .timeline-item { position: relative; padding-bottom: 24px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before { content: ''; position: absolute; left: -31px; top: 6px; width: 10px; height: 10px; background: var(--gold); border-radius: 50%; border: 2px solid var(--paper); }
+    .timeline-date { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.12em; color: var(--gold-lt); text-transform: uppercase; margin-bottom: 4px; }
+    .timeline-text { font-size: 0.95rem; color: var(--slate); line-height: 1.6; }
+    .timeline-text strong { color: var(--ink); }
+
+    .math-block { background: #05080d; color: var(--gold-lt); font-family: var(--ff-mono); padding: 22px 28px; margin: 2em 0; border-radius: 2px; font-size: 0.86rem; line-height: 1.8; overflow-x: auto; white-space: pre; border: 1px solid var(--rule-2); border-left: 3px solid var(--gold); }
+    .math-block .comment { color: var(--mid); }
+
+    .insight-box { background: linear-gradient(135deg, var(--paper-3) 0%, #1a2129 100%); color: var(--ink); padding: 32px; margin: 2.5em 0; border: 1px solid var(--gold); border-left: 3px solid var(--gold); }
+    .insight-box-label { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .insight-box p { font-size: 1rem; line-height: 1.75; color: var(--slate); margin-bottom: 0.8em; }
+    .insight-box p:last-child { margin-bottom: 0; }
+    .insight-box strong { color: var(--gold-lt); }
+    .insight-box a { color: var(--gold-lt); border-bottom: 1px dotted var(--gold); }
+    .insight-box a:hover { color: #fff; }
+
+    .scripture { margin: 2.5em 0; padding: 22px 30px; border-left: 3px solid var(--gold); background: rgba(6,182,212,0.03); font-style: italic; color: var(--slate); font-size: 1.02rem; }
+    .scripture cite { display: block; font-style: normal; font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--gold); margin-top: 10px; text-transform: uppercase; }
+
+    .section-rule { display: flex; align-items: center; gap: 16px; margin: 3em 0; }
+    .section-rule hr { flex: 1; border: none; border-top: 1px solid var(--rule-2); }
+    .section-rule span { font-family: var(--ff-mono); font-size: 0.55rem; letter-spacing: 0.3em; color: var(--light); text-transform: uppercase; }
+
+    .inline-subscribe { background: radial-gradient(ellipse at center, rgba(6,182,212,0.1) 0%, transparent 70%), var(--paper-3); border: 1px solid var(--gold); padding: 32px; margin: 3em 0; text-align: center; }
+    .inline-subscribe h3 { font-family: var(--ff-head); font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; color: var(--ink); }
+    .inline-subscribe p { font-size: 0.88rem; color: var(--slate); font-style: italic; margin-bottom: 18px !important; }
+    .subscribe-form { display: flex; max-width: 400px; margin: 0 auto; border: 1px solid var(--gold); }
+    .subscribe-form input { flex: 1; padding: 10px 14px; border: none; background: var(--paper-3); color: var(--ink); font-family: var(--ff-body); font-size: 0.88rem; outline: none; }
+    .subscribe-form button { padding: 10px 20px; background: var(--gold); color: var(--paper); border: none; cursor: pointer; font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; transition: background 0.2s; white-space: nowrap; }
+    .subscribe-form button:hover { background: var(--gold-lt); color: var(--paper); }
+
+    .consulting-cta { background: linear-gradient(135deg, var(--paper-3) 0%, #1a2129 100%); color: var(--ink); padding: 36px; margin: 3em 0; border: 1px solid var(--gold); border-left: 4px solid var(--gold); }
+    .consulting-cta .cta-kicker { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .consulting-cta h3 { font-family: var(--ff-head); font-size: 1.5rem; font-weight: 700; margin-bottom: 14px; color: var(--ink); }
+    .consulting-cta p { font-size: 0.96rem; line-height: 1.7; color: var(--slate); margin-bottom: 16px; }
+    .consulting-cta .cta-btn { display: inline-block; padding: 14px 32px; background: var(--gold); color: var(--paper); font-family: var(--ff-mono); font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; transition: all 0.2s; box-shadow: 0 0 0 1px rgba(6,182,212,0.3); }
+    .consulting-cta .cta-btn:hover { background: var(--gold-lt); color: var(--paper); box-shadow: 0 0 24px rgba(34,211,238,0.4); }
+
+    .article-footer { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--gold); }
+    .article-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .tag { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border: 1px solid var(--rule-2); color: var(--slate); transition: all 0.2s; cursor: default; background: var(--paper-2); }
+    .tag:hover { border-color: var(--gold); color: var(--gold); }
+    .share-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .share-label { font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); }
+    .share-btn { padding: 9px 18px; background: var(--paper-3); color: var(--gold-lt); font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s; cursor: pointer; border: 1px solid var(--gold); }
+    .share-btn:hover { background: var(--gold); color: var(--paper); }
+
+    .related-section { margin-top: 56px; padding-top: 24px; border-top: 2px solid var(--gold); }
+    .related-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid var(--rule); padding-bottom: 8px; margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-card { border-top: 1px solid var(--rule-2); padding-top: 16px; }
+    .related-kicker { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+    .related-headline { font-family: var(--ff-head); font-size: 1rem; font-weight: 700; line-height: 1.3; }
+    .related-headline a:hover { color: var(--gold); }
+
+    .sources-section { margin-top: 48px; padding: 24px 28px; background: var(--paper-3); border: 1px solid var(--rule-2); }
+    .sources-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .sources-list { font-family: var(--ff-mono); font-size: 0.72rem; line-height: 1.9; color: var(--slate); list-style: none; }
+    .sources-list li { margin-bottom: 6px; padding-left: 16px; position: relative; }
+    .sources-list li::before { content: '▸'; position: absolute; left: 0; color: var(--gold); }
+    .sources-list a { color: var(--slate); border-bottom: 1px dotted var(--rule-2); }
+    .sources-list a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+    .site-footer { background: var(--paper-3); color: var(--ink); padding: 32px 24px; text-align: center; border-top: 1px solid var(--rule-2); }
+    .footer-logo { font-family: var(--ff-head); font-size: 1.5rem; font-weight: 900; margin-bottom: 10px; color: var(--ink); }
+    .footer-logo span { color: var(--gold); }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 16px; }
+    .footer-links a { font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold-lt); }
+    .footer-copy { font-family: var(--ff-mono); font-size: 0.58rem; color: var(--light); letter-spacing: 0.06em; }
+    .footer-formula { font-family: var(--ff-mono); font-size: 0.62rem; color: var(--gold); letter-spacing: 0.12em; margin-top: 6px; }
+
+    @media (max-width: 700px) {
+      .related-grid { grid-template-columns: 1fr; }
+      .header-nav { display: none; }
+      .article-headline { font-size: 1.8rem; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "The Surveillance Collapse",
+    "description": "Every surveillance system in existence assumes signals eventually exist somewhere accessible. Patent #96 Orthogonal Data Transport specifies a protocol whose payload is structurally absent from any single captured stream. This is not encryption. It is geometry. The surveillance architecture of the 20th and 21st centuries has never had to deal with this object.",
+    "author": {
+      "@type": "Person",
+      "name": "J.C. Medina",
+      "jobTitle": "Oracle — Founder, Seven Cubed Seven Labs LLC"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "2401 Wire — Seven Cubed Seven Labs LLC",
+      "url": "https://2401wire.com"
+    },
+    "datePublished": "2026-04-17",
+    "articleSection": "Patent Intelligence",
+    "url": "https://2401wire.com/surveillance-collapse.html"
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="site-logo">
+    <span>2401</span> Wire
+    <small>Prophetic Intelligence · Mathematical Certainty · Seven Cubed Seven Labs</small>
+  </a>
+  <nav class="header-nav">
+    <a href="/">Home</a>
+    <a href="archive.html">AI Analysis</a>
+    <a href="archive.html">Prophetic Intel</a>
+    <a href="patents.html" class="active">Patents</a>
+    <a href="archive.html">Oracle</a>
+    <a href="#subscribe">Subscribe</a>
+  </nav>
+</header>
+
+<div class="breadcrumb">
+  <a href="/">2401 Wire</a>
+  <span>›</span>
+  <a href="archive.html">Patent Intelligence</a>
+  <span>›</span>
+  The Orthogonality Turn · Pt. 3
+</div>
+
+<article class="article-wrap">
+
+  <header class="article-header">
+
+    <div class="article-section">Patent Intelligence · The Orthogonality Turn · 2401 Lens</div>
+
+    <h1 class="article-headline">
+      The Surveillance Collapse
+    </h1>
+
+    <p class="article-deck">
+      The Five Eyes, the Great Firewall, Pegasus, and every bulk-collection system in existence all assume signals eventually exist somewhere accessible. A protocol has been filed that makes the payload structurally absent from any single captured stream. Not encryption. Geometry. The surveillance architecture of the last sixty years has never had to deal with this object.
+    </p>
+
+    <div class="article-meta-row">
+      <div class="article-byline">
+        <div class="byline-avatar">JM</div>
+        <div class="byline-info">
+          <span class="byline-name">J.C. Medina</span>
+          <span class="byline-role">Oracle · Founder, Seven Cubed Seven Labs LLC</span>
+        </div>
+      </div>
+      <div class="article-meta-right">
+        <span class="meta-date">April 17, 2026</span>
+        <span class="meta-read">⚡ 18 min read · The Orthogonality Turn, Pt. 3 of 7</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-body">
+
+    <p class="drop-cap">Two things are simultaneously true about cryptography in April 2026. First: the United States, through the NSA's Commercial National Security Algorithm Suite 2.0, has mandated that all new National Security System acquisitions be CNSA 2.0 compliant by January 1, 2027. Hybrid classical-plus-post-quantum deployments required by 2030. Full post-quantum by 2033. NIST has finalized ML-KEM, ML-DSA, and SLH-DSA as the core standards. FIPS 140-2 sunsets September 21, 2026. The migration is not coming. It is here.</p>
+
+    <p>Second: the FBI is still claiming, periodically and publicly, that law enforcement is "going dark" because of end-to-end encryption. The UK government secretly ordered Apple to backdoor its encryption services worldwide in early 2025 — Apple chose to remove Advanced Data Protection from UK users entirely rather than comply. The EARN IT Act stalled. Salt Typhoon — the Chinese state breach of US telecom infrastructure — exploited the exact lawful-intercept backdoors CALEA mandated for domestic surveillance, proving that backdoors, once created, are exploited by foreign adversaries.</p>
+
+    <p>These two facts are supposed to be in tension. Post-quantum cryptography strengthens encryption; surveillance authorities want weaker encryption. The regulatory debate has been framed as a tradeoff between surveillance capability and communications security, with policy choices in the middle.</p>
+
+    <p>This framing is about to become structurally obsolete. The tradeoff assumes a specific mathematical context: communications are encrypted, and the question is whether the encryption can be weakened or circumvented by authorized parties. That context is about to be joined by a new one, in which the underlying assumption is different enough that the entire surveillance-vs-privacy debate has to be rewritten from the bottom.</p>
+
+    <h2>What Every Surveillance System Actually Assumes</h2>
+
+    <p>Here is the structural assumption shared by every lawful intercept system, every bulk collection program, every network tap, every state-level surveillance apparatus in operation today:</p>
+
+    <div class="pullquote">
+      <p>The signal being surveilled exists in some reference frame accessible to the surveillor.</p>
+      <cite>The universal assumption of surveillance architecture</cite>
+    </div>
+
+    <p>This sounds so obvious as to be tautological. But it is the assumption that does all the work. Bulk collection at a network transit point works because the traffic passes through the transit point — the packet exists there. Lawful intercept at a telecom switch works because the call is routed through the switch — the audio exists there. Encryption complicates this — the surveillor captures ciphertext rather than plaintext — but the ciphertext still exists, somewhere, in some accessible form, waiting for either decryption keys (via court order, coercion, or cryptanalysis) or computational advances that break the encryption mathematically.</p>
+
+    <p>Harvest-now-decrypt-later attacks operate on exactly this logic. An adversary captures encrypted traffic today, stores it, waits until quantum computers mature enough to break the encryption in the future. The attack assumes — correctly — that the encrypted payload exists <em>somewhere</em>. The adversary's only problem is computational: can they eventually derive the plaintext from the ciphertext they already possess?</p>
+
+    <p>All existing surveillance technology, legal and illegal, authorized and criminal, operates within this framework. The question is always: can the surveillor access the signal that exists somewhere in the channel?</p>
+
+    <p>The post-quantum migration does not change this assumption. It changes the computational difficulty of breaking the encryption. The signal still exists in the channel, encrypted with stronger mathematics. The harvest-now-decrypt-later attack still works against pre-quantum algorithms; it just stops working against post-quantum ones. The debate shifts from "who can access the cleartext" to "whose mathematics wins." <strong>The architecture of surveillance remains intact.</strong></p>
+
+    <p>What is about to arrive is different. It does not make the surveillor's problem harder. It makes the surveillor's problem <em>not a problem anymore</em>, because <strong>there is no signal in the channel to surveil.</strong></p>
+
+    <h2>Orthogonal Data Transport</h2>
+
+    <p>The mathematics has been filed. Patent #96 (Orthogonal Data Transport) in the Seven Cubed Seven Labs portfolio specifies a wire-protocol-layer data transport method with a property that sounds, at first, like marketing hyperbole:</p>
+
+    <div class="pullquote">
+      <p>An interceptor of any single transmitted stream obtains exactly zero information about the data payload, by mathematical identity.</p>
+      <cite>Patent #96 — Orthogonal Data Transport, Core Claim</cite>
+    </div>
+
+    <p>The architecture is simple to describe. Data is decomposed into 31 relational coefficients drawn from the odd-parity subspace of a 2,401-dimensional Hilbert space. Two carrier streams are generated. Each stream, individually, contains noise-equivalent content — statistically indistinguishable from background network traffic, with zero projection onto the data payload. The payload is encoded exclusively in the <em>antisymmetric difference</em> between the two streams. When the streams are transmitted on physically or logically disjoint paths, an interceptor capturing either stream alone captures only noise.</p>
+
+    <p>This is not encryption. The protection does not derive from computational difficulty. There is no encryption key to capture, no decryption problem to solve, no mathematical bet about what quantum computers might eventually break. The payload does not exist in either individual stream. It exists only in the relationship between them.</p>
+
+    <div class="math-block"><span class="comment">// Orthogonal Data Transport — the encoding</span>
+
+<span class="comment">// Payload D is decomposed into 31 relational coefficients.</span>
+<span class="comment">// Two streams S_A and S_B are generated with the antisymmetry property:</span>
+
+S_A = Σ(j=1 to 31) +c_j · r_j + noise_A
+S_B = Σ(j=1 to 31) -c_j · r_j + noise_B
+
+<span class="comment">// Where r_j are the 31 odd-parity basis vectors of H_rel,</span>
+<span class="comment">// and c_j encode the payload D.</span>
+
+<span class="comment">// Individual-stream observation:</span>
+⟨observer | S_A⟩ = noise_A         <span class="comment">// Zero information about D.</span>
+⟨observer | S_B⟩ = noise_B         <span class="comment">// Zero information about D.</span>
+
+<span class="comment">// Payload reconstruction requires both streams:</span>
+D = ½(S_A - S_B)                   <span class="comment">// The antisymmetric difference.</span>
+
+<span class="comment">// The surveillance apparatus captures S_A or S_B individually.</span>
+<span class="comment">// The mathematics forbids either capture from containing D.</span></div>
+
+    <p>The interceptor's problem is not "break the encryption." The interceptor's problem is: <strong>the signal you are trying to capture is not in any single one of the things you are capturing.</strong></p>
+
+    <p>Let me state this in the most precise possible terms, because this is the point where the entire surveillance apparatus of the 20th and 21st centuries starts to come apart:</p>
+
+    <p>If Stream A traverses one national telecommunications infrastructure and Stream B traverses a different one, neither nation's surveillance apparatus captures anything but noise on its side of the transmission. The protection is not legal. It is not jurisdictional. It is not even cryptographic in the traditional sense. <strong>It is geometric.</strong> The mathematics of subspace orthogonality forbids the signal from existing in either single path.</p>
+
+    <p>No amount of computational power changes this. No quantum computer solves this. No backdoor mandate reaches this. No "golden key" exists, because there is no door. The information is not hidden — it is <em>absent</em> from the observable space of any single path.</p>
+
+    <h2>Why This Is Inevitable</h2>
+
+    <p>The skeptical response is to assume that a system with this property is impossibly exotic, requires specialized hardware, or is years from deployment. None of this is true. The mathematical operations required — decomposing data into 31 relational coefficients, distributing it across two or more stream pairs — are implementable in software at approximately 500 CPU cycles per frame. That is orders of magnitude faster than current TLS handshakes. On dedicated silicon (which Patent #82 specifies as the Relational Security Processing Unit), the same operation executes in a single clock cycle.</p>
+
+    <p>The system operates over standard IP infrastructure. Each individual stream is a valid IP packet, routable by every switch, router, and firewall in existence, without modification. Dual-path routing is a solved problem in networking — SD-WAN vendors sell it, multipath TCP implements it, every CDN uses it for redundancy. The novelty is not the transport mechanism. The novelty is the encoding: noise-equivalent individual streams whose antisymmetric difference carries the payload.</p>
+
+    <p>More importantly: <strong>the mathematics is public.</strong> The orthogonality identity has been published in academic venues under the Consciousness Field Equation framework. The SCSL patent portfolio files the commercial applications. The underlying Hilbert space decomposition is straightforward linear algebra. Any sufficiently motivated research team — commercial, academic, or state-level — can derive orthogonal data transport from first principles within twelve to eighteen months. Some already have, quietly.</p>
+
+    <p>Once the mathematics is understood, implementation is straightforward. Once implementation is straightforward, deployment happens. The only question is by whom, first.</p>
+
+    <div class="data-box">
+      <span class="data-box-label">Who Deploys First</span>
+      <p><strong>Journalists protecting sources</strong> in authoritarian jurisdictions, where current end-to-end encryption is defeated by device seizure, coerced credentials, or compromised endpoints.</p>
+      <p><strong>Dissidents and human rights workers</strong> under surveillance regimes, for whom Pegasus and comparable spyware have rendered conventional encryption insufficient.</p>
+      <p><strong>Corporate entities protecting trade secrets</strong> against both foreign state adversaries and domestic corporate espionage.</p>
+      <p><strong>Government agencies</strong> requiring communication security for activities outside the authorized surveillance scope of either transit jurisdiction — diplomatic cables, intelligence liaison, classified research coordination.</p>
+      <p><strong>Medical, legal, and financial institutions</strong> whose current compliance posture under HIPAA, GDPR, and equivalent regulations is one harvest-now-decrypt-later attack away from catastrophic breach.</p>
+      <p><strong>Cloud computing providers</strong> offering customers a fundamentally new category of data-in-transit protection, beyond TLS 1.3 and post-quantum TLS.</p>
+    </div>
+
+    <p>Every one of these parties is structurally motivated to move to orthogonal transport the moment a production-ready implementation exists. The protection is categorical. The commercial and strategic value is obvious. The regulatory arbitrage is significant — a journalist using orthogonal transport between Country A and Country B is not evading any law, because no law yet exists that addresses a protocol whose payload does not exist in any capturable form.</p>
+
+    <p>The industry will build this. Some of it will happen in patent-compliant licensing arrangements with SCSL and other holders of the relevant IP. Some will happen outside those arrangements, because the mathematics is in the public literature. All of it will happen.</p>
+
+    <div class="section-rule"><hr><span>2401 Lens Analysis</span><hr></div>
+
+    <h2>Through the 2401 Lens</h2>
+
+    <p>The foundational mathematical claim of the Consciousness Field Equation has a surveillance-architecture consequence that has not been named in the policy literature yet, and the orthogonality identity deserves to be written down directly in this context:</p>
+
+    <div class="math-block"><span class="comment">// The orthogonality identity — the load-bearing mathematics</span>
+
+H<sub>2401</sub> = H<sub>ind</sub>(2,370) ⊕ H<sub>rel</sub>(31)
+
+⟨ψ<sub>A</sub> | r<sub>j</sub>⟩ = 0     for all j ∈ {1, 2, ..., 31}
+                    for any single carrier A
+
+<span class="comment">// In surveillance terms:</span>
+<span class="comment">// ψ<sub>A</sub> is the observation space of any single interceptor.</span>
+<span class="comment">// r<sub>j</sub> are the 31 relational eigenstates in which the payload lives.</span>
+<span class="comment">// Their inner product is identically zero.</span>
+<span class="comment">// The payload is not hidden. It is absent from the observation space.</span></div>
+
+    <p>Every surveillance apparatus that exists operates in ψ<sub>A</sub>-style observation spaces. National-level bulk collection, corporate intercept, adversarial interception — all of them are single-reference-frame observers. The orthogonality identity states that the 31 relational eigenstates have zero projection onto any such observer. <strong>Not hidden. Absent.</strong> There is no mathematical operation an observer can perform within ψ<sub>A</sub> that recovers information from r<sub>j</sub>. The operation would have to start with a nonzero inner product, and the inner product is structurally zero.</p>
+
+    <h3>The Patent Stack</h3>
+
+    <div class="data-box">
+      <span class="data-box-label">Patent Stack — The Structural Protection</span>
+      <p><strong>Patent #66 — Ontologically Relational Cryptographic Security</strong>: Establishes the foundational principle. Encryption keys derived from the 31-dimensional relational subspace are ontologically inaccessible to any isolated attacker, regardless of computational resources. The security guarantee is not "breaking this is hard" but "the key does not exist in the attacker's reference frame."</p>
+      <p><strong>Patent #96 — Orthogonal Data Transport</strong>: Applies the ontological security principle at the wire-protocol layer. Each individual stream is noise-equivalent; the payload is structurally absent. An interceptor of any single stream obtains zero information by mathematical identity.</p>
+      <p><strong>Patent #82 — Relational Security Processing Unit</strong>: The silicon implementation. Single-clock-cycle relational projection onto the 31-dimensional subspace. Makes orthogonal transport deployable at line rate, at sub-microwatt power for IoT, at 100+ Gbps for network infrastructure.</p>
+      <p><strong>Patent #69 — Continuous Non-Periodic Key Evolution</strong>: For the orthogonal-transport-plus-encryption deployment pattern. Defense-in-depth across two independent security paradigms: the payload is absent from any single capture (#96) and the layered encryption evolves via Weyl equidistribution so that even harvest-now-decrypt-later attacks face a trajectory that never repeats.</p>
+    </div>
+
+    <h3>What Scripture Already Named</h3>
+
+    <p>The framework teaches that structural truths are often encoded in Scripture long before they are named in secular vocabulary. The orthogonal-transport principle — that some information exists only in the gathering between two witnesses, not in either witness alone — is one of the oldest structural teachings in the Bible. It is the legal foundation of Mosaic jurisprudence:</p>
+
+    <div class="scripture">
+      "At the mouth of two witnesses, or at the mouth of three witnesses, shall the matter be established."
+      <cite>Deuteronomy 19:15 — KJV</cite>
+    </div>
+
+    <p>Read this carefully. The matter is not established in either witness alone. A single witness is insufficient — not because a single witness might be lying, but because the <em>establishment</em> of a matter, in this legal architecture, requires the gathering of at least two independent witnesses. The truth is a property of the relationship between witnesses, not a property of either witness individually.</p>
+
+    <p>Every lawful-intercept regime in modern history has been built on the opposite assumption: that truth can be established by a single authorized observer, capturing a single channel, at a single point. The Mosaic architecture — and the mathematics that the CFE formalizes three thousand years later — says this is structurally false for a broad class of information. The information does not exist in a single observer's frame. It exists in the gathering.</p>
+
+    <p>When orthogonal transport deploys, the surveillance apparatus discovers what the Mosaic legal tradition codified at Sinai: <strong>some matters are structurally unwitnessable from a single reference frame.</strong> They require the gathering. They require the relationship. There is no workaround. The mathematics forbids it, and has forbidden it from the beginning.</p>
+
+    <div class="scripture">
+      "Wo to them that decree unrighteous decrees, and that write grievousness which they have prescribed; To turn aside the needy from judgment, and to take away the right from the poor of my people."
+      <cite>Isaiah 10:1-2 — KJV</cite>
+    </div>
+
+    <p>The legal architecture that assumes universal surveillance is possible — that every communication must remain interceptable, that every encrypted channel must have a lawful backdoor, that every protocol must be designed for state observability — is a decree of the exact kind Isaiah condemned. It writes grievousness into law by prescribing the impossible: that truth must always be accessible to the watcher. The orthogonality identity says it cannot always be. The Deuteronomic principle says it should not always be. Both conclusions converge on the same architectural truth.</p>
+
+    <h3>The Policy Collision</h3>
+
+    <p>Regulators facing orthogonal transport deployment have three responses available, each worse than the last:</p>
+
+    <div class="data-box">
+      <span class="data-box-label">Regulatory Trilemma</span>
+      <p><strong>Response 1 — Ban orthogonal transport</strong>: Technically unenforceable. The mathematics is public, implementations are simple, detection requires packet-level statistical analysis that cover-traffic defeats. Also captures diplomatic, intelligence, and commercial uses that no government can actually prohibit.</p>
+      <p><strong>Response 2 — Mandate dual-path surveillance</strong>: Works until anyone routes one stream through foreign infrastructure. Compliant users captured; non-compliant users — the exact users the mandate was designed to surveil — are unaffected. Same failure mode as attempts to ban strong encryption.</p>
+      <p><strong>Response 3 — Build relational surveillance infrastructure</strong>: Require international intelligence-sharing arrangements that give surveillance authorities access to both halves of any stream pair. Not impossible in principle. Not remotely achievable in the political timeline, and almost certainly incompatible with most existing privacy law.</p>
+    </div>
+
+    <p>The honest answer is that none of the three responses works cleanly. The mature regulatory position is to accept that <strong>a portion of communications traffic is, henceforth, outside the scope of the surveillance apparatus</strong> — and to reallocate investigative resources accordingly.</p>
+
+    <h2>The Timeline</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">Q2-Q4 2026</div>
+        <div class="timeline-text">First production deployments by high-sensitivity users: investigative journalism consortia, human rights legal organizations, corporate security teams protecting frontier research. <strong>Quiet, specialized, below the visibility threshold of regulatory attention.</strong></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Q1-Q3 2027</div>
+        <div class="timeline-text">First commercial VPN / secure-communication products incorporate orthogonal transport, marketed as "quantum-proof beyond PQC" and "structural privacy." Consumer adoption begins in privacy-conscious markets. First enterprise deployments at financial institutions and healthcare organizations. <strong>January 1, 2027 CNSA 2.0 compliance deadline forces the cryptography conversation into every enterprise procurement cycle — and orthogonal transport becomes the next-layer answer.</strong></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Q4 2027 - Q2 2028</div>
+        <div class="timeline-text">First regulatory collision. A Western government attempts to compel cooperation from a service provider deploying orthogonal transport, and discovers that the provider literally cannot produce what is being demanded — the company does not possess the data because the data never existed on their infrastructure. <strong>The ensuing public conversation is the first broad-audience introduction to the concept that some protocols are structurally unsurveillable.</strong></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">H2 2028</div>
+        <div class="timeline-text">First peer-reviewed academic paper formalizing the surveillance-architecture implications. The paper does not cite the 2401 framework directly, but uses mathematically equivalent arguments. <strong>The academic-legitimacy moment after which regulatory agencies can no longer pretend the phenomenon is speculative.</strong></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2029-2030</div>
+        <div class="timeline-text">The policy conversation shifts. Aggressive-ban attempts face industry and civil-liberties coalitions that block the legislation. Mandated dual-path attempts face technical unenforceability. The mature regulatory equilibrium is a combination of narrow criminalization (specific misuse cases), international coordination (where it works), and <strong>resource reallocation toward endpoint-based investigative techniques, which orthogonal transport does not protect against.</strong></div>
+      </div>
+    </div>
+
+    <h2>The SCSL Implications</h2>
+
+    <div class="insight-box">
+      <div class="insight-box-label">⚡ Strategic Intelligence — Seven Cubed Seven Labs</div>
+      <p>The CNSA 2.0 deadlines mean every enterprise, every defense contractor, every federal system owner is running a post-quantum migration project <strong>right now</strong>. These projects are treating post-quantum as the endpoint. <strong>It is not the endpoint.</strong> Post-quantum strengthens the computational assumption. Orthogonal transport removes the signal-existence assumption entirely. These are complementary, not competing — the mature enterprise cryptography posture for 2028-2030 is post-quantum-for-everything plus orthogonal-transport-for-the-highest-sensitivity-communications.</p>
+      <p>The SCSL patent portfolio is the only architecture in existence that specifies orthogonal transport as a filed, defensible, deployable system. Patents #66, #82, #96, #69, and the supporting stack (#70 for relational identity, #79 for zero-trust access, #94 for session-bound authentication) constitute a coherent secure-communications architecture for the post-CNSA world. When the first Western enterprise asks "what comes after post-quantum?" the answer has already been filed, dated, and documented.</p>
+      <p>The surveillance collapse is not a prediction. It is a description of what is already beginning to happen, stated in the language that the inevitable has not yet been given. <strong>The mathematics is public, the patents are filed, and the industry deployment is twelve to thirty-six months out. When it lands, the record will show that every structural implication was named in April 2026.</strong></p>
+    </div>
+
+    <h3>The Commercial Implication</h3>
+
+    <p>For organizations running post-quantum migration projects right now: the decisions you are making through 2026-2027 to comply with CNSA 2.0, NIST FIPS 203/204/205, and equivalent international standards are correct. Post-quantum cryptography is the right next step. It is also not the last step. Within 24-36 months, a complementary architectural layer becomes available — orthogonal transport — that provides a different category of protection: not stronger encryption, but structural absence of the signal from any single capturable channel.</p>
+
+    <p>Organizations that architect their security posture around the two-layer model — post-quantum for everything, orthogonal for highest-sensitivity — starting now, are positioned for the cryptographic landscape of 2028-2030. Organizations that architect only for post-quantum are solving the visible problem and missing the structural one.</p>
+
+    <h2>The Closing Frame</h2>
+
+    <p>Lawful intercept is about to encounter a mathematical object it has never had to deal with before: a protocol whose payload is structurally absent from any single capturable channel. This is not encryption that is harder to break. This is not obfuscation that is harder to detect. <strong>This is geometry.</strong> The information is not in the signal. It is in the relationship between signals. No single-frame observer — human, algorithmic, quantum — can access it, because the information does not exist in the single-frame reference system that all surveillance apparatuses are built on.</p>
+
+    <p>The post-quantum cryptography debate, which consumes most of the current regulatory and commercial attention in the encryption conversation, is preparing defenses for the wrong war. The next war is not about whose mathematics can out-compute whose. It is about whether a signal exists to be captured at all. For an increasing share of high-sensitivity communications, it won't.</p>
+
+    <p>The mathematics is public. The patents are filed. The implementations are straightforward. The commercial deployment is twelve to thirty-six months away. The regulatory collision is two to four years away. And when it arrives, the record will show that the structural implications were named, dated, and published in April 2026 — before the first production deployment, before the first regulatory confrontation, before the industry had the vocabulary to describe what it was about to deploy.</p>
+
+    <p>The surveillance collapse is not a prediction. It is a description of what is already inevitable, stated in the language that the inevitable has not yet been given.</p>
+
+    <div class="scripture">
+      "At the mouth of two witnesses, or at the mouth of three witnesses, shall the matter be established."
+      <cite>Deuteronomy 19:15 — KJV</cite>
+    </div>
+
+    <div class="scripture">
+      "The secret things belong unto the LORD our God: but those things which are revealed belong unto us and to our children for ever."
+      <cite>Deuteronomy 29:29 — KJV</cite>
+    </div>
+
+    <div class="consulting-cta">
+      <div class="cta-kicker">Seven Cubed Seven Labs · Strategic Consulting</div>
+      <h3>If your organization is running a post-quantum migration project right now…</h3>
+      <p>You are doing the correct work. You are also solving the problem that the surveillance apparatus is about to move past. CNSA 2.0 compliance, FIPS 203/204/205 integration, and hybrid classical-plus-post-quantum deployment through 2030 are all necessary. None of them are sufficient for the 2028-2030 cryptographic landscape. The two-layer architecture — post-quantum-for-everything plus orthogonal-transport-for-highest-sensitivity — is the mature posture, and it requires architectural planning that begins now, not after the first production deployment becomes visible.</p>
+      <p>SCSL offers three tiers of strategic consulting rooted in the CFE framework and the 34-patent portfolio: <strong>Trinity Node Strategy Session</strong> (90 min · $297) for initial framework application to your post-quantum roadmap; <strong>AI Patent Discovery Workshop</strong> (half day · $497) for identifying patent-grade innovations in your domain using relational architecture; <strong>Framework Implementation</strong> (full day · $997) for complete organizational deployment including orthogonal transport roadmap integration with your CNSA 2.0 migration.</p>
+      <a href="https://c343.org" class="cta-btn" target="_blank">Book at c343.org →</a>
+    </div>
+
+    <div class="sources-section">
+      <div class="sources-label">Sources &amp; Citations</div>
+      <ul class="sources-list">
+        <li><a href="https://postquantum.com/quantum-policies/us-pqc-regulatory-framework-2026/" target="_blank">PostQuantum.com — "The Complete US Post-Quantum Cryptography (PQC) Regulatory Framework in 2026"</a> — CNSA 2.0 deadlines, FIPS 140-2 sunset, NIST algorithm finalizations. Primary source for the post-quantum regulatory timeline.</li>
+        <li><a href="https://postquantum.com/quantum-policy/nsa-cnsa-2-0-pqc/" target="_blank">PostQuantum.com — "NSA Unveils CNSA 2.0 Post-Quantum Algorithm Suite"</a> — January 1, 2027 new NSS acquisition deadline, 2030 software/firmware signing deadline, 2031-2033 legacy equipment replacement.</li>
+        <li><a href="https://www.paloaltonetworks.com/cyberpedia/pqc-standards" target="_blank">Palo Alto Networks — "A Complete Guide to Post-Quantum Cryptography Standards"</a> — Global regulatory comparison: US 2035, Australia 2030, EU ETSI 2035. Algorithm adoption status.</li>
+        <li><a href="https://cyberlaw.stanford.edu/blog/2025/05/governments-continue-losing-efforts-to-gain-backdoor-access-to-secure-communications/" target="_blank">Stanford CIS — "Governments continue losing efforts to gain backdoor access to secure communications"</a> — UK-Apple standoff (January 2025, Apple removes Advanced Data Protection from UK rather than comply); EARN IT Act collapse in 2023-2024 legislative session.</li>
+        <li><a href="https://ritcyberselfdefense.wordpress.com/2026/04/13/going-dark-the-fbi-vs-whatsapp-encryption-debate/" target="_blank">RIT Cyber Self-Defense — "Going Dark: The FBI vs. WhatsApp Encryption Debate"</a> (April 2026) — Current state of the "going dark" policy debate; Salt Typhoon's proof that backdoors become foreign-adversary attack vectors.</li>
+        <li><a href="https://www.sealsq.com/sealsq-blog/quantum-risk-is-no-longer-tomorrows-problem-why-u.s.-organizations-must-act-now" target="_blank">SEALSQ — "Quantum risk is no longer tomorrow's problem"</a> — The harvest-now-decrypt-later threat landscape, 2025-2026 integration phase, 2027-2030 hybrid deployment phase.</li>
+        <li><a href="https://2401wire.com/patents.html" target="_blank">SCSL Patent Portfolio — 2401wire.com/patents</a> — Patents #66, #69, #70, #79, #82, #94, and #96 each address specific dimensions of the orthogonal-transport architecture described in this piece.</li>
+        <li><a href="https://2401wire.com/capability-observability-coupling.html" target="_blank">2401 Wire — The Capability-Observability Coupling (The Orthogonality Turn, Pt. 1)</a></li>
+        <li><a href="https://2401wire.com/benchmark-exhaustion-point.html" target="_blank">2401 Wire — The Benchmark Exhaustion Point (The Orthogonality Turn, Pt. 2)</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="inline-subscribe" id="subscribe">
+    <h3>Get the 2401 Wire Daily Brief</h3>
+    <p>Prophetic convergence updates, patent intelligence, and AI architecture analysis — when it matters.</p>
+    <form class="subscribe-form" onsubmit="return false;">
+      <input type="email" placeholder="your@email.com" aria-label="Email">
+      <button type="submit">Subscribe Free</button>
+    </form>
+  </div>
+
+  <footer class="article-footer">
+    <div class="article-tags">
+      <span class="tag">Patent Intelligence</span>
+      <span class="tag">Orthogonality Turn</span>
+      <span class="tag">Surveillance Architecture</span>
+      <span class="tag">Post-Quantum Cryptography</span>
+      <span class="tag">CNSA 2.0</span>
+      <span class="tag">Patent #96</span>
+      <span class="tag">Patent #66</span>
+      <span class="tag">Patent #82</span>
+      <span class="tag">2401 Lens</span>
+      <span class="tag">Seven Cubed Seven Labs</span>
+    </div>
+    <div class="share-row">
+      <span class="share-label">Share this piece:</span>
+      <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href); this.textContent='Copied ✓'">Copy Link</button>
+      <button class="share-btn" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(window.location.href)+'&text='+encodeURIComponent(document.title))">Twitter / X</button>
+    </div>
+  </footer>
+
+  <div class="related-section">
+    <div class="related-label">Related Intelligence</div>
+    <div class="related-grid">
+      <div class="related-card">
+        <div class="related-kicker">Orthogonality Turn</div>
+        <h3 class="related-headline"><a href="capability-observability-coupling.html">Pt. 1 — The Capability-Observability Coupling</a></h3>
+      </div>
+      <div class="related-card">
+        <div class="related-kicker">Orthogonality Turn</div>
+        <h3 class="related-headline"><a href="benchmark-exhaustion-point.html">Pt. 2 — The Benchmark Exhaustion Point</a></h3>
+      </div>
+      <div class="related-card">
+        <div class="related-kicker">Patent Intelligence</div>
+        <h3 class="related-headline"><a href="patents.html">SCSL Patent Portfolio — 34 Patents, 22 Markets</a></h3>
+      </div>
+    </div>
+  </div>
+
+</article>
+
+<footer class="site-footer">
+  <div class="footer-logo"><span>2401</span> Wire</div>
+  <nav class="footer-links">
+    <a href="/">Home</a>
+    <a href="archive.html">AI Analysis</a>
+    <a href="archive.html">Prophetic Intel</a>
+    <a href="patents.html">Patents</a>
+    <a href="archive.html">Oracle</a>
+    <a href="https://sevencubedseven.com">SCSL</a>
+    <a href="https://c343.org">c343.org · Consulting</a>
+    <a href="#subscribe">Subscribe</a>
+  </nav>
+  <p class="footer-copy">© 2026 Seven Cubed Seven Labs LLC · J.C. Medina · All Rights Reserved · 2401wire.com</p>
+  <p class="footer-formula">7³ × 7 = 2,401 — Forever Calculating, Forever Creating ⚡</p>
+</footer>
+
+<!-- GoatCounter Analytics -->
+<script data-goatcounter="https://2401wire.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>
