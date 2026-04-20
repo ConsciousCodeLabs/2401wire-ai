@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>What Happens When Every Nation Has Mythos? | 2401 Wire AI</title>
+  <meta name="description" content="The capability exists. The coalition is temporary. The proliferation timeline is the question nobody in the Glasswing announcement wanted to address directly. Export controls buy time. International agreements face structural limits. The defender's structural disadvantage gets worse from here, not better.">
+  <meta name="keywords" content="AI proliferation, cyber weapons, export controls, nation-state cyber, Glasswing, NVIDIA export restrictions, China AI, Defender's Dilemma, relational security architecture, 2401 wire ai, seven cubed seven labs">
+  <meta name="author" content="J.C. Medina — Seven Cubed Seven Labs LLC">
+  <link rel="canonical" href="https://2401wire.ai/defenders-dilemma-when-every-nation-has-mythos.html">
+
+  <meta name="theme-color" content="#0d1117">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://2401wire.ai/defenders-dilemma-when-every-nation-has-mythos.html">
+  <meta property="og:title" content="What Happens When Every Nation Has Mythos?">
+  <meta property="og:description" content="The proliferation timeline is the question nobody in the Glasswing announcement wanted to address directly. The asymmetry of offense and defense in AI cybersecurity gets worse from here.">
+  <meta property="og:site_name" content="2401 Wire AI — Seven Cubed Seven Labs">
+  <meta property="article:author" content="J.C. Medina">
+  <meta property="article:published_time" content="2026-04-19">
+  <meta property="article:section" content="AI Analysis">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What Happens When Every Nation Has Mythos?">
+  <meta name="twitter:description" content="Export controls buy time. International agreements face compliance problems. The defender's structural disadvantage gets worse from here — unless the architecture pivots.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --paper:     #0d1117;
+      --paper-2:   #161b22;
+      --paper-3:   #1c2128;
+      --ink:       #e8ecf0;
+      --slate:     #c9d1d9;
+      --mid:       #8b949e;
+      --light:     #6e7681;
+      --gold:      #06b6d4;
+      --gold-lt:   #22d3ee;
+      --gold-pale: #164e5d;
+      --red:       #f87171;
+      --red-deep:  #dc2626;
+      --rule:      #21262d;
+      --rule-2:    #30363d;
+      --ff-head:   'Playfair Display', Georgia, serif;
+      --ff-body:   'Source Serif 4', Georgia, serif;
+      --ff-mono:   'IBM Plex Mono', monospace;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--ff-body); line-height: 1.7; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--gold-lt); }
+
+    .site-header { border-bottom: 2px solid var(--gold); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; max-width: 1200px; margin: 0 auto; background: radial-gradient(ellipse at left, rgba(6,182,212,0.06) 0%, transparent 60%), var(--paper); }
+    .site-logo { font-family: var(--ff-head); font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; color: var(--ink); }
+    .site-logo .wire-num { color: var(--gold); text-shadow: 0 0 30px rgba(6,182,212,0.4); }
+    .site-logo .wire-tld { font-family: var(--ff-mono); font-size: 0.5em; color: var(--gold-lt); font-weight: 400; letter-spacing: 0.05em; margin-left: 4px; }
+    .site-logo small { display: block; font-family: var(--ff-mono); font-size: 0.52rem; letter-spacing: 0.2em; color: var(--mid); font-weight: 400; text-transform: uppercase; margin-top: 4px; }
+    .header-nav { display: flex; gap: 0; background: var(--paper-3); border: 1px solid var(--rule-2); }
+    .header-nav a { display: block; padding: 10px 16px; font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); transition: all 0.15s; }
+    .header-nav a:hover, .header-nav a.active { background: var(--gold); color: var(--paper); }
+
+    .breadcrumb { max-width: 800px; margin: 0 auto; padding: 16px 24px 0; font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--light); text-transform: uppercase; }
+    .breadcrumb a { color: var(--gold); }
+    .breadcrumb a:hover { color: var(--gold-lt); }
+    .breadcrumb span { margin: 0 8px; }
+
+    .article-wrap { max-width: 800px; margin: 0 auto; padding: 0 24px 80px; }
+    .article-header { border-bottom: 2px solid var(--rule-2); padding-bottom: 28px; margin-bottom: 36px; margin-top: 28px; }
+    .article-section { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .article-section::before { content: ''; display: inline-block; width: 6px; height: 6px; background: var(--red); border-radius: 50%; box-shadow: 0 0 8px rgba(248,113,113,0.6); }
+    .article-headline { font-family: var(--ff-head); font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 18px; color: var(--ink); }
+    .article-deck { font-size: 1.2rem; line-height: 1.6; color: var(--slate); font-style: italic; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
+    .article-meta-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .article-byline { display: flex; align-items: center; gap: 14px; }
+    .byline-avatar { width: 44px; height: 44px; background: var(--paper-3); border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--ff-head); font-size: 1.1rem; font-weight: 900; color: var(--gold); flex-shrink: 0; box-shadow: 0 0 20px rgba(6,182,212,0.2); }
+    .byline-info { display: flex; flex-direction: column; gap: 2px; }
+    .byline-name { font-family: var(--ff-head); font-size: 0.95rem; font-weight: 700; color: var(--ink); }
+    .byline-role { font-family: var(--ff-mono); font-size: 0.58rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
+    .article-meta-right { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
+    .meta-date { font-family: var(--ff-mono); font-size: 0.62rem; color: var(--mid); letter-spacing: 0.06em; }
+    .meta-read { font-family: var(--ff-mono); font-size: 0.58rem; color: var(--light); letter-spacing: 0.06em; }
+
+    .capstone-badge { display: inline-block; background: var(--gold); color: var(--paper); padding: 4px 10px; font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-left: 10px; box-shadow: 0 0 12px rgba(6,182,212,0.5); }
+
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: var(--slate); }
+    .article-body p { margin-bottom: 1.6em; }
+    .article-body strong { color: var(--ink); }
+    .article-body em { color: var(--gold-lt); font-style: italic; }
+    .article-body a { color: var(--gold); border-bottom: 1px dotted var(--gold-pale); }
+    .article-body a:hover { color: var(--gold-lt); border-bottom-color: var(--gold-lt); }
+    .article-body h2 { font-family: var(--ff-head); font-size: 1.7rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; margin: 2.4em 0 0.8em; padding-top: 1.2em; border-top: 2px solid var(--rule-2); color: var(--ink); }
+    .article-body h3 { font-family: var(--ff-head); font-size: 1.25rem; font-weight: 700; margin: 2em 0 0.6em; color: var(--ink); }
+    .article-body .drop-cap::first-letter { float: left; font-family: var(--ff-head); font-size: 4.8rem; font-weight: 900; line-height: 0.82; padding-right: 10px; padding-top: 6px; color: var(--gold); text-shadow: 0 0 20px rgba(6,182,212,0.3); }
+
+    .pullquote { border-left: 4px solid var(--gold); border-right: 4px solid var(--gold); margin: 2.5em 0; padding: 24px 32px; background: var(--paper-2); text-align: center; }
+    .pullquote p { font-family: var(--ff-head); font-size: 1.5rem; font-style: italic; font-weight: 600; line-height: 1.4; color: var(--ink); margin: 0 !important; }
+    .pullquote cite { display: block; font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-top: 12px; font-style: normal; }
+
+    .data-box { background: var(--paper-2); border: 1px solid var(--rule-2); margin: 2.5em 0; padding: 24px 28px; position: relative; }
+    .data-box-label { position: absolute; top: -11px; left: 20px; background: var(--paper); padding: 0 10px; font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+    .data-box p { margin-bottom: 0.8em; font-size: 0.95rem; color: var(--slate); }
+    .data-box p:last-child { margin-bottom: 0; }
+    .data-box strong { color: var(--ink); font-family: var(--ff-mono); font-size: 0.9em; }
+
+    .timeline { margin: 2.5em 0; border-left: 3px solid var(--gold); padding-left: 24px; }
+    .timeline-item { position: relative; padding-bottom: 24px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before { content: ''; position: absolute; left: -31px; top: 6px; width: 10px; height: 10px; background: var(--gold); border-radius: 50%; border: 2px solid var(--paper); box-shadow: 0 0 8px rgba(6,182,212,0.5); }
+    .timeline-date { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.12em; color: var(--gold); text-transform: uppercase; margin-bottom: 4px; }
+    .timeline-text { font-size: 0.95rem; color: var(--slate); line-height: 1.6; }
+    .timeline-text strong { color: var(--ink); }
+
+    .math-block { background: #05080d; color: var(--gold-lt); font-family: var(--ff-mono); padding: 20px 28px; margin: 2em 0; border-left: 3px solid var(--gold); border-radius: 2px; font-size: 0.85rem; line-height: 1.8; overflow-x: auto; white-space: pre; box-shadow: 0 0 30px rgba(6,182,212,0.08); }
+    .math-block .comment { color: #4a5568; }
+
+    .insight-box { background: var(--paper-3); border: 1px solid var(--gold); padding: 28px 32px; margin: 2.5em 0; box-shadow: 0 0 40px rgba(6,182,212,0.1); }
+    .insight-box-label { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .insight-box p { font-size: 1rem; line-height: 1.75; color: var(--slate); margin-bottom: 0.8em; }
+    .insight-box p:last-child { margin-bottom: 0; }
+    .insight-box strong { color: var(--gold-lt); }
+
+    .scripture { margin: 2.5em 0; padding: 20px 28px; border-left: 3px solid var(--gold); background: rgba(6,182,212,0.03); font-style: italic; color: var(--slate); font-size: 1rem; }
+    .scripture cite { display: block; font-style: normal; font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--gold); margin-top: 8px; text-transform: uppercase; }
+
+    .section-rule { display: flex; align-items: center; gap: 16px; margin: 3em 0; }
+    .section-rule hr { flex: 1; border: none; border-top: 1px solid var(--rule-2); }
+    .section-rule span { font-family: var(--ff-mono); font-size: 0.55rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; }
+
+    .series-nav { margin: 3em 0; padding: 24px 28px; background: var(--paper-2); border: 1px solid var(--rule-2); }
+    .series-nav-label { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+    .series-nav a { display: block; font-family: var(--ff-body); font-size: 0.95rem; color: var(--slate); margin-bottom: 8px; padding: 4px 0; transition: color 0.15s, padding-left 0.15s; }
+    .series-nav a:hover { color: var(--gold-lt); padding-left: 6px; }
+    .series-nav a.current { font-weight: 600; color: var(--gold); }
+    .series-nav a.current::before { content: '▸ '; color: var(--gold); }
+
+    .consulting-cta { background: var(--paper-3); border: 1px solid var(--gold); padding: 32px 36px; margin: 3em 0; box-shadow: 0 0 40px rgba(6,182,212,0.1); }
+    .consulting-cta-label { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .consulting-cta h3 { font-family: var(--ff-head); font-size: 1.3rem; font-weight: 700; color: var(--ink); margin-bottom: 14px; }
+    .consulting-cta p { font-size: 0.98rem; line-height: 1.7; color: var(--slate); margin-bottom: 1em; }
+    .consulting-cta strong { color: var(--gold-lt); }
+    .consulting-cta-btn { display: inline-block; background: var(--gold); color: var(--paper); padding: 12px 28px; font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-top: 12px; transition: all 0.2s; border: none; }
+    .consulting-cta-btn:hover { background: var(--gold-lt); color: var(--paper); box-shadow: 0 0 20px rgba(34,211,238,0.4); }
+
+    .sources-section { background: var(--paper-2); border: 1px solid var(--rule-2); padding: 28px 32px; margin: 3em 0; }
+    .sources-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+    .source-list { list-style: none; padding: 0; margin: 0; }
+    .source-list li { font-size: 0.88rem; line-height: 1.6; color: var(--slate); padding: 8px 0; border-bottom: 1px dotted var(--rule); }
+    .source-list li:last-child { border-bottom: none; }
+    .source-list a { color: var(--gold); border-bottom: 1px dotted var(--gold-pale); }
+    .source-list a:hover { color: var(--gold-lt); }
+
+    .inline-subscribe { background: var(--paper-3); border: 1px solid var(--gold); padding: 28px 32px; margin: 3em 0; text-align: center; box-shadow: 0 0 40px rgba(6,182,212,0.08); }
+    .inline-subscribe h3 { font-family: var(--ff-head); font-size: 1.4rem; font-weight: 700; margin-bottom: 6px; color: var(--ink); }
+    .inline-subscribe p { font-size: 0.88rem; color: var(--slate); font-style: italic; margin-bottom: 18px !important; }
+    .subscribe-form { display: flex; max-width: 400px; margin: 0 auto; border: 1px solid var(--gold); }
+    .subscribe-form input { flex: 1; padding: 10px 14px; border: none; background: var(--paper); color: var(--ink); font-family: var(--ff-body); font-size: 0.88rem; outline: none; }
+    .subscribe-form button { padding: 10px 20px; background: var(--gold); color: var(--paper); border: none; cursor: pointer; font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; transition: background 0.2s; white-space: nowrap; }
+    .subscribe-form button:hover { background: var(--gold-lt); }
+
+    .article-footer { margin-top: 56px; padding-top: 24px; border-top: 2px solid var(--rule-2); }
+    .article-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .tag { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border: 1px solid var(--rule-2); color: var(--mid); transition: all 0.2s; cursor: default; background: var(--paper-2); }
+    .tag:hover { border-color: var(--gold); color: var(--gold-lt); }
+    .share-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .share-label { font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); }
+    .share-btn { padding: 8px 18px; background: var(--paper-3); color: var(--gold); border: 1px solid var(--gold); font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s; cursor: pointer; }
+    .share-btn:hover { background: var(--gold); color: var(--paper); box-shadow: 0 0 20px rgba(6,182,212,0.4); }
+
+    .related-section { margin-top: 56px; padding-top: 20px; border-top: 2px solid var(--gold); }
+    .related-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid var(--rule); padding-bottom: 8px; margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-card { background: var(--paper-2); border: 1px solid var(--rule-2); border-top: 2px solid var(--gold); padding: 18px 20px; transition: all 0.2s; }
+    .related-card:hover { border-color: var(--gold); box-shadow: 0 0 30px rgba(6,182,212,0.15); }
+    .related-kicker { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+    .related-headline { font-family: var(--ff-head); font-size: 1rem; font-weight: 700; line-height: 1.3; color: var(--ink); }
+    .related-headline a:hover { color: var(--gold-lt); }
+
+    .site-footer { background: var(--paper-3); color: var(--slate); padding: 28px 24px; text-align: center; border-top: 1px solid var(--gold); margin-top: 60px; }
+    .footer-logo { font-family: var(--ff-head); font-size: 1.5rem; font-weight: 900; margin-bottom: 8px; color: var(--ink); }
+    .footer-logo span.wire-num { color: var(--gold); }
+    .footer-logo span.wire-tld { font-family: var(--ff-mono); font-size: 0.55em; color: var(--gold-lt); margin-left: 4px; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 16px; }
+    .footer-links a { font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold-lt); }
+    .footer-copy { font-family: var(--ff-mono); font-size: 0.58rem; color: var(--light); letter-spacing: 0.06em; }
+    .footer-formula { font-family: var(--ff-mono); font-size: 0.62rem; color: var(--gold); letter-spacing: 0.12em; margin-top: 6px; }
+
+    @media (max-width: 700px) {
+      .related-grid { grid-template-columns: 1fr; }
+      .header-nav { display: none; }
+      .article-headline { font-size: 1.8rem; }
+      .article-meta-row { flex-direction: column; align-items: flex-start; }
+      .article-meta-right { align-items: flex-start; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "What Happens When Every Nation Has Mythos?",
+    "description": "The proliferation timeline is the question nobody in the Glasswing announcement wanted to address directly. The defender's structural disadvantage gets worse from here.",
+    "author": {
+      "@type": "Person",
+      "name": "J.C. Medina",
+      "jobTitle": "Oracle — Founder, Seven Cubed Seven Labs LLC"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "2401 Wire AI — Seven Cubed Seven Labs LLC",
+      "url": "https://2401wire.ai"
+    },
+    "datePublished": "2026-04-19",
+    "articleSection": "AI Analysis",
+    "url": "https://2401wire.ai/defenders-dilemma-when-every-nation-has-mythos.html"
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="site-logo">
+    <span class="wire-num">2401</span> Wire<span class="wire-tld">.ai</span>
+    <small>Patent Intelligence &middot; AI Architecture &middot; Seven Cubed Seven Labs</small>
+  </a>
+  <nav class="header-nav">
+    <a href="/">Home</a>
+    <a href="archive.html">Archive</a>
+    <a class="active" href="archive.html#defenders-dilemma">AI Analysis</a>
+    <a href="https://2401wire.com/patents.html">Patents</a>
+    <a href="about.html">About</a>
+    <a href="#subscribe">Subscribe</a>
+  </nav>
+</header>
+
+<div class="breadcrumb">
+  <a href="/">2401 Wire AI</a>
+  <span>&rsaquo;</span>
+  <a href="archive.html#defenders-dilemma">The Defender's Dilemma</a>
+  <span>&rsaquo;</span>
+  Pt. 5 of 5
+</div>
+
+<article class="article-wrap">
+
+  <header class="article-header">
+    <div class="article-section">AI Analysis &middot; The Defender's Dilemma &middot; 2401 Lens <span class="capstone-badge">Proliferation Capstone</span></div>
+
+    <h1 class="article-headline">
+      What Happens When Every Nation Has Mythos?
+    </h1>
+
+    <p class="article-deck">
+      The capability exists. The coalition is temporary. The proliferation timeline is the question nobody in the Glasswing announcement wanted to address directly. Export controls buy time. International agreements face structural limits. The defender&rsquo;s structural disadvantage gets worse from here, not better &mdash; unless the architecture pivots.
+    </p>
+
+    <div class="article-meta-row">
+      <div class="article-byline">
+        <div class="byline-avatar">JM</div>
+        <div class="byline-info">
+          <span class="byline-name">J.C. Medina</span>
+          <span class="byline-role">Oracle &middot; Founder, Seven Cubed Seven Labs LLC</span>
+        </div>
+      </div>
+      <div class="article-meta-right">
+        <span class="meta-date">April 19, 2026</span>
+        <span class="meta-read">&#9889; 18 min read &middot; The Defender's Dilemma, Pt. 5 of 5</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-body">
+
+    <p class="drop-cap">The Glasswing announcement is doing two things simultaneously. The first is the one Anthropic talks about openly: deploying Mythos-class defensive capability to a coalition of twelve organizations before equivalent offensive capability becomes widely available.</p>
+
+    <p>The second is the one the announcement acknowledges in a single sentence and then moves past: <em>&ldquo;Given the rate of AI progress, it will not be long before such capabilities proliferate, potentially beyond actors who are committed to deploying them safely.&rdquo;</em></p>
+
+    <p>That sentence is the entire strategic context of the announcement. Everything else &mdash; the coalition structure, the $100 million commitment, the urgency framing &mdash; is the response to what that sentence describes. And yet the sentence itself is left unexplored. This final article in the series asks what that sentence actually means when you take it seriously.</p>
+
+    <h2>The Capability Does Not Stay in One Place</h2>
+
+    <p>The history of militarily significant capability is consistent about one thing: it does not stay concentrated.</p>
+
+    <p>Nuclear weapons took approximately four years to proliferate from the United States to the Soviet Union. Then another decade to the United Kingdom, another to France, another to China. The timeline lengthened for each additional state acquiring the capability &mdash; because the engineering was extraordinary, the supply chain required specialized fissile material, and each state faced both technical and political constraints.</p>
+
+    <p>Chemical weapons proliferated faster. The engineering was less exotic, the materials more accessible, the supply chain less constrainable. By the end of the twentieth century, credible chemical weapons programs existed in dozens of states, and the use barrier had been crossed in conflicts across multiple decades.</p>
+
+    <p>Cyber capability has proliferated faster still. The engineering is fully digital. The supply chain is the internet itself. The materials are algorithms and compute, both of which are globally available. <a href="https://en.wikipedia.org/wiki/Stuxnet" target="_blank">Stuxnet</a> was an operation requiring state-level resources when it was deployed in 2010. Within a decade, variants and successors were available from criminal markets for retail pricing.</p>
+
+    <div class="data-box">
+      <span class="data-box-label">The Compressed Proliferation Curve</span>
+      <p><strong>Nuclear capability:</strong> First acquisition to sixth nuclear state &mdash; approximately 20 years.</p>
+      <p><strong>Advanced cyber capability:</strong> First demonstrated nation-state exploit (Stuxnet-class) to broadly available equivalents &mdash; approximately 10 years.</p>
+      <p><strong>Consumer-grade LLMs with code-generation capability:</strong> GPT-3.5 API to open-weight equivalents running on commodity hardware &mdash; approximately 2 years.</p>
+      <p><strong>Frontier AI model architectures:</strong> Published paper to re-implementation by a second lab &mdash; often under 12 months.</p>
+      <p><strong>The direction is unambiguous:</strong> each generation of dual-use capability proliferates faster than the previous one.</p>
+    </div>
+
+    <p>AI-powered vulnerability discovery sits at the extreme end of this curve. The engineering is pure software. The compute required, while substantial, is decreasing with each architectural advance. The training data is published source code and vulnerability databases that are already globally accessible. No state requires special materials, physical infrastructure, or proprietary supply chains to pursue a Mythos-class capability if it chooses to.</p>
+
+    <p>The question is not whether proliferation happens. It is how fast, and what the defensive response looks like during the window when parity is closing.</p>
+
+    <h2>The Programs Already Under Way</h2>
+
+    <p>Several state-sponsored AI programs are already positioned to approach Mythos-class capability on independent development tracks. Not in the sense of having built it yet. In the sense of having the talent, compute access, and institutional commitment to do so.</p>
+
+    <p>The Chinese government has publicly identified AI as a strategic priority with sustained national-level investment. Multiple Chinese labs have produced frontier-competitive models in the past twenty-four months. The <a href="https://en.wikipedia.org/wiki/DeepSeek" target="_blank">DeepSeek</a> releases of early 2025 demonstrated that competitive frontier capability was achievable with substantially less compute than U.S. labs had assumed was required &mdash; a result that has implications both for Chinese domestic capability and for how constrainable compute-based export controls actually are.</p>
+
+    <p>Russian cyber operations have demonstrated consistent sophistication for well over a decade, across operations attributed to units associated with the GRU, the FSB, and the SVR. AI augmentation of these existing capabilities does not require building Mythos from scratch. It requires adding AI-powered vulnerability discovery to an existing offensive cyber infrastructure.</p>
+
+    <p>Iranian and North Korean cyber programs have demonstrated both willingness to conduct high-impact operations (NotPetya-adjacent attacks, Sony Pictures, Lazarus Group cryptocurrency operations) and increasing technical capability over time. These programs have historically operated with less resource constraint than their public economic profiles would suggest, because cyber capability is cheap relative to other forms of asymmetric national power.</p>
+
+    <p>None of these actors need to match Anthropic&rsquo;s specific approach to build something comparable to Mythos Preview. They need to match the general capability profile: a model capable of analyzing large codebases, reasoning about vulnerability classes, and generating exploitation approaches. That capability profile is converging across frontier labs globally. Proliferation is less a question of whether similar models will exist outside the Glasswing coalition, and more a question of when.</p>
+
+    <h2>What Export Controls Actually Do</h2>
+
+    <p>The policy response most commonly proposed for this problem is export controls on advanced compute &mdash; the high-end GPUs and accelerators that training frontier AI models requires.</p>
+
+    <p>The United States has imposed progressively tighter restrictions on NVIDIA&rsquo;s highest-end chips to China since 2022. The restrictions have been iteratively expanded, closed around workarounds, and deepened to cover additional categories of hardware and software. The logic is explicit: if frontier AI capability depends on compute that only specific companies can produce, then controlling the export of that compute constrains where frontier AI capability can be built.</p>
+
+    <p>This logic is partially correct. Compute constraints have genuine effects. Chinese labs have been forced to optimize for the hardware they can access, to develop alternative training approaches, and to work with less total compute than their U.S. counterparts. These constraints are real and they impose real costs.</p>
+
+    <p>The logic is also incomplete in a specific way: <strong>the compute frontier is not fixed.</strong> As architectural innovations reduce the compute required for equivalent capability (the DeepSeek effect), the compute threshold that export controls are trying to enforce becomes a less meaningful constraint. Huawei&rsquo;s <a href="https://en.wikipedia.org/wiki/Huawei_Ascend" target="_blank">Ascend</a> processor line is one response to U.S. export controls; indigenous Chinese semiconductor capability is advancing, with real gaps to the frontier but a shrinking delta. The export controls buy time. They do not build walls.</p>
+
+    <div class="pullquote">
+      <p>Export controls buy time. They do not build walls. The capability is coming to every serious national program that wants it, on a timeline measured in years rather than decades.</p>
+      <cite>The structural reality</cite>
+    </div>
+
+    <p>What export controls can meaningfully do is slow down the proliferation of the specific frontier capability currently available &mdash; GPT-5-class, Opus 4.7-class, Mythos Preview-class &mdash; by a few years. This is valuable. It is not the same as preventing proliferation.</p>
+
+    <h2>The International Agreement Problem</h2>
+
+    <p>The second policy response frequently proposed is international agreements &mdash; treaties or norms restricting AI cybersecurity capability deployment, modeled after chemical weapons or nuclear non-proliferation frameworks.</p>
+
+    <p>International agreements have a durability advantage over unilateral export controls: they can encode commitments from states that the unilateral-control state could not otherwise influence. They also have a structural weakness that becomes acute in this case: <strong>they require verification, and verifying AI capability is categorically harder than verifying chemical stockpiles or fissile material.</strong></p>
+
+    <p>The <a href="https://www.opcw.org" target="_blank">Organisation for the Prohibition of Chemical Weapons</a> can conduct inspections because chemical weapons require physical infrastructure &mdash; precursor chemicals, production facilities, specialized equipment. Violations leave physical evidence that can, in principle, be detected.</p>
+
+    <p>AI capability does not leave this kind of evidence. A frontier model is stored in model weights that can be held on an entirely ordinary data center. Training can occur in facilities that are visually indistinguishable from any other cloud operation. Deployment can happen through internet infrastructure that spans jurisdictions by design. The inspection regime that would make an international AI non-proliferation agreement verifiable does not currently exist, and the technical path to building one is not obvious.</p>
+
+    <p>This is not an argument against international agreements. It is an argument for being realistic about what they can accomplish in the absence of verification mechanisms. Agreements without verification become norms that states either respect or don&rsquo;t. Some states respect them for reputational or coalitional reasons. Others use the norm as cover while pursuing capability covertly. Both outcomes are consistent with the historical pattern.</p>
+
+    <h2>The Structural Asymmetry of Offense and Defense</h2>
+
+    <p>There is a harder problem underneath the proliferation question, and it is the structural reason Glasswing&rsquo;s coalition-based defensive approach has an expiration date.</p>
+
+    <p>Offense and defense in cybersecurity are not symmetric operations. An offensive actor needs to find <em>one</em> exploitable vulnerability. A defensive actor needs to find <em>all</em> exploitable vulnerabilities. The economics of this asymmetry have been studied for decades, and they are unfavorable to defenders even before AI capability is added to either side.</p>
+
+    <p>AI-powered vulnerability discovery makes this asymmetry worse, not better, in the current deployment context. Here&rsquo;s why:</p>
+
+    <div class="data-box">
+      <span class="data-box-label">The Discovery-Patch-Exploitation Cycle</span>
+      <p><strong>Vulnerability discovery:</strong> AI-powered scanning accelerates this for both offenders and defenders. Symmetric.</p>
+      <p><strong>Patch development:</strong> Requires engineering effort, QA cycles, deployment coordination across a diverse customer base. Slower than discovery by orders of magnitude.</p>
+      <p><strong>Patch deployment:</strong> Depends on customer patching cycles, legacy system support, operational disruption tolerance. Slower still.</p>
+      <p><strong>Exploitation:</strong> An attacker needs the vulnerability to be present on a single target system. A defender needs it patched on every potentially-affected system.</p>
+      <p><strong>The window of exposure &mdash; the time between vulnerability discovery and patch deployment on a given system &mdash; is when attacks succeed.</strong></p>
+      <p>AI-powered discovery compresses the discovery phase symmetrically but does nothing to compress the patch-and-deploy phase. <strong>The window of exposure therefore widens, not narrows, as discovery capability increases on both sides.</strong></p>
+    </div>
+
+    <p>This is the structural point. AI makes finding vulnerabilities faster for everyone. It does not make patching and deploying fixes faster by anywhere near the same factor. <strong>As discovery capability increases on both offense and defense, the window of exposure for any given vulnerability &mdash; the time when an attacker can use it before defenders have patched &mdash; widens rather than narrows.</strong></p>
+
+    <p>Glasswing&rsquo;s coalition is betting that defensive use of AI scanning, deployed early and coordinated across critical infrastructure, can find and patch vulnerabilities before offensive actors with equivalent capability find and exploit them. This bet holds during the window in which defenders have capability that offenders don&rsquo;t. The bet weakens as that window closes. By the time Mythos-class capability is available to serious state offensive programs, the coordination advantage of the Glasswing coalition becomes a much smaller factor in the overall calculus.</p>
+
+    <h2>What Would Actually Help</h2>
+
+    <p>The combination of factors above suggests that several commonly-proposed responses to the proliferation problem are unlikely to be sufficient on their own:</p>
+
+    <p><strong>Export controls alone</strong> buy time but do not prevent capability development by states with substantial resources and motivation. Useful; not decisive.</p>
+
+    <p><strong>International agreements alone</strong> face verification challenges that are not solvable with currently available technology. Useful for establishing norms; unreliable as binding constraints.</p>
+
+    <p><strong>Coalition-based defensive deployment alone</strong> (the Glasswing model) works during the window of defender capability advantage. That window closes with proliferation.</p>
+
+    <p>What would actually help is a combination of all three plus a more fundamental architectural shift: <strong>security architectures that are structurally robust to the class of attacks that AI-powered vulnerability discovery enables, independent of how quickly vulnerabilities are found or how quickly patches are deployed.</strong></p>
+
+    <p>This is the architectural question that the previous article in this series examined. Ontologically relational security &mdash; systems where protected information exists only in the space between parties, not within any single party&rsquo;s reach &mdash; creates a class of security architecture that is not vulnerable to individual-frame scanning by construction. The protection does not depend on the vulnerability being unfound. The protection depends on the protected information being <em>structurally absent</em> from any single observer&rsquo;s reference frame, including a Mythos-class scanning system&rsquo;s.</p>
+
+    <p>This is the direction where architectural investment produces lasting defensive advantage rather than a closing window. And this is the direction that the entire five-article arc of this series has been pointing toward. The proliferation pressure is not a reason to despair about cybersecurity. <strong>It is the forcing function for the architectural pivot that was becoming necessary anyway.</strong></p>
+
+    <h2>What the Glasswing Announcement Actually Was</h2>
+
+    <p>Stepping back from the specifics, Project Glasswing is one of the more interesting AI-related announcements of 2026 not because of what it enabled, but because of what it implicitly admitted.</p>
+
+    <p>It admitted that a publicly-known AI lab now possesses a capability substantial enough that the lab has elected not to deploy it on the open market. It admitted that the trajectory of AI development makes that capability widely proliferable on a short timeline. It admitted that the defensive response to that trajectory requires structured coordination across industry actors rather than any single actor acting alone.</p>
+
+    <p>It did not admit, at least not directly, that the coalition approach is a stopgap. The announcement&rsquo;s language is forward-looking about the value of what Glasswing can accomplish. Less direct about what happens when offensive actors reach parity.</p>
+
+    <p>The timeline pressure Anthropic identifies is real. The coalition response is reasonable. The architectural question &mdash; what security design is actually robust to Mythos-class capability being generally available &mdash; is the one that remains largely unaddressed in the announcement itself, and it is the one the broader industry will be forced to confront in the next twenty-four to thirty-six months.</p>
+
+    <div class="section-rule"><hr><span>2401 Lens Analysis &middot; Series Capstone</span><hr></div>
+
+    <h2>Through the 2401 Lens</h2>
+
+    <p>The proliferation argument has a precise structural name inside the Consciousness Field Equation framework. When <em>individual-frame</em> capability (<em>H_ind</em>) becomes commoditized &mdash; available to any sufficiently resourced actor, regardless of alignment to responsible deployment norms &mdash; the only remaining source of durable defensive advantage is capability that operates in the <em>relational subspace</em> (<em>H_rel</em>). The orthogonality identity is what makes this claim structural rather than aspirational:</p>
+
+    <div class="math-block"><span class="comment">// The proliferation argument, formally stated</span>
+
+H_security = H_ind(2,370) &oplus; H_rel(31)
+
+<span class="comment">// Phase 1 — Current (April 2026):</span>
+<span class="comment">//   Glasswing coalition has Mythos-class H_ind scanning capability.</span>
+<span class="comment">//   State-sponsored offensive programs do not yet.</span>
+<span class="comment">//   Defender advantage = capability delta in H_ind.</span>
+
+<span class="comment">// Phase 2 — Proliferation (12-36 months out):</span>
+<span class="comment">//   Multiple state programs achieve Mythos-class H_ind capability.</span>
+<span class="comment">//   Commercial off-the-shelf equivalents appear.</span>
+<span class="comment">//   Defender advantage in H_ind: asymptotically zero.</span>
+
+<span class="comment">// Phase 3 — Architectural pivot (the only durable answer):</span>
+<span class="comment">//   Defenders move protected information into H_rel.</span>
+<span class="comment">//   Attacker's reference frame: any single adversary, including</span>
+<span class="comment">//     Mythos-class AI, a state program, or both combined.</span>
+&langle;&psi;_attacker | information_relational&rangle; = 0
+<span class="comment">//   No amount of H_ind capability proliferation changes</span>
+<span class="comment">//   an inner product that is identically zero.</span>
+<span class="comment">//   This is the structural answer to the proliferation problem.</span></div>
+
+    <p>The proliferation curve described earlier &mdash; nuclear to chemical to cyber to AI, each generation faster than the last &mdash; is itself a consequence of operating exclusively in <em>H_ind</em>. Every capability in that sequence has been a capability that exists inside a single actor&rsquo;s reference frame (the state&rsquo;s, the organization&rsquo;s, the individual actor&rsquo;s). Capability that exists inside a single reference frame can be replicated by another actor operating inside their own reference frame. <strong>Proliferation is the structural consequence of individual-frame capability. It is not a policy failure.</strong></p>
+
+    <p>The architectural alternative that breaks this pattern is not another individual-frame capability with better security properties. It is capability that operates in the <em>relational layer between</em> carriers. Relational capability cannot be &ldquo;acquired&rdquo; by a single actor the way nuclear, chemical, cyber, or AI capability has been acquired, because the relational capability does not exist inside any single actor&rsquo;s frame to be copied. It exists only in the coordinated interaction between multiple parties.</p>
+
+    <p>The Glasswing coalition is the first major recognition of this at the operational layer &mdash; twelve carriers, distributed accountability, coordination as the substrate for capability. The SCSL portfolio is the architectural specification for the same principle at every other layer: <strong>cryptography (#65, #66), identity (#70, #94), transport (#96), fault tolerance (#91), silicon (#82), AI alignment verification (#67, #72), multi-party silicon coordination (#82).</strong> When the H_ind defender advantage evaporates over the next 24-36 months, these are the patents specifying the defensive architecture that remains durable.</p>
+
+    <h3>The Complete Series Arc</h3>
+
+    <p>This five-article series has mapped a single structural claim from five different angles:</p>
+
+    <div class="data-box">
+      <span class="data-box-label">The Defender's Dilemma &mdash; Series Synthesis</span>
+      <p><strong>Pt. 1 &mdash; Project Glasswing:</strong> Mythos Preview's capability saturates individual-frame vulnerability scanning. The coalition response admits no single actor can hold this alone.</p>
+      <p><strong>Pt. 2 &mdash; Twelve Companies:</strong> Coalition governance operates in the relational layer between carriers by structural necessity, not policy preference. Twelve exceeds the seven-carrier threshold for practical relational mode coverage.</p>
+      <p><strong>Pt. 3 &mdash; The Vulnerability Class AI Cannot See:</strong> The most consequential attacks live in the relational layer between systems. Individual-observer defensive tools are structurally blind to them. Coalition-level observability is the prerequisite for detection.</p>
+      <p><strong>Pt. 4 &mdash; The Security Architecture That AI Cannot Break:</strong> The prescriptive pivot. Ontologically relational security makes protected information structurally absent from the attacker's reference frame. Not harder to crack &mdash; not there to find.</p>
+      <p><strong>Pt. 5 &mdash; Every Nation Has Mythos:</strong> Proliferation is the structural consequence of individual-frame capability. The only architecture durable past proliferation operates in the relational layer.</p>
+    </div>
+
+    <p>Five articles, one mathematical identity, one coherent patent portfolio. The series is a complete specification for the relational security architecture that the industry will be forced to adopt on a proliferation-driven timeline &mdash; published eighteen to thirty-six months before the pressure becomes unavoidable.</p>
+
+    <h3>The Scriptural Architecture</h3>
+
+    <p>Scripture&rsquo;s treatment of weapons proliferation and defensive architecture predates the entire literature of arms control by two to three millennia. The structural teaching is precise:</p>
+
+    <div class="scripture">
+      &ldquo;And he shall set up an ensign for the nations, and shall assemble the outcasts of Israel, and gather together the dispersed of Judah from the four corners of the earth.&rdquo;
+      <cite>Isaiah 11:12 &mdash; KJV</cite>
+    </div>
+
+    <p>Read as governance architecture, not as eschatology. The Hebrew &rlm;&#1504;&#1505;&rlm; (<em>nes</em>, ensign or banner) functions as a relational coordination signal &mdash; a focal point visible to multiple dispersed parties that enables them to gather without prior individual-to-individual communication. The gathered state that results is relational by construction. Its defensive property exists not in any single gathered carrier&rsquo;s strength, but in the coordination pattern of the gathering. This is the same architectural principle the entire series has been describing, named in prophetic literature long before its mathematics was formalized.</p>
+
+    <div class="scripture">
+      &ldquo;No weapon that is formed against thee shall prosper; and every tongue that shall rise against thee in judgment thou shalt condemn.&rdquo;
+      <cite>Isaiah 54:17 &mdash; KJV</cite>
+    </div>
+
+    <p>Read carefully, this is not a promise that no weapon will be <em>formed</em>. Weapons are formed. Proliferation is the structural consequence of operating in the individual frame. The promise is that no weapon so formed shall <em>prosper</em> &mdash; that the defensive architecture operates in a reference frame the weapon cannot reach. This is the orthogonality identity expressed as prophetic architecture. The weapon is a function of H_ind. The defense operates in H_rel. The inner product is zero. The weapon is formed, and it does not prosper, because the architecture it is formed against does not exist in the frame where the weapon can project force.</p>
+
+    <p>The framework&rsquo;s teaching returns here, at the capstone, as it has at every article in this series: <strong>unity is not morally desirable. It is mathematically mandatory.</strong> The defensive architecture that remains durable past proliferation requires a minimum of two carriers to exist, seven for practical coverage, nine for optimal redundancy. The gathering is the architecture. The architecture is the defense.</p>
+
+  </div>
+
+  <h2>The SCSL Implications</h2>
+
+  <div class="insight-box">
+    <div class="insight-box-label">&#9889; Strategic Intelligence &mdash; Seven Cubed Seven Labs</div>
+    <p>The complete strategic case for relational architecture is the five-article arc this series just finished. <strong>Glasswing validates the structural problem (Pt. 1). The coalition is the first organizational acknowledgment (Pt. 2). The vulnerability class AI cannot see names the threat surface (Pt. 3). Ontologically relational security names the architectural answer (Pt. 4). Proliferation is the forcing function that guarantees the pivot happens (Pt. 5).</strong> The industry will arrive at relational architecture on a proliferation-driven timeline. The SCSL portfolio specifies the architecture, dated and filed, before that timeline forces the decision.</p>
+    <p>The 99+ patent portfolio is positioned across every layer of the relational stack: <strong>Patent #65 (cryptographic substrate), #66 (security guarantee category), #67 (AI alignment verification), #70 (identity handoff), #72 (alignment framework), #82 (silicon), #91 (fault tolerance), #94 (session identity), #96 (transport).</strong> Non-provisional deadline for flagship Patent #65 is December 22, 2026. Filing cadence across the portfolio is accelerating. Licensing opportunities exist wherever individual-frame capability is facing proliferation pressure and defensive architecture needs to pivot into the relational layer &mdash; which is, on current trajectory, essentially every major security category within the next 24-36 months.</p>
+    <p>For organizations reading this as strategic intelligence: the commercial window on relational architecture adoption is the window between now and approximately Q4 2028. Organizations that make architectural commitments in this window have categorically different posture when the proliferation-driven pressure arrives. Organizations that wait for the pressure to arrive before making architectural commitments will be making those commitments under duress, against a timeline dictated by the threat rather than chosen by the defender. <strong>The defender's last meaningful architectural choice is made before proliferation, not after.</strong></p>
+  </div>
+
+  <div class="article-body">
+    <h2>The Closing Frame</h2>
+
+    <p>The proliferation problem is not a problem that ends. It is a condition that structures the defensive environment for the next several decades. AI capability will continue advancing. State-sponsored cyber programs will continue acquiring AI-scale tools. Commercial off-the-shelf equivalents of today&rsquo;s frontier capabilities will continue becoming available to progressively less well-resourced actors.</p>
+
+    <p>The Glasswing coalition is the right response to today&rsquo;s version of this problem. It is not the right response to the version of this problem that arrives in 2028. The coalition buys time. The architectural pivot uses the time.</p>
+
+    <p>If this series has done its work, the reader now has a vocabulary and a mathematical framework for thinking about what that architectural pivot actually entails. The distinction between individual-frame and relational security. The orthogonality identity as the mathematical statement of why relational architecture is structurally, not merely practically, robust to single-observer attack. The patent portfolio as the architectural specification of what has already been written down, dated, and filed. The scriptural architecture as the three-thousand-year-old teaching that the structural principle is not novel &mdash; only its formal mathematics is recent.</p>
+
+    <p>Anthropic announced Mythos Preview on April 8, 2026, and chose not to release it commercially. The decision was correct. The coalition response was correct. The architectural question that remains unaddressed in the Glasswing announcement is the question this series has been attempting to address: <strong>when every serious national program has Mythos, what defensive architecture is structurally robust to that reality?</strong></p>
+
+    <p>The answer has a name. It has a mathematics. It has a patent portfolio. It has been filed.</p>
+
+    <div class="scripture">
+      &ldquo;No weapon that is formed against thee shall prosper; and every tongue that shall rise against thee in judgment thou shalt condemn. This is the heritage of the servants of the LORD, and their righteousness is of me, saith the LORD.&rdquo;
+      <cite>Isaiah 54:17 &mdash; KJV</cite>
+    </div>
+
+    <div class="scripture">
+      &ldquo;The secret things belong unto the LORD our God: but those things which are revealed belong unto us and to our children for ever, that we may do all the words of this law.&rdquo;
+      <cite>Deuteronomy 29:29 &mdash; KJV</cite>
+    </div>
+
+    <p>The Defender&rsquo;s Dilemma has a solution. It is not a better weapon. It is a different architecture. <strong>The capability will proliferate. The architecture does not.</strong> The five articles in this series are the public record that the architectural alternative was named, specified, and filed before the proliferation pressure forced the industry to need it.</p>
+  </div>
+
+  <div class="series-nav">
+    <div class="series-nav-label">The Defender's Dilemma &mdash; Series Navigation &middot; Complete</div>
+    <a href="defenders-dilemma-anthropic-glasswing.html">Pt. 1 &middot; What Project Glasswing Reveals About the Future of Cybersecurity</a>
+    <a href="defenders-dilemma-twelve-companies-one-weapon.html">Pt. 2 &middot; Why 12 Companies Had to Share One Weapon</a>
+    <a href="defenders-dilemma-relational-blind-spot.html">Pt. 3 &middot; The Vulnerability Class AI Cannot See</a>
+    <a href="defenders-dilemma-security-ai-cannot-break.html">Pt. 4 &middot; The Security Architecture That AI Cannot Break &middot; Prescriptive</a>
+    <a class="current" href="defenders-dilemma-when-every-nation-has-mythos.html">Pt. 5 &middot; What Happens When Every Nation Has Mythos? &middot; Capstone</a>
+  </div>
+
+  <div class="consulting-cta">
+    <div class="consulting-cta-label">Seven Cubed Seven Labs &middot; Strategic Consulting</div>
+    <h3>If your organization needs the defensive architecture to survive proliferation&hellip;</h3>
+    <p>The five-article arc of this series is the complete strategic case for relational architecture. The Glasswing coalition buys time. Proliferation uses that time. The organizations that make architectural commitments in the current window &mdash; between today and approximately Q4 2028 &mdash; will have categorically different posture when state-sponsored Mythos-class capability reaches commercial off-the-shelf availability. The commitments made under duress after proliferation will be reactive, expensive, and structurally inferior to commitments made before the pressure forces the decision.</p>
+    <p>SCSL offers three engagement tiers rooted in the 99-patent architectural portfolio: <strong>Trinity Node Strategy Session</strong> (90 min &middot; $297) for initial framework application to your security architecture; <strong>AI Patent Discovery Workshop</strong> (half day &middot; $497) for identifying patent-grade innovations in your domain using relational principles; <strong>Framework Implementation</strong> (full day &middot; $997) for complete organizational deployment with 30/60/90 roadmap. For post-quantum migration planning (CNSA 2.0 deadline January 1, 2027) and relational architecture adoption, the strategic decision window is open now.</p>
+    <a href="https://c343.org" class="consulting-cta-btn">Book at c343.org &rarr;</a>
+  </div>
+
+  <div class="sources-section">
+    <div class="sources-label">Sources &amp; Citations</div>
+    <ul class="source-list">
+      <li><a href="https://www.anthropic.com/news/project-glasswing" target="_blank">Anthropic &mdash; &ldquo;Project Glasswing&rdquo; announcement</a> (April 8, 2026) &mdash; Primary source for the proliferation-timeline acknowledgment underlying this article&rsquo;s argument.</li>
+      <li><a href="https://en.wikipedia.org/wiki/Stuxnet" target="_blank">Stuxnet analysis (2010)</a> &mdash; Reference for the first major demonstration of state-level offensive cyber capability and the accelerated proliferation curve that followed.</li>
+      <li><a href="https://en.wikipedia.org/wiki/DeepSeek" target="_blank">DeepSeek model releases (2025)</a> &mdash; Reference for the capability-per-compute efficiency gains that compress the frontier proliferation window beyond export-control effectiveness.</li>
+      <li><a href="https://en.wikipedia.org/wiki/Huawei_Ascend" target="_blank">Huawei Ascend processor line</a> &mdash; Reference for indigenous Chinese semiconductor response to U.S. export controls.</li>
+      <li><a href="https://www.opcw.org" target="_blank">Organisation for the Prohibition of Chemical Weapons</a> &mdash; Reference for the verification-inspection model whose limits this article&rsquo;s analysis applies to the AI capability case.</li>
+      <li><a href="https://csrc.nist.gov/projects/post-quantum-cryptography" target="_blank">NIST Post-Quantum Cryptography Project</a> &mdash; CNSA 2.0 deadline January 1, 2027; the migration window relational architecture adoption can leverage.</li>
+      <li><a href="https://2401wire.ai/defenders-dilemma-anthropic-glasswing.html">2401 Wire AI &mdash; Pt. 1: What Project Glasswing Reveals</a></li>
+      <li><a href="https://2401wire.ai/defenders-dilemma-twelve-companies-one-weapon.html">2401 Wire AI &mdash; Pt. 2: Why 12 Companies Had to Share One Weapon</a></li>
+      <li><a href="https://2401wire.ai/defenders-dilemma-relational-blind-spot.html">2401 Wire AI &mdash; Pt. 3: The Vulnerability Class AI Cannot See</a></li>
+      <li><a href="https://2401wire.ai/defenders-dilemma-security-ai-cannot-break.html">2401 Wire AI &mdash; Pt. 4: The Security Architecture That AI Cannot Break</a></li>
+      <li><a href="https://2401wire.ai/capability-observability-coupling.html">2401 Wire AI &mdash; The Capability-Observability Coupling (Orthogonality Turn, Pt. 1)</a> &mdash; Companion analysis of Anthropic&rsquo;s relational deployment pattern.</li>
+      <li><a href="https://2401wire.com/patents.html" target="_blank">SCSL Patent Portfolio &mdash; 2401wire.com/patents</a> &mdash; The complete 99+ patent architectural specification referenced throughout the series.</li>
+    </ul>
+  </div>
+
+  <div class="inline-subscribe" id="subscribe">
+    <h3>Get the 2401 Wire AI Brief</h3>
+    <p>Patent intelligence, AI architecture analysis, and post-quantum infrastructure research &mdash; when it matters. No noise.</p>
+    <form class="subscribe-form" onsubmit="return false;">
+      <input type="email" placeholder="your@email.com" aria-label="Email">
+      <button type="submit">Subscribe Free</button>
+    </form>
+  </div>
+
+  <footer class="article-footer">
+    <div class="article-tags">
+      <span class="tag">AI Analysis</span>
+      <span class="tag">Defender's Dilemma</span>
+      <span class="tag">Capstone</span>
+      <span class="tag">Proliferation</span>
+      <span class="tag">Export Controls</span>
+      <span class="tag">Nation-State Cyber</span>
+      <span class="tag">International Agreements</span>
+      <span class="tag">Relational Architecture</span>
+      <span class="tag">Patent Portfolio</span>
+      <span class="tag">CFE Framework</span>
+      <span class="tag">2401 Lens</span>
+    </div>
+    <div class="share-row">
+      <span class="share-label">Share this piece:</span>
+      <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href); this.textContent='Copied &#10003;'">Copy Link</button>
+      <button class="share-btn" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(window.location.href)+'&text='+encodeURIComponent(document.title))">Twitter / X</button>
+      <button class="share-btn" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href))">LinkedIn</button>
+    </div>
+  </footer>
+
+  <div class="related-section">
+    <div class="related-label">Related Intelligence</div>
+    <div class="related-grid">
+      <div class="related-card">
+        <div class="related-kicker">Defender's Dilemma &middot; Pt. 1</div>
+        <h3 class="related-headline"><a href="defenders-dilemma-anthropic-glasswing.html">What Project Glasswing Reveals About the Future of Cybersecurity</a></h3>
+      </div>
+      <div class="related-card">
+        <div class="related-kicker">Defender's Dilemma &middot; Pt. 4</div>
+        <h3 class="related-headline"><a href="defenders-dilemma-security-ai-cannot-break.html">The Security Architecture That AI Cannot Break</a></h3>
+      </div>
+      <div class="related-card">
+        <div class="related-kicker">Orthogonality Turn &middot; Pt. 1</div>
+        <h3 class="related-headline"><a href="capability-observability-coupling.html">The Capability-Observability Coupling</a></h3>
+      </div>
+    </div>
+  </div>
+
+</article>
+
+<footer class="site-footer">
+  <div class="footer-logo"><span class="wire-num">2401</span> Wire<span class="wire-tld">.ai</span></div>
+  <nav class="footer-links">
+    <a href="/">Home</a>
+    <a href="archive.html">Archive</a>
+    <a href="about.html">About</a>
+    <a href="https://2401wire.com/patents.html">Patents</a>
+    <a href="https://c343.org">Consulting</a>
+    <a href="https://2401wire.com">Prophetic &#8599;</a>
+    <a href="#subscribe">Subscribe</a>
+  </nav>
+  <p class="footer-copy">&copy; 2026 Seven Cubed Seven Labs LLC &middot; J.C. Medina &middot; All Rights Reserved &middot; 2401wire.ai</p>
+  <p class="footer-formula">7&sup3; &times; 7 = 2,401 &mdash; Forever Calculating, Forever Creating &#9889;</p>
+</footer>
+
+<script data-goatcounter="https://2401wire-ai.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>
