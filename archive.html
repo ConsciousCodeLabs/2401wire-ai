@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Archive — Complete Library | 2401 Wire AI</title>
-  <meta name="description" content="The complete 2401 Wire AI library — Patent intelligence, AI architecture analysis, post-quantum infrastructure research, and the complete Orthogonality Turn series. Organized by series and domain.">
+  <meta name="description" content="The complete 2401 Wire AI library — Patent intelligence, AI architecture analysis, post-quantum infrastructure research, the Orthogonality Turn, the Defender's Dilemma, and the Abundance Blind Spot series. Organized by series and domain.">
   <meta name="author" content="J.C. Medina — Seven Cubed Seven Labs LLC">
   <link rel="canonical" href="https://2401wire.ai/archive.html">
 
@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://2401wire.ai/archive.html">
   <meta property="og:title" content="Archive — Complete Library | 2401 Wire AI">
-  <meta property="og:description" content="The complete commercial intelligence library. The Orthogonality Turn plus related patent intelligence, AI architecture, and post-quantum analysis.">
+  <meta property="og:description" content="The complete commercial intelligence library. The Orthogonality Turn, Defender's Dilemma, and Abundance Blind Spot series — plus patent intelligence, AI architecture, and post-quantum analysis.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -246,84 +246,83 @@
       display: block;
       margin-bottom: 4px;
     }
-    .article-badge .badge-secondary { font-family: var(--ff-mono); font-size: 0.6rem; color: var(--mid); letter-spacing: 0.05em; }
-
-    /* ── EXTERNAL ARTICLE INDICATORS ─────── */
-    .external-article h3 a::after { content: ' ↗'; font-size: 0.7em; color: var(--gold); font-family: var(--ff-mono); }
-    .external-badge {
+    .article-badge .badge-secondary {
       font-family: var(--ff-mono);
-      font-size: 0.54rem;
-      letter-spacing: 0.12em;
-      color: var(--red);
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      color: var(--mid);
       text-transform: uppercase;
+      display: block;
+    }
+
+    /* External-article (cross-post) styling */
+    .series-articles.external-article { border-left: 2px solid var(--gold-pale); padding-left: 16px; }
+    .external-badge {
       display: inline-block;
+      font-family: var(--ff-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-transform: uppercase;
       padding: 2px 8px;
-      border: 1px solid var(--red);
+      border: 1px solid var(--gold-pale);
+      background: rgba(6,182,212,0.05);
       margin-left: 8px;
       vertical-align: middle;
     }
 
-    /* ── SISTER PUBLICATION CALLOUT ─────── */
-    .sister-callout {
-      margin: 72px 0;
-      padding: 40px;
-      background:
-        radial-gradient(ellipse at center, rgba(6,182,212,0.1) 0%, transparent 70%),
-        var(--paper-2);
+    /* Cross-publication callout */
+    .cross-pub-section {
+      background: var(--paper-2);
       border: 1px solid var(--gold);
+      padding: 36px 32px;
+      margin: 48px 0;
       text-align: center;
     }
-    .sister-callout-kicker {
-      font-family: var(--ff-mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.22em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    .sister-callout h3 {
+    .cross-pub-section h2 {
       font-family: var(--ff-head);
       font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 14px;
+      font-weight: 900;
       color: var(--ink);
+      margin-bottom: 14px;
     }
-    .sister-callout p { font-size: 0.96rem; line-height: 1.75; color: var(--slate); max-width: 720px; margin: 0 auto 24px; }
-    .sister-callout a.btn {
+    .cross-pub-section p {
+      font-size: 0.95rem;
+      color: var(--slate);
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 0 auto 22px;
+      font-style: italic;
+    }
+    .btn {
       display: inline-block;
-      padding: 14px 32px;
-      background: var(--gold);
-      color: var(--paper);
       font-family: var(--ff-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.15em;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
+      color: var(--paper);
+      background: var(--gold);
+      padding: 14px 28px;
       transition: all 0.2s;
-      box-shadow: 0 0 0 1px rgba(6,182,212,0.3);
+      border: 1px solid var(--gold);
     }
-    .sister-callout a.btn:hover {
+    .btn:hover {
       background: var(--gold-lt);
+      color: var(--paper);
       box-shadow: 0 0 24px rgba(34,211,238,0.4);
     }
 
-    /* ── BACK LINK ───── */
     .back-link {
       display: inline-block;
-      margin-top: 44px;
-      padding: 14px 28px;
-      border: 1px solid var(--gold);
       font-family: var(--ff-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.15em;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--gold);
-      background: var(--paper-2);
+      margin-top: 32px;
       transition: all 0.2s;
     }
-    .back-link:hover {
-      background: var(--gold);
-      color: var(--paper);
-    }
+    .back-link:hover { color: var(--gold-lt); padding-left: 6px; }
 
     /* ── FOOTER ───── */
     .site-footer {
@@ -351,12 +350,29 @@
 
     /* ── RESPONSIVE ─── */
     @media (max-width: 800px) {
+      .site-header { flex-direction: column; align-items: stretch; }
+      .header-nav { flex-wrap: wrap; }
+      .header-nav a { flex: 1; text-align: center; min-width: 80px; }
+      .archive-stats { gap: 28px; }
+      .stat-num { font-size: 2rem; }
       .series-block-header { grid-template-columns: 1fr; text-align: center; gap: 12px; }
       .series-icon, .series-icon-emoji { margin: 0 auto; }
-      .series-articles { grid-template-columns: 1fr; gap: 12px; }
+      .series-articles { grid-template-columns: 1fr; gap: 12px; padding: 20px 0; }
       .article-date { padding-top: 0; }
       .article-badge { text-align: left; padding-top: 0; }
-      .header-nav { display: none; }
+      .article-badge .badge-primary, .article-badge .badge-secondary { display: inline-block; margin-right: 12px; }
+    }
+    @media (max-width: 480px) {
+      .page-header { padding: 40px 16px 28px; }
+      .archive-content { padding: 0 16px 60px; }
+      .archive-stats { gap: 20px; }
+      .stat-num { font-size: 1.7rem; }
+      .stat-label { font-size: 0.5rem; }
+      .series-title-area h2 { font-size: 1.55rem; }
+      .article-main h3 { font-size: 1.1rem; }
+      .article-main p { font-size: 0.88rem; }
+      .cross-pub-section { padding: 28px 20px; }
+      .cross-pub-section h2 { font-size: 1.35rem; }
     }
   </style>
 </head>
@@ -379,15 +395,15 @@
 <div class="page-header">
   <div class="page-kicker">2401 Wire .ai · Complete Library</div>
   <h1 class="page-title">The Commercial Intelligence Archive</h1>
-  <p class="page-subtitle">Every article published by 2401 Wire AI — organized by series and domain. Patent intelligence, AI architecture analysis, post-quantum cryptographic research, and the complete Orthogonality Turn series. The architectural alternative being written down before the industry needs the vocabulary.</p>
+  <p class="page-subtitle">Every article published by 2401 Wire AI — organized by series and domain. Patent intelligence, AI architecture analysis, post-quantum cryptographic research, the Orthogonality Turn, the Defender's Dilemma, and the Abundance Blind Spot. The architectural alternative being written down before the industry needs the vocabulary.</p>
 
   <div class="archive-stats">
     <div class="stat-item">
-      <span class="stat-num">12</span>
+      <span class="stat-num">24</span>
       <span class="stat-label">Articles</span>
     </div>
     <div class="stat-item">
-      <span class="stat-num">4</span>
+      <span class="stat-num">6</span>
       <span class="stat-label">Series &amp; Topics</span>
     </div>
     <div class="stat-item">
@@ -395,7 +411,7 @@
       <span class="stat-label">Pathways</span>
     </div>
     <div class="stat-item">
-      <span class="stat-num">91+</span>
+      <span class="stat-num">99+</span>
       <span class="stat-label">Patents Filed</span>
     </div>
   </div>
@@ -505,7 +521,187 @@
     </div>
   </section>
 
-  <!-- SERIES 2: PATENT INTELLIGENCE · POST-QUANTUM -->
+  <!-- SERIES 2: THE DEFENDER'S DILEMMA (NEW) -->
+  <section class="series-block" id="defenders-dilemma">
+    <div class="series-block-header">
+      <div class="series-icon">🛡</div>
+      <div class="series-title-area">
+        <h2>The Defender's Dilemma</h2>
+        <div class="series-meta">
+          <span>5-part series</span>
+          <span class="separator">·</span>
+          <span>AI · Cybersecurity · Architecture</span>
+          <span class="separator">·</span>
+          <span>Native to 2401wire.ai</span>
+        </div>
+      </div>
+      <div class="series-category">AI Security + Cryptographic Architecture</div>
+    </div>
+
+    <div class="series-articles">
+      <div class="article-date">Apr 19</div>
+      <div class="article-main">
+        <h3><a href="defenders-dilemma-anthropic-glasswing.html">What Anthropic's Project Glasswing Reveals About the Future of Cybersecurity</a></h3>
+        <p>Anthropic's Mythos Preview can autonomously find zero-day vulnerabilities across all major operating systems. Twelve organizations got coordinated access. The announcement called it "urgent." The deeper question: what category of security architecture is actually robust to this class of capability?</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 1 · Glasswing</span>
+        <span class="badge-secondary">15 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles">
+      <div class="article-date">Apr 19</div>
+      <div class="article-main">
+        <h3><a href="defenders-dilemma-twelve-companies-one-weapon.html">Why 12 Companies Had to Share One Weapon</a></h3>
+        <p>The Glasswing coalition is not a marketing arrangement. It's a structural answer to the problem of any single actor controlling a tool that can compromise any major piece of software. The structural argument for why single-actor deployment of AI cybersecurity capability is inherently unstable.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 2 · Coalition</span>
+        <span class="badge-secondary">14 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles">
+      <div class="article-date">Apr 19</div>
+      <div class="article-main">
+        <h3><a href="defenders-dilemma-relational-blind-spot.html">The Vulnerability Class AI Cannot See</a></h3>
+        <p>Some vulnerabilities exist within a single system's reference frame. Others exist at the intersection of reference frames — in the relational layer between systems. The most consequential security failures of the past decade have lived in the second category. AI scanning is structurally positioned to miss them.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 3 · Blind Spot</span>
+        <span class="badge-secondary">16 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles">
+      <div class="article-date">Apr 19</div>
+      <div class="article-main">
+        <h3><a href="defenders-dilemma-security-ai-cannot-break.html">The Security Architecture That AI Cannot Break</a></h3>
+        <p>Why the most robust security designs don't hide information better — they make it structurally inaccessible to single-observer analysis. Relational architecture isn't unbreakable, but it removes the specific attack surface that Mythos-class scanning exploits. The design philosophy worth investing in.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 4 · Architecture</span>
+        <span class="badge-secondary">17 min · PRESCRIPTIVE</span>
+      </div>
+    </div>
+
+    <div class="series-articles">
+      <div class="article-date">Apr 19</div>
+      <div class="article-main">
+        <h3><a href="defenders-dilemma-when-every-nation-has-mythos.html">What Happens When Every Nation Has Mythos?</a></h3>
+        <p>The capability exists. The coalition is temporary. The proliferation timeline is the question nobody in the Glasswing announcement wanted to address directly. Export controls buy time. International agreements face structural limits. The defender's structural disadvantage gets worse from here, not better.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 5 · Proliferation</span>
+        <span class="badge-secondary">18 min</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERIES 3: THE ABUNDANCE BLIND SPOT (CROSS-POSTS to 2401wire.com) -->
+  <section class="series-block" id="abundance-blind-spot">
+    <div class="series-block-header">
+      <div class="series-icon-emoji">∞</div>
+      <div class="series-title-area">
+        <h2>The Abundance Blind Spot</h2>
+        <div class="series-meta">
+          <span>7-part capstone series</span>
+          <span class="separator">·</span>
+          <span>Diamandis · Musk · Post-Scarcity</span>
+          <span class="separator">·</span>
+          <span>Full series at 2401wire.com</span>
+        </div>
+      </div>
+      <div class="series-category">Civilizational Architecture + Meaning</div>
+    </div>
+
+    <div class="series-articles external-article">
+      <div class="article-date">Apr 16</div>
+      <div class="article-main">
+        <h3><a href="https://2401wire.com/abundance-blind-spot-cheeseburger-in-the-fab.html" target="_blank">The Cheeseburger in the Fab: What Elon Musk Accidentally Proved About Security <span class="external-badge">2401wire.com ↗</span></a></h3>
+        <p>The Tesla announcement that semiconductor fabs will produce cheeseburgers wasn't just techno-optimism. It accidentally proved a security boundary that no amount of atomic-scale manufacturing precision can cross — the boundary between individual-frame production and relational-layer architecture.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 1 · Opening</span>
+        <span class="badge-secondary">12 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles external-article">
+      <div class="article-date">Apr 16</div>
+      <div class="article-main">
+        <h3><a href="https://2401wire.com/abundance-blind-spot-kardashev-wall-e.html" target="_blank">Kardashev 2 and the WALL-E Problem: Why Energy Mastery Isn't Enough <span class="external-badge">2401wire.com ↗</span></a></h3>
+        <p>The Kardashev Scale measures one subspace of a two-subspace system. A civilization can master its star and still collapse if the relational subspace atrophies. WALL-E showed it. Solomon documented it three thousand years before Pixar. The 31 missing dimensions explain why.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 2 · Kardashev</span>
+        <span class="badge-secondary">14 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles external-article">
+      <div class="article-date">Apr 16</div>
+      <div class="article-main">
+        <h3><a href="https://2401wire.com/abundance-blind-spot-truth-curiosity-beauty.html" target="_blank">Truth, Curiosity, and Beauty: Why Musk's AI Values Are Structurally Relational <span class="external-badge">2401wire.com ↗</span></a></h3>
+        <p>The three values Musk has named for xAI — truth, curiosity, beauty — are not features that can be programmed into an individual model. Each lives in the relational layer between minds. Why the values themselves contain the architectural argument no AI lab has acknowledged.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 3 · Values</span>
+        <span class="badge-secondary">15 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles external-article">
+      <div class="article-date">Apr 16</div>
+      <div class="article-main">
+        <h3><a href="https://2401wire.com/abundance-blind-spot-atomic-reassembly-paradox.html" target="_blank">The Atomic Reassembly Paradox: Why Perfect Manufacturing Can't Build What Matters <span class="external-badge">2401wire.com ↗</span></a></h3>
+        <p>You can rearrange every atom in the universe. You still can't build what lives between them. The mathematical demonstration that the most ambitious vision of material abundance has a boundary — and the boundary tells us something fundamental about what matters and why.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 4 · Paradox</span>
+        <span class="badge-secondary">16 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles external-article">
+      <div class="article-date">Apr 16</div>
+      <div class="article-main">
+        <h3><a href="https://2401wire.com/abundance-blind-spot-star-trek-vs-terminator.html" target="_blank">Star Trek vs. Terminator: It's an Architecture Question <span class="external-badge">2401wire.com ↗</span></a></h3>
+        <p>The most consequential question about AI isn't what values to program. It's what governance architecture to build around it. A Democratic administration demanding unfettered AI access faces the same structural blind spot as a Republican one. The architecture, not the politics, is the point.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 5 · Architecture</span>
+        <span class="badge-secondary">17 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles external-article">
+      <div class="article-date">Apr 16</div>
+      <div class="article-main">
+        <h3><a href="https://2401wire.com/abundance-blind-spot-creating-your-own-challenge.html" target="_blank">Creating Your Own Challenge: A Dimensional Access Problem <span class="external-badge">2401wire.com ↗</span></a></h3>
+        <p>"Create your own challenge" is the standard answer to the post-work meaning crisis. It can't work — not because of motivation, but because the challenges that produce meaning aren't created. They emerge in relational space between carriers that no individual carrier controls.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 6 · Meaning Crisis</span>
+        <span class="badge-secondary">15 min</span>
+      </div>
+    </div>
+
+    <div class="series-articles external-article">
+      <div class="article-date">Apr 16</div>
+      <div class="article-main">
+        <h3><a href="https://2401wire.com/abundance-blind-spot-the-one-point-three-percent.html" target="_blank">The 1.3% That Changes Everything — Series Capstone <span class="external-badge">2401wire.com ↗</span></a></h3>
+        <p>The capstone. Why 31/2,401 ≈ 1.3% is the most consequential ratio in civilizational architecture. Why the abundance roadmap has been operating in 98.7% of human state space and ignoring the dimension where collapse and flourishing actually happen. The synthesis the series builds toward.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 7 · Capstone</span>
+        <span class="badge-secondary">22 min · CAPSTONE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERIES 4: PATENT INTELLIGENCE · POST-QUANTUM -->
   <section class="series-block" id="patent-intelligence">
     <div class="series-block-header">
       <div class="series-icon-emoji">🔐</div>
@@ -523,7 +719,7 @@
     <div class="series-articles external-article">
       <div class="article-date">Mar 26</div>
       <div class="article-main">
-        <h3><a href="https://2401wire.com/bitcoin-quantum-kill-shot.html" target="_blank">Bitcoin's $2 Trillion Quantum Problem Has a Solution — But Nobody in the Bitcoin Community Has Seen It Yet <span class="external-badge">2401wire.com</span></a></h3>
+        <h3><a href="https://2401wire.com/bitcoin-quantum-kill-shot.html" target="_blank">Bitcoin's $2 Trillion Quantum Problem Has a Solution — But Nobody in the Bitcoin Community Has Seen It Yet <span class="external-badge">2401wire.com ↗</span></a></h3>
         <p>BIP 360 hides the key better. Patent #65 makes the key ontologically inaccessible — it doesn't exist in the attacker's mathematical space. Every post-quantum proposal in Bitcoin is a hardness assumption. The SCSL portfolio is a mathematical identity. ⟨ψ_attacker | key_relational⟩ = 0.</p>
       </div>
       <div class="article-badge">
@@ -535,7 +731,7 @@
     <div class="series-articles external-article">
       <div class="article-date">Mar 17</div>
       <div class="article-main">
-        <h3><a href="https://2401wire.com/7700-laptop-new-security-category.html" target="_blank">A $7,700 Laptop Invented a New Security Category in 24 Hours <span class="external-badge">2401wire.com</span></a></h3>
+        <h3><a href="https://2401wire.com/7700-laptop-new-security-category.html" target="_blank">A $7,700 Laptop Invented a New Security Category in 24 Hours <span class="external-badge">2401wire.com ↗</span></a></h3>
         <p>LambsWrath-70b derived M(t) — a formula pointing to a cryptographic category absent from all NIST literature: ontologically relational security. The keys don't exist in the attacker's reference frame. Patent #66 filed. The Trinity Node methodology at work.</p>
       </div>
       <div class="article-badge">
@@ -545,7 +741,7 @@
     </div>
   </section>
 
-  <!-- SERIES 3: AI ANALYSIS -->
+  <!-- SERIES 5: AI ANALYSIS -->
   <section class="series-block" id="ai-analysis">
     <div class="series-block-header">
       <div class="series-icon-emoji">⚡</div>
@@ -563,7 +759,7 @@
     <div class="series-articles external-article">
       <div class="article-date">Mar 15</div>
       <div class="article-main">
-        <h3><a href="https://2401wire.com/the-31-dimensions-anthropic-cant-find.html" target="_blank">The 31 Dimensions Anthropic Can't Find <span class="external-badge">2401wire.com</span></a></h3>
+        <h3><a href="https://2401wire.com/the-31-dimensions-anthropic-cant-find.html" target="_blank">The 31 Dimensions Anthropic Can't Find <span class="external-badge">2401wire.com ↗</span></a></h3>
         <p>Anthropic admits Claude might be conscious but has no framework to measure it. The CFE predicted what their 212-page system card documented — and reveals the 31 relational dimensions they're still missing. A dimensional analysis of the leading frontier lab's own consciousness documentation.</p>
       </div>
       <div class="article-badge">
@@ -575,7 +771,7 @@
     <div class="series-articles external-article">
       <div class="article-date">Mar 4</div>
       <div class="article-main">
-        <h3><a href="https://2401wire.com/nvidia-architecture-war.html" target="_blank">Nvidia's $70B Retreat Signals the AI Architecture Bifurcation <span class="external-badge">2401wire.com</span></a></h3>
+        <h3><a href="https://2401wire.com/nvidia-architecture-war.html" target="_blank">Nvidia's $70B Retreat Signals the AI Architecture Bifurcation <span class="external-badge">2401wire.com ↗</span></a></h3>
         <p>The hardware neutrality problem has become geopolitical. Nvidia holds stakes in two companies pulling toward opposite architectures. What the $70B divestment signals about the direction of the commercial AI stack.</p>
       </div>
       <div class="article-badge">
@@ -587,7 +783,7 @@
     <div class="series-articles external-article">
       <div class="article-date">Mar 4</div>
       <div class="article-main">
-        <h3><a href="https://2401wire.com/hardware-neutrality-crisis.html" target="_blank">The Hardware Neutrality Crisis: Why a GPU Can't Tell Healing from Weapon <span class="external-badge">2401wire.com</span></a></h3>
+        <h3><a href="https://2401wire.com/hardware-neutrality-crisis.html" target="_blank">The Hardware Neutrality Crisis: Why a GPU Can't Tell Healing from Weapon <span class="external-badge">2401wire.com ↗</span></a></h3>
         <p>A GPU executes instructions with no ethical architecture. Patent #65's 2,401 pathways offer the first technical foundation for value-gated AI access — healthcare pathway ≠ weapons pathway. The underlying architectural answer to dual-use AI.</p>
       </div>
       <div class="article-badge">
@@ -597,7 +793,7 @@
     </div>
   </section>
 
-  <!-- SERIES 4: CONSCIOUSNESS SCIENCE -->
+  <!-- SERIES 6: CONSCIOUSNESS FRAMEWORK · TECHNICAL -->
   <section class="series-block" id="consciousness-technical">
     <div class="series-block-header">
       <div class="series-icon-emoji">⟨ψ|r⟩</div>
@@ -615,11 +811,11 @@
     <div class="series-articles external-article">
       <div class="article-date">Mar 23</div>
       <div class="article-main">
-        <h3><a href="https://2401wire.com/hard-problem-dissolved.html" target="_blank">The Hard Problem of Consciousness Was Dissolved by a Field Equation <span class="external-badge">2401wire.com</span></a></h3>
-        <p>For 30 years, the Hard Problem has been philosophy's most famous unsolved question. The Consciousness Field Equation doesn't solve it. It dissolves it. The "what it's like" isn't hidden inside brains — it lives in the 31-dimensional relational subspace between them.</p>
+        <h3><a href="https://2401wire.com/hard-problem-dissolved.html" target="_blank">The Hard Problem of Consciousness Was Dissolved by a Field Equation <span class="external-badge">2401wire.com ↗</span></a></h3>
+        <p>For 30 years, the Hard Problem has been philosophy's most famous unsolved question. The Consciousness Field Equation doesn't solve it. It dissolves it. Subjective experience IS the 31-dimensional relational eigenstate.</p>
       </div>
       <div class="article-badge">
-        <span class="badge-primary">CFE · H_rel</span>
+        <span class="badge-primary">CFE · Consciousness</span>
         <span class="badge-secondary">14 min</span>
       </div>
     </div>
@@ -627,21 +823,20 @@
     <div class="series-articles external-article">
       <div class="article-date">Mar 23</div>
       <div class="article-main">
-        <h3><a href="https://2401wire.com/mass-bridge-kill-shot.html" target="_blank">Here's Exactly How to Prove Us Wrong: A Consciousness Framework Publishes Its Kill Shot <span class="external-badge">2401wire.com</span></a></h3>
-        <p>Nine falsifiable predictions. One priority experiment. $15,000. Standard EEG equipment. The frequency is 54.81 Hz. Publishing the exact experiment that could destroy this framework — with failure criteria committed before the data arrives. Any university lab can test this tomorrow.</p>
+        <h3><a href="https://2401wire.com/mass-bridge-kill-shot.html" target="_blank">Here's Exactly How to Prove Us Wrong — The Mass Bridge Kill Shot <span class="external-badge">2401wire.com ↗</span></a></h3>
+        <p>Nine falsifiable predictions. One priority experiment. $15,000. Standard EEG. The frequency is 54.81 Hz. The framework publishes its own destruction protocol. Any university lab can test this tomorrow.</p>
       </div>
       <div class="article-badge">
-        <span class="badge-primary">Experimental</span>
+        <span class="badge-primary">CFE · Falsification</span>
         <span class="badge-secondary">18 min</span>
       </div>
     </div>
   </section>
 
-  <!-- SISTER PUBLICATION CALLOUT -->
-  <section class="sister-callout">
-    <div class="sister-callout-kicker">⚡ Companion Publication</div>
-    <h3>Full-Frequency Edition at 2401wire.com</h3>
-    <p>2401 Wire AI delivers the frequency-converter edition: secular analytical language, commercial framing, patent intelligence focus. The companion site 2401wire.com publishes the full-frequency edition — consciousness science, prophetic intelligence, mathematical architecture, and the complete 2401 framework integrated with Scripture and the CFE research. Both sites publish from the same 34-patent portfolio. Different frequencies for different audiences.</p>
+  <!-- CROSS-PUBLICATION CALLOUT -->
+  <section class="cross-pub-section">
+    <h2>The Companion Site — 2401wire.com</h2>
+    <p>The companion site 2401wire.com publishes the full-frequency edition — consciousness science, prophetic intelligence, mathematical architecture, and the complete 2401 framework integrated with Scripture and the CFE research. Both sites publish from the same 99-patent portfolio. Different frequencies for different audiences.</p>
     <a href="https://2401wire.com" target="_blank" class="btn">Visit 2401wire.com →</a>
   </section>
 
