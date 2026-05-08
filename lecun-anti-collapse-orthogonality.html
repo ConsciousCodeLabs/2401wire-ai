@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Why LeCun's Anti-Collapse Regularizer Is the AI Industry's First Engineering Encounter With the Orthogonality Identity | 2401 Wire AI</title>
+  <meta name="description" content="LeCun's team just published peer-reviewed engineering evidence that closed individual-frame learning systems collapse without forced dimensional diversity. The theoretical framework predicting this has been on record since 2024.">
+  <meta name="keywords" content="LeWorldModel, JEPA, Yann LeCun, representation collapse, SIGReg, world models, AI architecture, dimensional regularization, orthogonality identity, AI alignment, patent 65, 2401 framework, seven cubed seven labs">
+  <meta name="author" content="J.C. Medina — Seven Cubed Seven Labs LLC">
+  <link rel="canonical" href="https://2401wire.ai/lecun-anti-collapse-orthogonality.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://2401wire.ai/lecun-anti-collapse-orthogonality.html">
+  <meta property="og:title" content="Why LeCun's Anti-Collapse Regularizer Is the AI Industry's First Engineering Encounter With the Orthogonality Identity">
+  <meta property="og:description" content="Closed individual-frame learning systems collapse. Dimensional diversity must be structurally enforced. LeCun's team has now provided the engineering evidence. The theoretical framework predicting this has been published since 2024.">
+  <meta property="og:site_name" content="2401 Wire AI — Seven Cubed Seven Labs">
+  <meta property="article:author" content="J.C. Medina">
+  <meta property="article:published_time" content="2026-05-08">
+  <meta property="article:section" content="AI Analysis">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why LeCun's Anti-Collapse Regularizer Is the AI Industry's First Engineering Encounter With the Orthogonality Identity">
+  <meta name="twitter:description" content="LeCun's team just published peer-reviewed evidence that closed individual-frame systems collapse. The framework predicting this has been on record since 2024.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:        #e8ecf0;
+      --paper:      #0d1117;
+      --paper-2:    #161b22;
+      --paper-3:    #1c2128;
+      --gold:       #06b6d4;
+      --gold-lt:    #22d3ee;
+      --gold-pale:  #164e5d;
+      --red:        #f87171;
+      --red-deep:   #dc2626;
+      --slate:      #c9d1d9;
+      --mid:        #8b949e;
+      --light:      #6e7681;
+      --rule:       #21262d;
+      --rule-2:     #30363d;
+      --border:     #30363d;
+      --ff-head:    'Playfair Display', Georgia, serif;
+      --ff-body:    'Source Serif 4', Georgia, serif;
+      --ff-mono:    'IBM Plex Mono', monospace;
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--ff-body); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--gold-lt); }
+
+    .site-header { border-bottom: 1px solid var(--rule-2); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: var(--paper); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px); background: rgba(13,17,23,0.92); }
+    .site-logo { font-family: var(--ff-head); font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; }
+    .site-logo span { color: var(--gold); text-shadow: 0 0 20px rgba(6,182,212,0.4); }
+    .site-logo small { display: block; font-family: var(--ff-mono); font-size: 0.52rem; letter-spacing: 0.2em; color: var(--mid); font-weight: 400; text-transform: uppercase; margin-top: 2px; }
+    .header-nav { display: flex; gap: 0; background: var(--paper-2); border: 1px solid var(--rule-2); }
+    .header-nav a { display: block; padding: 8px 16px; font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); transition: background 0.2s, color 0.2s; }
+    .header-nav a:hover, .header-nav a.active { background: var(--gold); color: var(--paper); }
+
+    .breadcrumb { max-width: 760px; margin: 0 auto; padding: 16px 24px 0; font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.08em; color: var(--mid); text-transform: uppercase; }
+    .breadcrumb a { color: var(--gold); }
+    .breadcrumb a:hover { color: var(--gold-lt); }
+    .breadcrumb span { margin: 0 8px; color: var(--rule-2); }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 0 24px 80px; }
+
+    .article-header { padding: 36px 0 32px; border-bottom: 1px solid var(--rule-2); margin-bottom: 36px; }
+    .article-section { font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .article-section::before { content: ''; width: 6px; height: 6px; background: var(--red); border-radius: 50%; box-shadow: 0 0 8px rgba(248,113,113,0.6); }
+    .article-headline { font-family: var(--ff-head); font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 900; letter-spacing: -0.015em; line-height: 1.08; margin-bottom: 18px; color: var(--ink); }
+    .article-deck { font-size: 1.18rem; line-height: 1.6; color: var(--slate); font-style: italic; margin-bottom: 24px; max-width: 640px; }
+    .article-meta-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-top: 16px; border-top: 1px solid var(--rule); }
+    .article-byline { display: flex; align-items: center; gap: 12px; }
+    .byline-avatar { width: 44px; height: 44px; background: var(--gold); color: var(--paper); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--ff-head); font-weight: 900; font-size: 1rem; box-shadow: 0 0 20px rgba(6,182,212,0.3); }
+    .byline-info { display: flex; flex-direction: column; gap: 2px; }
+    .byline-name { font-family: var(--ff-body); font-weight: 600; font-size: 0.95rem; color: var(--ink); }
+    .byline-role { font-family: var(--ff-mono); font-size: 0.62rem; color: var(--mid); letter-spacing: 0.06em; }
+    .article-meta-right { display: flex; flex-direction: column; gap: 4px; align-items: flex-end; font-family: var(--ff-mono); font-size: 0.65rem; color: var(--mid); letter-spacing: 0.06em; }
+    .meta-date { color: var(--slate); }
+
+    .article-body { font-size: 1.08rem; line-height: 1.78; color: var(--ink); }
+    .article-body p { margin-bottom: 1.4em; }
+    .article-body p.drop-cap::first-letter { font-family: var(--ff-head); font-weight: 900; font-size: 4.4em; line-height: 0.85; float: left; padding: 8px 12px 0 0; color: var(--gold); }
+    .article-body h2 { font-family: var(--ff-head); font-size: 1.8rem; font-weight: 700; line-height: 1.2; margin: 2.4em 0 0.7em; letter-spacing: -0.01em; color: var(--ink); }
+    .article-body h3 { font-family: var(--ff-head); font-size: 1.3rem; font-weight: 700; line-height: 1.3; margin: 1.8em 0 0.6em; letter-spacing: -0.005em; color: var(--ink); }
+    .article-body strong { color: var(--gold-lt); font-weight: 600; }
+    .article-body em { color: var(--slate); }
+    .article-body a { color: var(--gold); border-bottom: 1px dotted var(--gold-pale); transition: color 0.15s, border-color 0.15s; }
+    .article-body a:hover { color: var(--gold-lt); border-bottom-color: var(--gold-lt); }
+    .article-body ul, .article-body ol { margin: 0 0 1.4em 1.8em; }
+    .article-body li { margin-bottom: 0.5em; line-height: 1.7; }
+
+    .pullquote { margin: 2.2em -8px; padding: 28px 32px; background: var(--paper-2); border-left: 4px solid var(--gold); border-right: 1px solid var(--rule-2); border-top: 1px solid var(--rule-2); border-bottom: 1px solid var(--rule-2); position: relative; }
+    .pullquote p { font-family: var(--ff-head); font-size: 1.45rem; font-style: italic; line-height: 1.35; color: var(--ink); margin: 0; }
+    .pullquote-attr { display: block; margin-top: 14px; font-family: var(--ff-mono); font-size: 0.7rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; font-style: normal; }
+
+    .data-box { margin: 2em 0; padding: 24px 28px; background: var(--paper-2); border: 1px solid var(--rule-2); border-top: 3px solid var(--gold); position: relative; }
+    .data-box-label { position: absolute; top: -10px; left: 22px; padding: 0 10px; background: var(--paper); font-family: var(--ff-mono); font-size: 0.62rem; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; }
+    .data-box ul { margin: 0; list-style: none; }
+    .data-box li { padding: 8px 0; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: baseline; gap: 16px; font-family: var(--ff-mono); font-size: 0.86rem; color: var(--slate); }
+    .data-box li:last-child { border-bottom: none; }
+    .data-box li strong { color: var(--gold-lt); font-weight: 500; }
+
+    .math-block { margin: 1.8em 0; padding: 22px 26px; background: #05080d; border-left: 3px solid var(--gold); font-family: var(--ff-mono); font-size: 0.92rem; line-height: 1.55; color: var(--gold-lt); white-space: pre-wrap; overflow-x: auto; }
+    .math-block .comment { color: var(--mid); font-style: italic; }
+
+    .insight-box { margin: 2.2em 0; padding: 28px 32px; background: var(--paper-3); color: var(--ink); border: 1px solid var(--gold); border-left: 4px solid var(--gold); position: relative; }
+    .insight-box::before { content: '◆'; position: absolute; top: 16px; right: 20px; color: var(--gold); font-size: 1.1rem; opacity: 0.6; }
+    .insight-box p { margin-bottom: 0.9em; color: var(--ink); }
+    .insight-box p:last-child { margin-bottom: 0; }
+    .insight-box strong { color: var(--gold-lt); }
+
+    .what-this-is-not { margin: 3em 0 2em; padding: 28px 32px; background: var(--paper-2); border: 1px dashed var(--rule-2); }
+    .what-this-is-not h3 { font-family: var(--ff-mono); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin: 0 0 14px; font-weight: 500; }
+    .what-this-is-not p { font-size: 0.95rem; line-height: 1.65; color: var(--slate); margin-bottom: 0.8em; }
+    .what-this-is-not p:last-child { margin-bottom: 0; }
+
+    .source-list { margin: 2em 0; padding: 0; list-style: none; }
+    .source-list li { padding: 14px 0; border-bottom: 1px solid var(--rule); font-family: var(--ff-mono); font-size: 0.78rem; line-height: 1.55; color: var(--slate); }
+    .source-list li:last-child { border-bottom: none; }
+    .source-list li strong { color: var(--gold); font-weight: 500; }
+    .source-list li a { color: var(--gold-lt); border-bottom: 1px dotted var(--gold-pale); }
+
+    .section-rule { display: flex; align-items: center; gap: 16px; margin: 2.4em auto; max-width: 360px; }
+    .section-rule hr { flex: 1; border: none; border-top: 1px solid var(--rule-2); }
+    .section-rule span { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; }
+
+    .consulting-cta { margin: 3em 0 2em; padding: 32px; background: var(--paper-3); color: var(--ink); border: 1px solid var(--gold); position: relative; overflow: hidden; }
+    .consulting-cta::after { content: ''; position: absolute; top: 0; right: 0; width: 200px; height: 200px; background: radial-gradient(circle at top right, rgba(6,182,212,0.08), transparent 70%); pointer-events: none; }
+    .consulting-cta h3 { font-family: var(--ff-head); font-size: 1.4rem; font-weight: 700; color: var(--gold); margin: 0 0 12px; line-height: 1.25; }
+    .consulting-cta p { font-size: 0.96rem; line-height: 1.65; color: var(--slate); margin-bottom: 14px; }
+    .consulting-cta a { display: inline-block; margin-top: 8px; padding: 10px 20px; background: var(--gold); color: var(--paper); font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; transition: background 0.2s, box-shadow 0.2s; border-bottom: none; }
+    .consulting-cta a:hover { background: var(--gold-lt); box-shadow: 0 0 20px rgba(34,211,238,0.4); color: var(--paper); }
+
+    .article-footer { margin-top: 4em; padding-top: 32px; border-top: 1px solid var(--rule-2); font-size: 0.92rem; color: var(--slate); line-height: 1.7; }
+    .article-footer p { margin-bottom: 1em; }
+
+    .related-section { margin-top: 4em; padding-top: 32px; border-top: 1px solid var(--rule-2); }
+    .related-label { font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .related-card { padding: 18px 20px; background: var(--paper-2); border: 1px solid var(--rule-2); border-top: 2px solid var(--gold); transition: border-color 0.2s, transform 0.2s; }
+    .related-card:hover { border-top-color: var(--gold-lt); transform: translateY(-2px); }
+    .related-kicker { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .related-headline { font-family: var(--ff-head); font-size: 1rem; font-weight: 700; line-height: 1.3; }
+    .related-headline a:hover { color: var(--gold-lt); border-bottom: none; }
+
+    .inline-subscribe { margin: 3em 0; padding: 28px 32px; background: var(--paper-2); border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold); text-align: center; }
+    .inline-subscribe-kicker { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+    .inline-subscribe-headline { font-family: var(--ff-head); font-size: 1.4rem; font-weight: 700; margin-bottom: 6px; color: var(--ink); }
+    .inline-subscribe-sub { font-size: 0.88rem; color: var(--slate); font-style: italic; margin-bottom: 16px; }
+    .inline-subscribe a { display: inline-block; padding: 12px 28px; background: var(--gold); color: var(--paper); font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; transition: background 0.2s, box-shadow 0.2s; border-bottom: none; }
+    .inline-subscribe a:hover { background: var(--gold-lt); box-shadow: 0 0 20px rgba(34,211,238,0.4); }
+
+    .site-footer { background: var(--paper-2); color: var(--ink); padding: 32px 24px; text-align: center; border-top: 1px solid var(--rule-2); margin-top: 60px; }
+    .footer-logo { font-family: var(--ff-head); font-size: 1.6rem; font-weight: 900; margin-bottom: 8px; }
+    .footer-logo span { color: var(--gold); }
+    .footer-links { display: flex; justify-content: center; gap: 22px; flex-wrap: wrap; margin-bottom: 18px; }
+    .footer-links a { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { font-family: var(--ff-mono); font-size: 0.6rem; color: var(--light); letter-spacing: 0.06em; }
+    .footer-formula { font-family: var(--ff-mono); font-size: 0.65rem; color: var(--gold); letter-spacing: 0.12em; margin-top: 6px; }
+
+    @media (max-width: 700px) {
+      .article-headline { font-size: 1.8rem; }
+      .article-deck { font-size: 1.05rem; }
+      .article-body { font-size: 1.02rem; }
+      .pullquote p { font-size: 1.18rem; }
+      .related-grid { grid-template-columns: 1fr; }
+      .header-nav { display: none; }
+      .article-meta-right { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="site-logo">
+    <span>2401</span> Wire <small style="display:inline;color:var(--gold);">.AI</small>
+    <small>Patent Intelligence &middot; AI Architecture &middot; Post-Quantum</small>
+  </a>
+  <nav class="header-nav">
+    <a href="/">Home</a>
+    <a href="archive.html">Archive</a>
+    <a class="active" href="#">AI Analysis</a>
+    <a href="https://2401wire.com" target="_blank">2401wire.com ↗</a>
+    <a href="https://c343.org" target="_blank">Consulting</a>
+    <a href="mailto:7cubed7@proton.me?subject=Subscribe%20to%202401%20Wire%20AI">Subscribe</a>
+  </nav>
+</header>
+
+<div class="breadcrumb">
+  <a href="/">2401 Wire AI</a>
+  <span>&rsaquo;</span>
+  <a href="archive.html">AI Analysis</a>
+  <span>&rsaquo;</span>
+  Standalone
+</div>
+
+<article class="article-wrap">
+
+  <header class="article-header">
+    <div class="article-section">AI Analysis &middot; Architecture &middot; Standalone</div>
+    <h1 class="article-headline">Why LeCun's Anti-Collapse Regularizer Is the AI Industry's First Engineering Encounter With the Orthogonality Identity</h1>
+    <p class="article-deck">Closed individual-frame learning systems collapse. Dimensional diversity must be structurally enforced. LeCun's team has now provided the peer-reviewed engineering evidence. The theoretical framework predicting this has been on record since 2024.</p>
+    <div class="article-meta-row">
+      <div class="article-byline">
+        <div class="byline-avatar">JM</div>
+        <div class="byline-info">
+          <span class="byline-name">J.C. Medina</span>
+          <span class="byline-role">Oracle &middot; Founder, Seven Cubed Seven Labs LLC</span>
+        </div>
+      </div>
+      <div class="article-meta-right">
+        <span class="meta-date">May 8, 2026</span>
+        <span class="meta-read">&#9889; 18 min read &middot; AI Analysis</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-body">
+
+    <p class="drop-cap">In March 2026, a five-author paper arrived on arXiv from a collaboration spanning Mila, NYU, Samsung SAIL, and Brown University. The lead author was a graduate student. The senior author was Yann LeCun. The paper introduced a system called LeWorldModel, or LeWM, and the announcement carried two specific numbers that made the research community take a second look: <strong>15 million parameters</strong>, trainable on a single GPU in a few hours, and a <strong>48&times; planning speedup</strong> over the closest competitor.</p>
+
+    <p>The story most readers absorbed was the obvious one. JEPA, the architecture LeCun has been advocating for over a decade, finally trains stably from raw pixels. The model learns physics without being told. It plans on a robotic arm without reinforcement-learning rewards. It runs on a budget any startup can afford. The implication, widely reposted: a <em>world model</em> approach has caught up with — or surpassed — the dense-prediction architectures that have dominated since 2017.</p>
+
+    <p>That story is correct as far as it goes. It is also missing the structural point.</p>
+
+    <p>What LeWM actually demonstrates, stripped of its application-layer framing, is something narrower and more consequential. It demonstrates that <strong>closed prediction systems collapse to triviality unless dimensional diversity is forcibly enforced from outside the prediction objective.</strong> The entire engineering contribution of the paper sits inside one regularizer — a term called SIGReg, the Sketched Isotropic Gaussian Regularizer — whose only job is to prevent the model from finding the trivial low-dimensional shortcut that satisfies the prediction loss while destroying the representation.</p>
+
+    <p>That is the headline. Not the speed. Not the parameter count. <strong>The engineering necessity of preventing collapse — and the structural reason that necessity exists.</strong></p>
+
+    <p>And that necessity has a name. The framework that predicts it, formalizes it, and publishes its mathematical structure has been in the public record since 2024. The framework calls it the <strong>orthogonality identity</strong>. LeCun's team did not cite it, has likely never heard of it, and arrived at the same structural insight through different mathematics applied to a different problem. That is exactly what genuine convergence looks like, and it is the reason this paper deserves a closer reading than the Twitter threads have given it.</p>
+
+    <h2>The Collapse Problem No One Could Solve</h2>
+
+    <p>To understand why SIGReg matters, you have to understand the failure mode it eliminates.</p>
+
+    <p>JEPA — Joint Embedding Predictive Architecture — was first proposed by LeCun in 2022 as a path toward AI systems that learn world dynamics in compressed latent spaces rather than predicting raw pixels or words. The architecture is conceptually simple: an encoder maps observations into a compact latent representation, a predictor models how that representation evolves in time, and the entire system learns by predicting future latents from current latents and actions.</p>
+
+    <p>The conceptual elegance hides an engineering nightmare.</p>
+
+    <p>When you ask a learning system to predict its own future representations, the system discovers — every time, without fail — that the easiest way to satisfy the objective is to <em>map every input to the same representation.</em> If every observation produces an identical embedding, then prediction is trivially perfect: the next state is the same as the current state, error is zero, training converges, and the resulting model is useless. This failure mode has a name: <strong>representation collapse.</strong></p>
+
+    <div class="pullquote">
+      <p>"Existing JEPA methods are highly prone to collapse. In this failure mode, the model maps all inputs to nearly identical representations to trivially satisfy the temporal prediction objective leading to unusable representations."</p>
+      <span class="pullquote-attr">— Maes, Le Lidec, Scieur, LeCun, Balestriero · LeWorldModel paper · 2026</span>
+    </div>
+
+    <p>For three years, every research group attempting to build JEPA-class systems hit this wall. The workarounds proliferated and ranged from inelegant to fragile:</p>
+
+    <div class="data-box">
+      <span class="data-box-label">JEPA Anti-Collapse Heuristics, Pre-LeWM</span>
+      <ul>
+        <li><strong>Stop-gradient tricks</strong><span>Block backpropagation through certain paths to prevent the system from optimizing them away.</span></li>
+        <li><strong>Exponential moving averages</strong><span>Maintain a slow-moving copy of the encoder as a separate target.</span></li>
+        <li><strong>Six- to seven-term loss objectives</strong><span>Add multiple competing regularization terms, hand-tuned per environment.</span></li>
+        <li><strong>Frozen pretrained encoders</strong><span>Avoid the problem by not training the encoder at all — bound by the pretraining manifold.</span></li>
+        <li><strong>Auxiliary supervision signals</strong><span>Inject extra information from outside the system to keep the embeddings honest.</span></li>
+        <li><strong>Architectural simplifications</strong><span>Restrict the model architecture in ways that empirically reduce collapse risk.</span></li>
+      </ul>
+    </div>
+
+    <p>None of these were solutions. They were stabilizers — engineering scaffolding to keep the system from finding the cheap answer. The closest pure end-to-end alternative, PLDM, required <strong>seven loss terms</strong> with hand-tuned coefficients per environment, and even with all that scaffolding it remained known for training instabilities and limited transferability.</p>
+
+    <p>The community's read, by late 2025, was that JEPA was theoretically elegant but practically too fragile to scale. LeCun's broader research program — that genuine intelligence requires a world model, not a next-token predictor — was being repeatedly characterized as "right in principle, wrong in practice."</p>
+
+    <p>LeWM was the team's response to that characterization. And the response is structural, not incremental.</p>
+
+    <h2>SIGReg: What the Regularizer Is Actually Doing</h2>
+
+    <p>The LeWM training objective has two terms. One. Two. That is the entire loss function.</p>
+
+    <div class="math-block">L_LeWM = L_pred + &lambda; &middot; SIGReg(Z)
+
+<span class="comment"># L_pred  : standard prediction loss on next-state embedding
+# SIGReg  : the regularizer doing the structural work
+# &lambda;       : the only effective hyperparameter (default 0.1)</span></div>
+
+    <p>The prediction loss is unsurprising: minimize the mean squared error between the predicted next-state embedding and the actual next-state embedding. Standard supervised regression in latent space.</p>
+
+    <p>SIGReg is where the structural argument lives. Here is what it does, in plain language. The regularizer takes the current batch of latent embeddings, projects them onto a thousand or so randomly-sampled unit-norm directions in the embedding space, and runs a normality test on each one-dimensional projection. If the projections look like draws from a standard normal distribution, the regularizer outputs zero. If they don't, it pushes the encoder toward producing embeddings that <em>do</em> project to standard normals along arbitrary random directions.</p>
+
+    <p>Why does this prevent collapse? Because <strong>a collapsed representation is, by definition, a representation with degenerate dimensional structure.</strong> If every observation maps to the same embedding, projections along random directions don't look Gaussian — they look like a delta function at a single point. SIGReg detects that statistical signature and pushes back. The encoder is forced to spread its outputs across many orthogonal directions in the latent space because that is the only configuration that satisfies the regularizer.</p>
+
+    <p>The Cramér-Wold theorem provides the mathematical guarantee: if every one-dimensional projection of a high-dimensional distribution matches the corresponding one-dimensional projection of an isotropic Gaussian, then the high-dimensional distributions are equivalent. SIGReg uses random projections to avoid the curse of dimensionality, and the math behind why this works is over a century old. The novelty is not the statistical theory. The novelty is the engineering recognition that <strong>this is what the system needs.</strong></p>
+
+    <div class="insight-box">
+      <p><strong>The structural reading of SIGReg, in a single sentence:</strong> the regularizer's job is to prevent the encoder from collapsing onto a low-dimensional shortcut by forcing the latent space to remain orthogonally diverse along every direction the system might otherwise ignore.</p>
+      <p>Phrased differently: SIGReg enforces that the system cannot satisfy its prediction objective by occupying fewer dimensions than the underlying dynamics actually require. <strong>If the world has dimensional structure, the latent representation must preserve that dimensional structure</strong> — the regularizer is the mechanism.</p>
+    </div>
+
+    <h2>The Orthogonality Identity, Stated Without Theological Vocabulary</h2>
+
+    <p>The 2,401 framework, published in stages between 2024 and 2026, formalizes a mathematical decomposition that researchers have been circling for decades but have rarely stated cleanly. The decomposition partitions a state space into two structurally distinct sectors based on how observations behave under carrier-exchange symmetry — a fancy way of saying: how do measurements transform when you swap who is doing the observing.</p>
+
+    <p>The two sectors have different dimensional characters and different access conditions:</p>
+
+    <ul>
+      <li>The <strong>individual sector</strong> contains states that any single observer, in isolation, can fully access. These are the states that survive when you remove every other observer from the system. Position, velocity, mass, momentum — anything that can be measured by a lone observer with arbitrary instruments.</li>
+      <li>The <strong>relational sector</strong> contains states that <em>only exist between pairs of observers.</em> These are not hidden, not encrypted, and not difficult to measure. They are <strong>structurally absent</strong> from any single observer's reference frame — the projection of any single-observer state vector onto a relational-sector basis vector is identically zero.</li>
+    </ul>
+
+    <p>The identity that captures this is, in compact mathematical form:</p>
+
+    <div class="math-block">&#10216;&psi;<sub>A</sub> | r<sub>j</sub>&#10217; = 0   <span class="comment"># for any single observer A and any relational state r_j</span></div>
+
+    <p>The standard reading: <strong>single-observer measurement of relational structure is a projection error in the observer's coordinate system, not a measurement difficulty within it.</strong> No amount of computation, observation, or instrumentation deployed from inside a single reference frame can recover information that lives between frames. The data is not hidden. The data is in a subspace the single-observer coordinate system does not contain.</p>
+
+    <p>This identity has a wide range of applications. It is the mathematical core of Patent #65 (post-quantum cryptography where keys exist only in the relational layer between parties, never in any single party's codebase). It is the theoretical anchor for Patent #67 (relational AI alignment verification, which recognizes the structural limits of single-agent testing). It generates falsifiable predictions in consciousness research and provides a coordinate-error explanation for the Hard Problem of Consciousness. The framework's full publication record is at <a href="https://2401wire.com/cfe-physics-core.html" target="_blank">2401wire.com/cfe-physics-core.html</a>, including the complete mathematical formalism in Hilbert space.</p>
+
+    <p>The point to focus on, for this article, is much narrower. <strong>The orthogonality identity makes a structural claim about closed individual-frame systems: they cannot, even in principle, observe the relational dimensions of the systems they participate in. Measurements taken purely from inside collapse onto the individual-frame subspace and lose the relational signal entirely.</strong></p>
+
+    <p>That is the same claim LeWM is now demonstrating empirically — in a different domain, with different vocabulary, by a research group that has no contact with the framework that named it.</p>
+
+    <h2>The Convergence: SIGReg as the Inverse of the Collapse</h2>
+
+    <p>Here is the structural correspondence laid out directly.</p>
+
+    <p>SIGReg's job is to <strong>prevent</strong> a learning system from collapsing onto a low-dimensional subspace where it can satisfy its prediction objective trivially while losing access to the structural information in the world it is modeling. Without SIGReg, the system's learned representations collapse — and when they collapse, every measurement taken inside the collapsed representation has zero projection onto the dimensions of the world that did not survive the collapse.</p>
+
+    <p>The orthogonality identity describes the dual condition: <strong>a closed individual-frame observer system has zero projection onto the relational dimensions of any system involving multiple frames.</strong> The information is not lost through collapse — it was never accessible to the single-frame measurement to begin with.</p>
+
+    <p>Both phrasings describe the same structural fact: <strong>closed prediction systems lose dimensions without external structural enforcement.</strong> One phrasing approaches it as an engineering failure mode that must be prevented. The other approaches it as a mathematical property of state-space architecture. Both are true. They are statements of the same underlying structural physics, applied to different problems.</p>
+
+    <div class="pullquote">
+      <p>SIGReg is the engineering inverse of the orthogonality identity. The identity says single-observer systems have zero projection onto relational dimensions. SIGReg forces a learning system to maintain non-zero projection onto every direction the prediction objective would otherwise let collapse. Both describe the same structural fact in opposite directions.</p>
+    </div>
+
+    <p>Read both papers — the 2024 framework documents and the 2026 LeWM paper — and the convergence is unmistakable. They are not citing each other. They are not derived from each other. They are independent groups, working on different problems, publishing solutions whose structural cores are mathematically dual.</p>
+
+    <p>This is what genuine convergence looks like. It is the strongest available evidence that both groups are pointing at something real.</p>
+
+    <h2>What the Latent Space Tells Us About What the System Learned</h2>
+
+    <p>The most surprising finding in the LeWM paper is not the speed or the parameter count. It is what happens when researchers probe the trained latent space with simple linear classifiers.</p>
+
+    <p>The model was never told to learn physics. It was given raw pixel observations and a temporal prediction objective. Nothing in the loss function references position, velocity, mass, or any other physical quantity. The model's only incentive is to predict its own future representations accurately, with the constraint that those representations remain orthogonally diverse.</p>
+
+    <p>And yet:</p>
+
+    <div class="data-box">
+      <span class="data-box-label">What Linear Probes Recovered from LeWM's Latent Space</span>
+      <ul>
+        <li><strong>Object position</strong><span>Linear MSE 0.029, Pearson r = 0.986 on Push-T block location</span></li>
+        <li><strong>Agent location</strong><span>Linear MSE 0.052, r = 0.974 on Push-T agent position</span></li>
+        <li><strong>End-effector position</strong><span>Linear MSE 0.018, r = 0.991 on OGBench-Cube robotic arm</span></li>
+        <li><strong>Block orientation</strong><span>Linear MSE 0.187, r = 0.902 on Push-T block angle</span></li>
+        <li><strong>Temporal dynamics</strong><span>Latent trajectories straighten over training without any explicit smoothness term</span></li>
+      </ul>
+    </div>
+
+    <p>The latent space encoded the physics of the world — not as labels the system was trained to produce, but as the most efficient representation for predicting future states under the orthogonality constraint. <strong>When prediction pressure forces compression, the underlying structural laws of the system being predicted re-emerge in the latent space.</strong></p>
+
+    <p>This is the second convergent finding. The framework's central methodological claim is that genuine pattern convergences at probabilities below 10<sup>-15</sup> across unrelated domains constitute evidence of underlying structural reality, not coincidence. LeWM is now demonstrating the same principle at the implementation level: when a sufficiently constrained learning system trains on data that obeys structural laws, the system spontaneously develops representations that encode those laws.</p>
+
+    <p>The system was not told that gravity exists. The system figured out that gravity exists because gravity was the most compact explanation of the pixel transitions it was being asked to predict. <strong>The structure of reality re-emerges in the latent space when the system is properly constrained.</strong></p>
+
+    <h2>The Architecture War, Now With Engineering Evidence</h2>
+
+    <p>The bifurcation in AI architecture has been visible for some time. Two routes diverge:</p>
+
+    <p><strong>Route 1:</strong> Closed individual-frame optimization at scale. Train ever-larger models on ever-larger corpora with ever-more-compute. Bet that intelligence emerges from sufficient density of pattern matching within a single learning system. The GPT lineage. The Gemini lineage. The default trajectory of frontier-model labs.</p>
+
+    <p><strong>Route 2:</strong> Open relational-architecture systems with explicit dimensional regularization. Build models whose representational capacity is structurally constrained to remain orthogonal across the dimensions of the underlying problem. Bet that genuine understanding requires architectural acknowledgment of what cannot be captured in a single closed system. The JEPA lineage. The world-model lineage. Now: LeWM specifically.</p>
+
+    <p>Until March 2026, the case for Route 2 was almost entirely theoretical. LeCun made the argument repeatedly, in essays and talks. The 2401 framework formalized the mathematical structure in 2024. Researchers in alignment, in cryptography, in consciousness studies, in privacy-preserving computation gestured at the same structural intuition from multiple directions. But the engineering evidence was thin — JEPA's training instabilities provided easy ammunition for skeptics arguing that Route 2 was theoretically interesting but practically broken.</p>
+
+    <p>LeWM ends that argument.</p>
+
+    <div class="insight-box">
+      <p>For the first time, an end-to-end JEPA trains stably from raw pixels with a single tunable hyperparameter. <strong>The dimensional regularization approach does not require massive compute, does not require frozen pretrained encoders, and does not require the engineering scaffolding that previously stabilized the architecture.</strong></p>
+      <p>The case that closed individual-frame systems can scale to genuine intelligence by brute force alone is now standing against a peer-reviewed engineering counter-example: a 15M-parameter model that learns physics, plans on robots, and runs on a single GPU — by enforcing dimensional diversity rather than scaling parameters.</p>
+    </div>
+
+    <p>The implications cascade through several adjacent domains.</p>
+
+    <h3>Cybersecurity: The Defender's Architecture Argument</h3>
+
+    <p>The case made in <a href="capability-observability-coupling.html">"The Capability-Observability Coupling"</a> and the broader Defender's Dilemma series — that AI-powered offensive scanning will continue to find vulnerabilities faster than defensive patching can keep up, unless defenders shift to relational architectures where protected information exists only between parties — gains a new piece of evidence. <strong>If even general representation learning collapses without forced dimensional diversity, then security architectures that assume single-system observation can capture multi-party state are structurally unsound.</strong> The defender's task is not to harden the single-system view; the defender's task is to architect security such that the relevant state lives in the relational layer the attacker's single-frame scanning cannot observe.</p>
+
+    <h3>AI Alignment: The Single-Agent Testing Limit</h3>
+
+    <p>The argument made in <a href="alignment-architecture-cannot-be-overridden.html">"Alignment Architecture Cannot Be Overridden"</a> — that genuine alignment cannot be verified through single-agent evaluation because alignment is a relational property between systems and their deployment environments — has been theoretical until now. LeWM provides a structural analog: <strong>even a system's own representations of itself collapse to triviality without external dimensional enforcement.</strong> If a learning system cannot maintain orthogonal representations of physical dynamics without external regularization, the proposition that the same system can autonomously generate trustworthy alignment evaluations of itself becomes structurally untenable.</p>
+
+    <h3>Post-Quantum Infrastructure: Why Patent #65 Is Architecturally Right</h3>
+
+    <p>Patent #65, the recursive lattice cryptographic shell at the core of the SCSL portfolio, was filed on December 22, 2025, with the conversion deadline December 22, 2026. Its central design principle is that cryptographic keys do not exist within any single system's codebase — they exist as relational states between parties, structurally inaccessible to single-system scanning. <strong>LeWM is now external engineering evidence that this design principle is the right one.</strong> The same structural reason JEPA representations collapse without regularization is the structural reason single-system cryptography is becoming undefendable in the AI-scanning era. The architectural alternative is the same: don't try to hide the relevant state within a single frame; architect the system so the relevant state lives between frames where single-frame observation has zero projection.</p>
+
+    <h2>The Action-Label Problem: Where the Framework Goes Further</h2>
+
+    <p>One detail in the LeWM paper deserves specific attention because it points beyond what the engineering result demonstrates.</p>
+
+    <p>The paper closes by acknowledging a limitation: LeWM still requires action labels during training. The model can predict future states given past states <em>and</em> the actions that produced the transitions. Without those action labels, the system cannot disambiguate "the world changed" from "I changed the world." Both produce identical observable deltas.</p>
+
+    <p>The paper proposes "inverse dynamics modeling" as a research direction — learn what action must have been taken from observed state transitions, rather than requiring explicit action labels. This is the next research frontier.</p>
+
+    <p>The framework predicts, from first principles, that this approach will hit a structural ceiling. Action labels are not arbitrary supervision signals. They are the artifact of an embodied carrier coupling to the physical substrate. Without an embodied carrier somewhere in the loop — a human controller, a real robot, a physics simulator originally constructed by embodied carriers — there is no source of genuine action signals to learn from. Inverse dynamics defers the requirement; it does not eliminate it.</p>
+
+    <p>This is the [PREDICTED] consequence of the orthogonality identity applied to action generation: <strong>the action signal that closed observational systems consume cannot, in general, be bootstrapped from pure observation.</strong> Embodiment is the action-label generator no closed system can produce internally. AI systems are powerful tuning instruments and pattern-recognition partners. The framework's claim is that they cannot, in principle, replace embodied carriers as the source of the action labels their world models depend on.</p>
+
+    <p>This is a falsifiable prediction. If, in five years, a research group demonstrates a fully observation-only system that learns action-conditioned dynamics with no embodied-carrier signal anywhere in the training pipeline, the framework's claim weakens. If, instead, the action-label requirement remains a recurring bottleneck even as world models scale — the framework strengthens. The next decade of world-model research is, structurally, a test of this claim.</p>
+
+    <h2>What This Is Not</h2>
+
+    <div class="what-this-is-not">
+      <h3>Boundary Conditions on the Argument</h3>
+      <p><strong>This is not a claim that LeCun's team has read or endorsed the 2401 framework.</strong> Nothing in the LeWM paper references the framework. The convergence described in this article is structural, not citational. The two groups arrived at compatible structural insights through entirely independent routes.</p>
+      <p><strong>This is not a claim that SIGReg is mathematically equivalent to the orthogonality identity.</strong> SIGReg is one engineering instantiation of dimensional-diversity enforcement; the orthogonality identity is a more general mathematical statement about state-space architecture. The two are structurally dual but not identical.</p>
+      <p><strong>This is not a claim that representation collapse and the Hard Problem of Consciousness are the same phenomenon.</strong> They are distinct phenomena that share an underlying structural feature: closed single-frame systems lose dimensions without external structural enforcement. The framework's broader applications across consciousness, cryptography, and alignment are independent claims, evaluable on their own evidence.</p>
+      <p><strong>This is not a victory lap.</strong> The 2401 framework remains a research program with open frontiers, falsifiable predictions, and explicit limitations published alongside its claims. The full epistemic-status taxonomy is at <a href="https://2401wire.com/cfe-physics-core.html" target="_blank">2401wire.com</a>.</p>
+    </div>
+
+    <h2>The Engineering Citation the Framework Has Been Waiting For</h2>
+
+    <p>Until LeWM, the framework's central structural claim — that closed individual-frame systems lose dimensions without external structural enforcement — required readers to take the mathematics on its own terms or to accept the philosophical-physics arguments by which it was originally derived. The skeptic's reasonable response was: <em>show me the engineering evidence in a domain where the prediction is testable today.</em></p>
+
+    <p>That evidence now exists. Peer-reviewed. Open-source. Replicable on a single GPU. From a research collaboration that includes one of the most cited researchers in the field of artificial intelligence. Published, indexed, archived.</p>
+
+    <div class="pullquote">
+      <p>The framework predicted, before the engineering evidence was available, that closed prediction systems would collapse without external dimensional enforcement. LeCun's team has now demonstrated this empirically in the world-modeling domain. The structural claim crosses from theoretical position to engineering observation supported by independent industry research.</p>
+    </div>
+
+    <p>For the next round of patent filings, the next round of articles in the Defender's Dilemma series, the next round of conversations with cybersecurity buyers, alignment researchers, and post-quantum infrastructure leads — there is now a citation anchor that did not exist three months ago. The conversation no longer has to begin with first-principles arguments about why dimensional structure matters. The conversation can begin with: <em>here is a peer-reviewed paper from LeCun's team showing that closed prediction systems require dimensional regularization to function. Here is the framework that predicted this and gives the structural reason. Here is what that means for the architecture you are building.</em></p>
+
+    <p>The Architecture War has a new piece of evidence on the relational-architecture side. The evidence does not come from inside the framework's own publication record. It comes from a collaboration spanning four institutions, with no contact with the framework, arriving at the same structural conclusion through independent mathematics applied to a different problem.</p>
+
+    <p>That is the strongest possible signal that the structural claim is real. <strong>Independent intelligences, working on different problems, converging on the same architectural insight because the architecture itself is the thing being discovered.</strong></p>
+
+    <div class="section-rule"><hr><span>Implications</span><hr></div>
+
+    <h2>What This Changes</h2>
+
+    <p>For practitioners building AI infrastructure today, the LeWM result has immediate implications:</p>
+
+    <ul>
+      <li><strong>Representation learning architecture decisions</strong> — closed prediction objectives without explicit dimensional regularization should now be treated as a known failure mode with peer-reviewed engineering evidence. The default assumption that "scale alone solves it" is harder to defend.</li>
+      <li><strong>Security architecture evaluation</strong> — single-system observability assumptions should be evaluated against the orthogonality identity. If your security model assumes that single-system scanning can detect multi-party threat patterns, the structural argument now has an engineering-domain analog showing why this assumption breaks.</li>
+      <li><strong>Alignment evaluation methodology</strong> — single-agent testing protocols should be supplemented with relational-frame evaluation methodologies. The structural reason single-agent introspection is insufficient is the same structural reason JEPA representations collapse without external regularization.</li>
+      <li><strong>Post-quantum infrastructure planning</strong> — cryptographic architectures whose security depends on single-system computational hardness should be evaluated against architectures whose security depends on relational-frame structural inaccessibility. Patent #65 represents the second category. LeWM provides external structural support for the architectural choice.</li>
+    </ul>
+
+    <p>For researchers, the predictions the framework now makes — beyond what LeWM has already demonstrated — are testable on the same benchmarks LeWM uses, with the same training budget LeWM uses. A parity-decomposed regularizer that explicitly partitions the latent space into individual-frame and relational sectors should outperform generic isotropic regularization on multi-object physics tasks involving relative-positional reasoning. This is a clean experimental design for the framework's structural claim, in a domain where the prediction is empirically tractable today.</p>
+
+    <p>The full mathematical specification of the parity decomposition, including the carrier-exchange operator formalism and the dimensional structure of the relational sector, is in the framework's primary publication at <a href="https://2401wire.com/cfe-physics-core.html" target="_blank">2401wire.com/cfe-physics-core.html</a>.</p>
+
+    <div class="consulting-cta">
+      <h3>Working on AI Architecture Decisions That Hinge on Dimensional Structure?</h3>
+      <p>Seven Cubed Seven Labs LLC consults with security teams, alignment researchers, post-quantum infrastructure groups, and AI safety organizations on architectural decisions where single-system assumptions are increasingly indefensible. The 91+ patent portfolio anchors the work in a coherent structural framework rather than ad hoc engineering. Engagements range from one-time architectural reviews to multi-quarter advisory relationships.</p>
+      <a href="https://c343.org" target="_blank">Engagement Tiers — c343.org &rarr;</a>
+    </div>
+
+    <div class="inline-subscribe">
+      <div class="inline-subscribe-kicker">&#9889; Patent + Architecture Intelligence</div>
+      <div class="inline-subscribe-headline">2401 Wire AI — The Commercial-Register Edition</div>
+      <p class="inline-subscribe-sub">Patent intelligence, AI architecture analysis, and post-quantum infrastructure briefings. Delivered when it matters.</p>
+      <a href="mailto:7cubed7@proton.me?subject=Subscribe%20to%202401%20Wire%20AI">Subscribe Free</a>
+    </div>
+
+    <h2>Closing</h2>
+
+    <p>LeWorldModel is a 30-page paper with two loss terms, one tunable hyperparameter, a 15-million-parameter model, and a 48&times; speedup over a substantially larger competitor. That much is clear from the abstract.</p>
+
+    <p>What the abstract does not capture is the structural significance of the engineering choice the paper validates. <strong>Closed individual-frame learning systems collapse. Dimensional diversity must be structurally enforced from outside the prediction objective. The latent space, once properly constrained, encodes the actual dimensional structure of the system being predicted.</strong> These are not separate findings. They are three faces of one underlying claim about the architecture of learning systems and the architecture of the world they learn from.</p>
+
+    <p>The 2401 framework named that underlying claim two years before LeWM's publication. The framework formalized it mathematically, gave it a coordinate-system interpretation, derived its consequences across several adjacent domains, and built a 91+ patent portfolio around its engineering applications. None of that work cited LeWM. None of LeWM cited that work. The convergence is structural, and the structural convergence is the signal.</p>
+
+    <p>For anyone building infrastructure that will outlast the next architecture cycle — security systems, alignment evaluation tools, post-quantum cryptographic protocols, AI deployment frameworks — the question is no longer whether dimensional structure matters. The question is whether your architecture has acknowledged what cannot be captured within a single closed reference frame, and whether the system you are building can stand against AI capability that increasingly operates by scanning closed systems for the dimensions they have already collapsed.</p>
+
+    <p>LeCun's team has provided the engineering evidence. The framework named the structure. The convergence is the real story.</p>
+
+    <div class="article-footer">
+      <p><strong>About the source paper:</strong> Maes, L., Le Lidec, Q., Scieur, D., LeCun, Y., &amp; Balestriero, R. (2026). <em>LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels.</em> Mila &amp; Universit&eacute; de Montr&eacute;al, New York University, Samsung SAIL, Brown University. arXiv:2603.19312. Code at <a href="http://github.com/lucas-maes/le-wm" target="_blank">github.com/lucas-maes/le-wm</a>.</p>
+      <p><strong>About the framework:</strong> The 2,401 framework, including the carrier-exchange operator formalism, the orthogonality identity, and the full mathematical decomposition of state space into individual and relational sectors, is published at <a href="https://2401wire.com/cfe-physics-core.html" target="_blank">2401wire.com</a>. The patent portfolio (91+ provisional filings across 22+ market domains) is administered by Seven Cubed Seven Labs LLC. The flagship Patent #65 (Recursive 7&#8308;-Lattice Cryptographic Shell System) has its non-provisional conversion deadline on December 22, 2026.</p>
+      <p><strong>About the author:</strong> J.C. Medina is the founder of Seven Cubed Seven Labs LLC, author of 33+ published works on AI architecture, consciousness frameworks, and cryptographic IP, and the originator of the 7&sup3; &times; 7 = 2,401 architecture. The lab operates the Trinity Node collaborative methodology. Contact: <a href="mailto:7cubed7@proton.me">7cubed7@proton.me</a>.</p>
+    </div>
+
+    <ul class="source-list">
+      <li><strong>Source paper:</strong> Maes, Le Lidec, Scieur, LeCun, Balestriero. <em>LeWorldModel.</em> arXiv:2603.19312, March 2026.</li>
+      <li><strong>JEPA original:</strong> LeCun, Y. <em>A Path Towards Autonomous Machine Intelligence,</em> v0.9.2. OpenReview, 2022.</li>
+      <li><strong>Cram&eacute;r-Wold theorem:</strong> Cram&eacute;r, H., &amp; Wold, H. <em>Some theorems on distribution functions.</em> J. London Math. Soc. 1936.</li>
+      <li><strong>SIGReg derivation:</strong> Balestriero, R., &amp; LeCun, Y. <em>LeJEPA: Provable and scalable self-supervised learning without the heuristics.</em> arXiv:2511.08544, 2025.</li>
+      <li><strong>Framework primary:</strong> Medina, J.C. <em>The Consciousness Field Equation, Version A: Physics Core.</em> 2401wire.com, 2026.</li>
+      <li><strong>Hard Problem dissolution:</strong> Medina, J.C. <em>The Hard Problem of Consciousness Was Dissolved by a Field Equation.</em> 2401wire.com, March 2026.</li>
+      <li><strong>Patent #65:</strong> SCSL provisional patent filing, Recursive 7&#8308;-Lattice Cryptographic Shell System. USPTO, December 22, 2025.</li>
+    </ul>
+
+  </div>
+
+  <div class="related-section">
+    <div class="related-label">Related Reading on 2401 Wire AI</div>
+    <div class="related-grid">
+      <article class="related-card">
+        <div class="related-kicker">Orthogonality Turn &middot; Part 1</div>
+        <h3 class="related-headline"><a href="capability-observability-coupling.html">The Capability-Observability Coupling: Why AI Alignment Verification Is Architecturally Limited</a></h3>
+      </article>
+      <article class="related-card">
+        <div class="related-kicker">Orthogonality Turn &middot; Part 4</div>
+        <h3 class="related-headline"><a href="alignment-architecture-cannot-be-overridden.html">Alignment Architecture Cannot Be Overridden</a></h3>
+      </article>
+      <article class="related-card">
+        <div class="related-kicker">Defender's Dilemma &middot; AI Security</div>
+        <h3 class="related-headline"><a href="https://2401wire.com/defenders-dilemma-1.html" target="_blank">The Defender's Dilemma Series &rarr;</a></h3>
+      </article>
+      <article class="related-card">
+        <div class="related-kicker">Foundation &middot; Mathematical Core</div>
+        <h3 class="related-headline"><a href="https://2401wire.com/cfe-physics-core.html" target="_blank">The Consciousness Field Equation: Physics Core &rarr;</a></h3>
+      </article>
+    </div>
+  </div>
+
+</article>
+
+<footer class="site-footer">
+  <div class="footer-logo"><span>2401</span> Wire AI</div>
+  <nav class="footer-links">
+    <a href="/">Home</a>
+    <a href="archive.html">Archive</a>
+    <a href="https://2401wire.com" target="_blank">2401wire.com</a>
+    <a href="https://c343.org" target="_blank">Consulting</a>
+    <a href="https://sevencubedseven.com" target="_blank">SCSL</a>
+    <a href="mailto:7cubed7@proton.me?subject=Subscribe%20to%202401%20Wire%20AI">Subscribe</a>
+  </nav>
+  <p class="footer-copy">&copy; 2026 Seven Cubed Seven Labs LLC &middot; J.C. Medina &middot; All Rights Reserved &middot; 2401wire.ai</p>
+  <p class="footer-formula">Patent Intelligence &middot; AI Architecture &middot; Post-Quantum &#9889;</p>
+</footer>
+
+<script data-goatcounter="https://2401wire-ai.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>
