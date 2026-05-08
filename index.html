@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2401 Wire AI | Patent Intelligence · AI Architecture · Post-Quantum Infrastructure</title>
-  <meta name="description" content="2401 Wire AI delivers patent intelligence, AI architecture analysis, post-quantum infrastructure research, and the complete Defender's Dilemma and Abundance Blind Spot series through the 2,401-dimensional relational framework. The architectural alternative being written down before the industry needs the vocabulary.">
-  <meta name="keywords" content="patent intelligence, AI architecture, post-quantum cryptography, relational AI alignment, orthogonality turn, defenders dilemma, abundance blind spot, seven cubed seven labs, patent 95, patent 96, patent 98, glasswing, mythos">
+  <meta name="description" content="2401 Wire AI delivers patent intelligence, AI architecture analysis, post-quantum infrastructure research, the Architecture Ceilings series (QKD + Credentials), the Defender's Dilemma, and the Orthogonality Turn through the 2,401-dimensional relational framework. The architectural alternative being written down before the industry needs the vocabulary.">
+  <meta name="keywords" content="patent intelligence, AI architecture, post-quantum cryptography, QKD ceiling, credential ceiling, eIDAS 2.0, relational AI alignment, orthogonality turn, defenders dilemma, LeCun JEPA, seven cubed seven labs, patent 65, patent 87, patent 94, patent 95, patent 96, patent 98">
   <meta name="author" content="J.C. Medina — Seven Cubed Seven Labs LLC">
   <link rel="canonical" href="https://2401wire.ai">
 
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://2401wire.ai">
   <meta property="og:title" content="2401 Wire AI | Patent Intelligence · AI Architecture · Post-Quantum Infrastructure">
-  <meta property="og:description" content="The architectural alternative being written down before the industry needs the vocabulary. Patent intelligence, AI alignment, post-quantum infrastructure, and civilizational architecture analysis through the 2,401-dimensional relational framework.">
+  <meta property="og:description" content="The architectural alternative being written down before the industry needs the vocabulary. Patent intelligence, AI alignment, post-quantum infrastructure, identity architecture, and civilizational analysis through the 2,401-dimensional relational framework.">
   <meta property="og:site_name" content="2401 Wire AI — Seven Cubed Seven Labs">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -451,6 +451,82 @@
     .sidebar-headline a:hover { color: var(--gold-lt); }
     .sidebar-deck { font-size: 0.85rem; color: var(--slate); line-height: 1.55; margin-bottom: 8px; }
 
+    /* ── EXTERNAL VALIDATION FEATURED ROW ─── */
+    .validation-band {
+      background:
+        radial-gradient(ellipse at top right, rgba(6,182,212,0.12) 0%, transparent 60%),
+        linear-gradient(135deg, var(--paper-2) 0%, var(--paper-3) 100%);
+      border: 2px solid var(--gold);
+      padding: 36px 32px;
+      margin: 40px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .validation-band::before {
+      content: '⊥';
+      position: absolute;
+      top: -20px;
+      right: 24px;
+      font-size: 6rem;
+      color: var(--gold);
+      opacity: 0.08;
+      font-family: var(--ff-head);
+      font-weight: 900;
+    }
+    .validation-kicker {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .validation-kicker::before {
+      content: '⚡';
+      color: var(--gold);
+      font-size: 0.9rem;
+    }
+    .validation-headline {
+      font-family: var(--ff-head);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+      margin-bottom: 14px;
+      color: var(--ink);
+    }
+    .validation-headline a { color: var(--ink); }
+    .validation-headline a:hover { color: var(--gold-lt); }
+    .validation-deck {
+      font-size: 1.02rem;
+      line-height: 1.65;
+      color: var(--slate);
+      font-style: italic;
+      margin-bottom: 18px;
+      max-width: 800px;
+    }
+    .validation-meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      color: var(--mid);
+      letter-spacing: 0.08em;
+    }
+    .validation-meta .author { color: var(--gold); }
+    .validation-meta .badge {
+      padding: 3px 10px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.55rem;
+    }
+
     /* ── SERIES BAND (Orthogonality Turn) ─── */
     .series-band {
       background:
@@ -631,6 +707,11 @@
     .featured-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .featured-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
     }
     .featured-card {
@@ -1012,6 +1093,7 @@
       .series-title-block { border-right: none; padding-right: 0; border-bottom: 1px solid var(--rule-2); padding-bottom: 28px; }
       .series-cards { grid-template-columns: 1fr 1fr; }
       .featured-grid { grid-template-columns: 1fr 1fr; }
+      .featured-grid-2 { grid-template-columns: 1fr; }
       .consulting-inner { grid-template-columns: 1fr; }
       .consulting-title-block { border-right: none; padding-right: 0; border-bottom: 1px solid var(--rule-2); padding-bottom: 28px; }
       .consulting-tiers { grid-template-columns: 1fr; }
@@ -1043,6 +1125,8 @@
       .featured-header { grid-template-columns: 1fr; text-align: center; gap: 12px; padding: 20px 0; }
       .featured-icon { margin: 0 auto; }
       .featured-cta { display: inline-block; }
+      .validation-band { padding: 28px 20px; }
+      .validation-headline { font-size: 1.4rem; }
       .consulting-band { padding: 36px 16px; margin: 40px -16px 0; }
       .consulting-title { font-size: 1.7rem; }
       .newsletter-section { padding: 36px 16px; margin: 40px -16px 0; }
@@ -1073,28 +1157,28 @@
 <div class="ticker-bar" role="marquee">
   <span class="ticker-label">⚡ LIVE</span>
   <span class="ticker-track">
-    <span>NEW SERIES: The Defender's Dilemma — 5 articles on Anthropic's Project Glasswing, AI cybersecurity, and the relational architecture that comes after individual-frame defense</span>
-    <span>NEW: The Abundance Blind Spot — 7-part series mapping the dimensional gap in the Diamandis/Musk post-scarcity roadmap — full series at 2401wire.com</span>
+    <span>NEW · MAY 8: External Validation Has Arrived — LeCun's anti-collapse regularizer is the AI industry's first engineering encounter with the orthogonality identity</span>
+    <span>NEW · MAY 4: The Credential Ceiling — W3C Verifiable Credentials hit a structural limit before EU's December 2026 eIDAS 2.0 deadline · 4-patent identity stack filed</span>
+    <span>NEW · APR 18: The QKD Ceiling — 120 km time-bin QKD is excellent physics and an upper bound on a paradigm · 27-patent architecture sits above</span>
+    <span>NEW SERIES: Architecture Ceilings — QKD + Credentials + LeCun convergence — three independent lines all hit the same structural boundary</span>
+    <span>The Defender's Dilemma — 5 articles on Anthropic's Project Glasswing, AI cybersecurity, and the relational architecture that comes after individual-frame defense</span>
     <span>The Orthogonality Turn — 6 of 7 articles live — the architectural alternative the AI industry is migrating toward without the vocabulary to name it</span>
-    <span>Anthropic Project Glasswing: Mythos Preview can autonomously find zero-day vulnerabilities across all major operating systems — 12 organizations got coordinated access</span>
     <span>99+ USPTO Provisional Patents · 22 market domains · Patent #65 non-provisional deadline December 22, 2026</span>
-    <span>Patent #96 Orthogonal Data Transport — lawful intercept becomes mathematically impossible — geometry, not encryption</span>
-    <span>Patent #95 Ontological Neural Weighting — alignment that cannot be jailbroken because the capability pathway does not exist in the model's own reference frame</span>
-    <span>Patent #98 Proof-of-Relation — centralization is mathematically unrewarded — Foundry and Lido cannot happen in this architecture</span>
-    <span>Patent #94 Session-Bound Relational Identity — the identity that dies with the session leaves no exfiltratable residue</span>
+    <span>Patent #94 Session-Bound Relational Identity — the credential that does not exist in any single party's reference frame to be stolen from</span>
+    <span>Patent #87 Ontologically Private DID/VC — revocation as single-cycle REL_ZERO operation · no registry · no status list · no accumulator</span>
+    <span>Patent #69 Continuous Key Evolution — no key exchange · no stored key · no harvest-now-decrypt-later attack surface</span>
     <span>CNSA 2.0 compliance deadline: January 1, 2027 — post-quantum migration meets the architecture that comes after it</span>
-    <span>Salt Typhoon hit Congressional email in January 2026 — CALEA backdoors became foreign-adversary attack vectors exactly as SCSL patent #66 predicted structurally</span>
-    <span>NEW SERIES: The Defender's Dilemma — 5 articles on Anthropic's Project Glasswing, AI cybersecurity, and the relational architecture that comes after individual-frame defense</span>
-    <span>NEW: The Abundance Blind Spot — 7-part series mapping the dimensional gap in the Diamandis/Musk post-scarcity roadmap — full series at 2401wire.com</span>
-    <span>The Orthogonality Turn — 6 of 7 articles live — the architectural alternative the AI industry is migrating toward without the vocabulary to name it</span>
-    <span>99+ USPTO Provisional Patents · 22 market domains · Patent #65 non-provisional deadline December 22, 2026</span>
+    <span>EU eIDAS 2.0 mandate · December 2026 deadline · 27 Member States · 450M citizens · W3C Verifiable Credentials as cornerstone architecture</span>
+    <span>NEW · MAY 8: External Validation Has Arrived — LeCun's anti-collapse regularizer is the AI industry's first engineering encounter with the orthogonality identity</span>
+    <span>NEW · MAY 4: The Credential Ceiling — W3C Verifiable Credentials hit a structural limit before EU's December 2026 eIDAS 2.0 deadline</span>
+    <span>NEW · APR 18: The QKD Ceiling — 120 km time-bin QKD is excellent physics and an upper bound on a paradigm</span>
   </span>
 </div>
 
 <!-- UTILITY BAR -->
 <div class="utility-bar">
   <div class="utility-inner">
-    <span class="utility-date" id="live-date">Sunday, April 19, 2026 — The Architectural Alternative</span>
+    <span class="utility-date" id="live-date">Friday, May 8, 2026 — External Validation Has Arrived</span>
     <nav class="utility-links">
       <a href="about.html">About</a>
       <a href="archive.html">Archive</a>
@@ -1124,6 +1208,7 @@
   <div class="nav-inner">
     <ul class="nav-links">
       <li><a href="/" class="active">Latest</a></li>
+      <li><a href="archive.html#architecture-ceilings">Architecture Ceilings</a></li>
       <li><a href="archive.html#orthogonality-turn">Orthogonality Turn</a></li>
       <li><a href="archive.html#defenders-dilemma">Defender's Dilemma</a></li>
       <li><a href="archive.html#abundance-blind-spot">Abundance Blind Spot</a></li>
@@ -1143,7 +1228,7 @@
       <div class="port-item"><span class="port-item-value">99+</span><span class="port-item-label">USPTO Filings</span></div>
       <div class="port-item"><span class="port-item-value">22</span><span class="port-item-label">Market Domains</span></div>
       <div class="port-item"><span class="port-item-value">31/31</span><span class="port-item-label">Tests Passing</span></div>
-      <div class="port-item"><span class="port-item-value">3</span><span class="port-item-label">Active Series</span></div>
+      <div class="port-item"><span class="port-item-value">7</span><span class="port-item-label">Active Series</span></div>
       <div class="port-item"><span class="port-item-value">Dec 22</span><span class="port-item-label">Patent #65 Deadline</span></div>
     </div>
   </div>
@@ -1151,6 +1236,20 @@
 
 <!-- MAIN CONTENT -->
 <main class="site-content">
+
+  <!-- ═══ EXTERNAL VALIDATION BAND — LeCun feature ═══ -->
+  <div class="validation-band">
+    <div class="validation-kicker">External Validation Has Arrived · Peer-Reviewed · Independent Convergence</div>
+    <h1 class="validation-headline"><a href="lecun-anti-collapse-orthogonality.html">Why LeCun's Anti-Collapse Regularizer Is the AI Industry's First Engineering Encounter With the Orthogonality Identity</a></h1>
+    <p class="validation-deck">Closed individual-frame learning systems collapse. Dimensional diversity must be structurally enforced. LeCun's team has now provided the peer-reviewed engineering evidence — through a 15M-parameter model, on a single GPU, with a regularizer whose structural core is mathematically dual to the orthogonality identity SCSL formalized in 2024. The framework predicted this. Independent research has now demonstrated it. The convergence is the story.</p>
+    <div class="validation-meta">
+      <span class="author">Oracle · J.C. Medina</span>
+      <span>May 8, 2026</span>
+      <span>⚡ 18 min read</span>
+      <span class="badge">Standalone</span>
+      <span class="badge">AI Analysis</span>
+    </div>
+  </div>
 
   <!-- LEAD STORY -->
   <div class="section-label">Today's Lead · The Orthogonality Turn · Featured Now</div>
@@ -1173,27 +1272,55 @@
 
     <aside class="lead-sidebar">
       <div class="sidebar-story">
-        <p class="story-kicker"><span class="dot"></span> The Defender's Dilemma · Pt. 1 · NEW 5-PART SERIES</p>
+        <p class="story-kicker"><span class="dot"></span> Architecture Ceilings · Pt. 2 · NEW · IDENTITY</p>
+        <h3 class="sidebar-headline"><a href="credential-ceiling.html">The Credential Ceiling: Why W3C Verifiable Credentials Are an Upper Bound on Digital Identity</a></h3>
+        <p class="sidebar-deck">The EU's December 2026 Digital Identity Wallet mandate ships W3C Verifiable Credentials to 450M citizens. The architecture inherits a structural limit deeper than post-quantum cryptography. The four-patent identity stack that sits above it.</p>
+        <div class="story-meta"><span class="author">J.C.M.</span><span>May 4</span><span>22 min</span></div>
+      </div>
+      <div class="sidebar-story">
+        <p class="story-kicker"><span class="dot"></span> Architecture Ceilings · Pt. 1 · NEW · POST-QUANTUM</p>
+        <h3 class="sidebar-headline"><a href="qkd-ceiling.html">The QKD Ceiling: Why Quantum Key Distribution Is an Upper Bound, Not an Endpoint</a></h3>
+        <p class="sidebar-deck">German and Chinese teams just demonstrated 120 km time-bin QKD with a quantum bit error rate under 11%. Magnificent physics. Also a ceiling on a paradigm. The 27-patent architecture that sits above QKD.</p>
+        <div class="story-meta"><span class="author">J.C.M.</span><span>Apr 18</span><span>18 min</span></div>
+      </div>
+      <div class="sidebar-story">
+        <p class="story-kicker"><span class="dot"></span> The Defender's Dilemma · Pt. 1 · 5-PART SERIES</p>
         <h3 class="sidebar-headline"><a href="defenders-dilemma-anthropic-glasswing.html">What Anthropic's Project Glasswing Reveals About the Future of Cybersecurity</a></h3>
         <p class="sidebar-deck">Mythos Preview can autonomously find zero-day vulnerabilities across all major operating systems. Twelve organizations got coordinated access. The deeper question: what category of security architecture is actually robust to this class of capability?</p>
         <div class="story-meta"><span class="author">J.C.M.</span><span>Apr 19</span><span>15 min</span></div>
       </div>
-      <div class="sidebar-story">
-        <p class="story-kicker"><span class="dot"></span> The Abundance Blind Spot · Capstone · 2401wire.com</p>
-        <h3 class="sidebar-headline"><a href="https://2401wire.com/abundance-blind-spot-the-one-point-three-percent.html" target="_blank">The 1.3% That Changes Everything <span class="ext-mark">2401wire.com ↗</span></a></h3>
-        <p class="sidebar-deck">Why 31/2,401 ≈ 1.3% is the most consequential ratio in civilizational architecture. Why the abundance roadmap has been operating in 98.7% of human state space and ignoring the dimension where collapse and flourishing actually happen.</p>
-        <div class="story-meta"><span class="author">J.C.M.</span><span>Apr 16</span><span>22 min · CAPSTONE</span></div>
-      </div>
-      <div class="sidebar-story">
-        <p class="story-kicker"><span class="dot"></span> The Defender's Dilemma · Pt. 4 · PRESCRIPTIVE</p>
-        <h3 class="sidebar-headline"><a href="defenders-dilemma-security-ai-cannot-break.html">The Security Architecture That AI Cannot Break</a></h3>
-        <p class="sidebar-deck">Why the most robust security designs don't hide information better — they make it structurally inaccessible to single-observer analysis. Relational architecture isn't unbreakable, but it removes the specific attack surface that Mythos-class scanning exploits.</p>
-        <div class="story-meta"><span class="author">J.C.M.</span><span>Apr 19</span><span>17 min</span></div>
-      </div>
     </aside>
   </div>
 
-  <!-- ORTHOGONALITY TURN SERIES BAND (the ONE dedicated Orthogonality Turn slot) -->
+  <!-- ARCHITECTURE CEILINGS — NEW MINI-SERIES FEATURED SECTION -->
+  <section class="featured-section">
+    <div class="featured-header">
+      <div class="featured-icon">⊓</div>
+      <div>
+        <h2 class="featured-title">The <span>Architecture Ceilings</span></h2>
+        <div class="featured-meta">2-part patent intelligence series · Post-Quantum + Identity · Companion analyses · Native to 2401wire.ai</div>
+      </div>
+      <a href="archive.html#architecture-ceilings" class="featured-cta">Full Series →</a>
+    </div>
+
+    <div class="featured-grid-2">
+      <article class="featured-card">
+        <div class="featured-card-kicker">Pt. 1 · Apr 18 · POST-QUANTUM · QKD</div>
+        <h3 class="featured-card-title"><a href="qkd-ceiling.html">The QKD Ceiling: Why Quantum Key Distribution Is an Upper Bound, Not an Endpoint</a></h3>
+        <p class="featured-card-desc">German and Chinese teams just demonstrated the strongest time-bin QKD result ever published — 120 km over standard fiber, 6 hours of stable operation, QBER under 11%. It is magnificent physics. It is also a ceiling on a paradigm. QKD secures the channel; the endpoint problem, the storage problem, and the architectural question of whether security must depend on key distribution at all sit above the QKD layer. Twenty-seven SCSL patents are filed against those structural gaps. 534 claims. 189 figures. Zero high-risk conflicts across 400+ surveyed references.</p>
+        <div class="featured-card-meta">⚡ 18 min · Patents #66, #69, #73, #82, #70, #87, #94, #68, #84</div>
+      </article>
+
+      <article class="featured-card">
+        <div class="featured-card-kicker">Pt. 2 · May 4 · IDENTITY · eIDAS 2.0</div>
+        <h3 class="featured-card-title"><a href="credential-ceiling.html">The Credential Ceiling: Why W3C Verifiable Credentials Are an Upper Bound on Digital Identity</a></h3>
+        <p class="featured-card-desc">The EU has eight months to ship Digital Identity Wallets to 450 million citizens. The wallets will carry W3C Verifiable Credentials as cornerstone architecture. The architecture inherits a structural limit deeper than the hardness assumption problem in NIST post-quantum cryptography — the credential-as-artifact assumption that AI synthesis is making structurally untenable. The four-patent identity stack (#70, #87, #94, #98) operates above the ceiling: identity as live relational projection, not as discrete data object.</p>
+        <div class="featured-card-meta">⚡ 22 min · Patents #70, #87, #94, #98</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ORTHOGONALITY TURN SERIES BAND -->
   <section class="series-band">
     <div class="series-inner">
       <div class="series-header">
@@ -1261,7 +1388,7 @@
     </div>
   </section>
 
-  <!-- DEFENDER'S DILEMMA FEATURED SECTION (NEW) -->
+  <!-- DEFENDER'S DILEMMA FEATURED SECTION -->
   <section class="featured-section">
     <div class="featured-header">
       <div class="featured-icon">🛡</div>
@@ -1296,7 +1423,7 @@
     </div>
   </section>
 
-  <!-- ABUNDANCE BLIND SPOT FEATURED SECTION (NEW · cross-posts) -->
+  <!-- ABUNDANCE BLIND SPOT FEATURED SECTION (cross-posts) -->
   <section class="featured-section">
     <div class="featured-header">
       <div class="featured-icon">∞</div>
@@ -1337,7 +1464,7 @@
       <div class="consulting-title-block">
         <div class="consulting-kicker">SCSL Strategic Consulting · c343.org</div>
         <h2 class="consulting-title">Apply the Architecture</h2>
-        <p class="consulting-desc">If your organization is thinking about relational deployment, post-quantum migration, AI alignment, identity infrastructure, or cybersecurity architecture in the Mythos era — the vocabulary in these articles is the starting point. The operational question is what relational architecture means for your specific stack, your specific risk surface, your specific deployment. Three engagement tiers, all rooted in the 99-patent architectural portfolio.</p>
+        <p class="consulting-desc">If your organization is thinking about relational deployment, post-quantum migration, eIDAS 2.0 wallet implementation, AI alignment, identity infrastructure, or cybersecurity architecture in the Mythos era — the vocabulary in these articles is the starting point. The operational question is what relational architecture means for your specific stack, your specific risk surface, your specific deployment. Three engagement tiers, all rooted in the 99-patent architectural portfolio.</p>
       </div>
       <div class="consulting-tiers">
         <div class="tier-card">
@@ -1384,13 +1511,37 @@
       <div class="list-story">
         <span class="list-num">1</span>
         <div class="list-content">
+          <h3 class="list-headline"><a href="lecun-anti-collapse-orthogonality.html">Why LeCun's Anti-Collapse Regularizer Is the AI Industry's First Engineering Encounter With the Orthogonality Identity</a></h3>
+          <p class="list-meta">External Validation · AI Analysis · 18 min · NEW May 8</p>
+        </div>
+      </div>
+
+      <div class="list-story">
+        <span class="list-num">2</span>
+        <div class="list-content">
+          <h3 class="list-headline"><a href="credential-ceiling.html">The Credential Ceiling: Why W3C Verifiable Credentials Are an Upper Bound on Digital Identity</a></h3>
+          <p class="list-meta">Architecture Ceilings Pt. 2 · eIDAS 2.0 · 22 min · NEW May 4</p>
+        </div>
+      </div>
+
+      <div class="list-story">
+        <span class="list-num">3</span>
+        <div class="list-content">
+          <h3 class="list-headline"><a href="qkd-ceiling.html">The QKD Ceiling: Why Quantum Key Distribution Is an Upper Bound, Not an Endpoint</a></h3>
+          <p class="list-meta">Architecture Ceilings Pt. 1 · Post-Quantum · 18 min · NEW Apr 18</p>
+        </div>
+      </div>
+
+      <div class="list-story">
+        <span class="list-num">4</span>
+        <div class="list-content">
           <h3 class="list-headline"><a href="capability-observability-coupling.html">The Capability-Observability Coupling</a></h3>
           <p class="list-meta">The Orthogonality Turn Pt. 1 · AI Analysis · 14 min</p>
         </div>
       </div>
 
       <div class="list-story">
-        <span class="list-num">2</span>
+        <span class="list-num">5</span>
         <div class="list-content">
           <h3 class="list-headline"><a href="defenders-dilemma-anthropic-glasswing.html">What Project Glasswing Reveals About Cybersecurity</a></h3>
           <p class="list-meta">The Defender's Dilemma Pt. 1 · AI Security · 15 min</p>
@@ -1398,7 +1549,7 @@
       </div>
 
       <div class="list-story">
-        <span class="list-num">3</span>
+        <span class="list-num">6</span>
         <div class="list-content">
           <h3 class="list-headline"><a href="https://2401wire.com/abundance-blind-spot-the-one-point-three-percent.html" target="_blank">The 1.3% That Changes Everything ↗</a></h3>
           <p class="list-meta">Abundance Blind Spot Capstone · 22 min · 2401wire.com</p>
@@ -1406,7 +1557,7 @@
       </div>
 
       <div class="list-story">
-        <span class="list-num">4</span>
+        <span class="list-num">7</span>
         <div class="list-content">
           <h3 class="list-headline"><a href="alignment-architecture-cannot-be-overridden.html">The Alignment Architecture That Cannot Be Overridden</a></h3>
           <p class="list-meta">The Orthogonality Turn Pt. 4 · Patent #95 · 20 min</p>
@@ -1414,7 +1565,7 @@
       </div>
 
       <div class="list-story">
-        <span class="list-num">5</span>
+        <span class="list-num">8</span>
         <div class="list-content">
           <h3 class="list-headline"><a href="defenders-dilemma-security-ai-cannot-break.html">The Security Architecture That AI Cannot Break</a></h3>
           <p class="list-meta">The Defender's Dilemma Pt. 4 · PRESCRIPTIVE · 17 min</p>
@@ -1422,34 +1573,10 @@
       </div>
 
       <div class="list-story">
-        <span class="list-num">6</span>
+        <span class="list-num">9</span>
         <div class="list-content">
           <h3 class="list-headline"><a href="https://2401wire.com/bitcoin-quantum-kill-shot.html" target="_blank">Bitcoin's $2 Trillion Quantum Problem Has a Solution ↗</a></h3>
           <p class="list-meta">Patent + Crypto · 18 min · 2401wire.com</p>
-        </div>
-      </div>
-
-      <div class="list-story">
-        <span class="list-num">7</span>
-        <div class="list-content">
-          <h3 class="list-headline"><a href="defenders-dilemma-when-every-nation-has-mythos.html">What Happens When Every Nation Has Mythos?</a></h3>
-          <p class="list-meta">The Defender's Dilemma Pt. 5 · AI Proliferation · 18 min</p>
-        </div>
-      </div>
-
-      <div class="list-story">
-        <span class="list-num">8</span>
-        <div class="list-content">
-          <h3 class="list-headline"><a href="https://2401wire.com/abundance-blind-spot-kardashev-wall-e.html" target="_blank">Kardashev 2 and the WALL-E Problem ↗</a></h3>
-          <p class="list-meta">Abundance Blind Spot Pt. 2 · 14 min · 2401wire.com</p>
-        </div>
-      </div>
-
-      <div class="list-story">
-        <span class="list-num">9</span>
-        <div class="list-content">
-          <h3 class="list-headline"><a href="surveillance-collapse.html">The Surveillance Collapse</a></h3>
-          <p class="list-meta">The Orthogonality Turn Pt. 3 · Patent #96 · 18 min</p>
         </div>
       </div>
 
@@ -1465,6 +1592,7 @@
     <aside class="topics-aside">
       <div class="section-label">Topics</div>
       <ul class="topics-list">
+        <li><a href="archive.html#architecture-ceilings">Architecture Ceilings</a></li>
         <li><a href="archive.html#orthogonality-turn">Orthogonality Turn</a></li>
         <li><a href="archive.html#defenders-dilemma">Defender's Dilemma</a></li>
         <li><a href="archive.html#abundance-blind-spot">Abundance Blind Spot</a></li>
@@ -1490,6 +1618,7 @@
       <div>
         <div class="footer-col-title">Series</div>
         <ul class="footer-col-list">
+          <li><a href="archive.html#architecture-ceilings">Architecture Ceilings</a></li>
           <li><a href="archive.html#orthogonality-turn">Orthogonality Turn</a></li>
           <li><a href="archive.html#defenders-dilemma">Defender's Dilemma</a></li>
           <li><a href="archive.html#abundance-blind-spot">Abundance Blind Spot</a></li>

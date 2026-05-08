@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Archive — Complete Library | 2401 Wire AI</title>
-  <meta name="description" content="The complete 2401 Wire AI library — Patent intelligence, AI architecture analysis, post-quantum infrastructure research, the Orthogonality Turn, the Defender's Dilemma, and the Abundance Blind Spot series. Organized by series and domain.">
+  <meta name="description" content="The complete 2401 Wire AI library — Patent intelligence, AI architecture analysis, post-quantum infrastructure research, the Architecture Ceilings (QKD + Credentials), the Orthogonality Turn, the Defender's Dilemma, and the Abundance Blind Spot series. Organized by series and domain.">
   <meta name="author" content="J.C. Medina — Seven Cubed Seven Labs LLC">
   <link rel="canonical" href="https://2401wire.ai/archive.html">
 
@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://2401wire.ai/archive.html">
   <meta property="og:title" content="Archive — Complete Library | 2401 Wire AI">
-  <meta property="og:description" content="The complete commercial intelligence library. The Orthogonality Turn, Defender's Dilemma, and Abundance Blind Spot series — plus patent intelligence, AI architecture, and post-quantum analysis.">
+  <meta property="og:description" content="The complete commercial intelligence library. The Architecture Ceilings (QKD + Credentials), the Orthogonality Turn, the Defender's Dilemma, and the Abundance Blind Spot — plus AI architecture and post-quantum analysis.">
   <meta property="og:image" content="https://2401wire.ai/og-2401wire-ai.png">
   <meta name="twitter:image" content="https://2401wire.ai/og-2401wire-ai.png">
 
@@ -153,6 +153,69 @@
     /* ── LAYOUT ─── */
     .archive-content { max-width: 1200px; margin: 0 auto; padding: 0 24px 80px; }
 
+    /* ── EXTERNAL VALIDATION CALLOUT ─── */
+    .validation-callout {
+      background:
+        radial-gradient(ellipse at right, rgba(6,182,212,0.1) 0%, transparent 60%),
+        linear-gradient(135deg, var(--paper-2) 0%, var(--paper-3) 100%);
+      border: 2px solid var(--gold);
+      padding: 32px 28px;
+      margin: 48px 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .validation-callout::before {
+      content: '⊥';
+      position: absolute;
+      top: -16px;
+      right: 24px;
+      font-size: 5rem;
+      color: var(--gold);
+      opacity: 0.08;
+      font-family: var(--ff-head);
+      font-weight: 900;
+    }
+    .validation-kicker {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .validation-kicker::before { content: '⚡'; color: var(--gold); }
+    .validation-callout h3 {
+      font-family: var(--ff-head);
+      font-size: 1.5rem;
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+    .validation-callout h3 a { color: var(--ink); }
+    .validation-callout h3 a:hover { color: var(--gold-lt); }
+    .validation-callout p {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--slate);
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+    .validation-callout-meta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      color: var(--mid);
+      letter-spacing: 0.08em;
+    }
+    .validation-callout-meta .author { color: var(--gold); }
+
     /* ── SERIES BLOCK ─────── */
     .series-block { margin: 56px 0; }
     .series-block-header {
@@ -272,6 +335,19 @@
       margin-left: 8px;
       vertical-align: middle;
     }
+    .new-badge {
+      display: inline-block;
+      font-family: var(--ff-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      color: var(--paper);
+      background: var(--gold);
+      text-transform: uppercase;
+      padding: 2px 8px;
+      margin-left: 8px;
+      vertical-align: middle;
+      font-weight: 600;
+    }
 
     /* Cross-publication callout */
     .cross-pub-section {
@@ -375,6 +451,8 @@
       .article-main p { font-size: 0.88rem; }
       .cross-pub-section { padding: 28px 20px; }
       .cross-pub-section h2 { font-size: 1.35rem; }
+      .validation-callout { padding: 24px 20px; }
+      .validation-callout h3 { font-size: 1.25rem; }
     }
   </style>
 </head>
@@ -397,15 +475,15 @@
 <div class="page-header">
   <div class="page-kicker">2401 Wire .ai · Complete Library</div>
   <h1 class="page-title">The Commercial Intelligence Archive</h1>
-  <p class="page-subtitle">Every article published by 2401 Wire AI — organized by series and domain. Patent intelligence, AI architecture analysis, post-quantum cryptographic research, the Orthogonality Turn, the Defender's Dilemma, and the Abundance Blind Spot. The architectural alternative being written down before the industry needs the vocabulary.</p>
+  <p class="page-subtitle">Every article published by 2401 Wire AI — organized by series and domain. Patent intelligence, AI architecture analysis, post-quantum cryptographic research, the Architecture Ceilings (QKD + Credentials), the Orthogonality Turn, the Defender's Dilemma, and the Abundance Blind Spot. The architectural alternative being written down before the industry needs the vocabulary.</p>
 
   <div class="archive-stats">
     <div class="stat-item">
-      <span class="stat-num">24</span>
+      <span class="stat-num">27</span>
       <span class="stat-label">Articles</span>
     </div>
     <div class="stat-item">
-      <span class="stat-num">6</span>
+      <span class="stat-num">7</span>
       <span class="stat-label">Series &amp; Topics</span>
     </div>
     <div class="stat-item">
@@ -421,7 +499,62 @@
 
 <main class="archive-content">
 
-  <!-- SERIES 1: THE ORTHOGONALITY TURN -->
+  <!-- EXTERNAL VALIDATION CALLOUT — LeCun feature -->
+  <div class="validation-callout">
+    <div class="validation-kicker">External Validation Has Arrived · Standalone · Featured</div>
+    <h3><a href="lecun-anti-collapse-orthogonality.html">Why LeCun's Anti-Collapse Regularizer Is the AI Industry's First Engineering Encounter With the Orthogonality Identity</a></h3>
+    <p>Closed individual-frame learning systems collapse. Dimensional diversity must be structurally enforced. LeCun's team has now provided the peer-reviewed engineering evidence — through a 15M-parameter model, on a single GPU, with a regularizer whose structural core is mathematically dual to the orthogonality identity SCSL formalized in 2024. The convergence is the story.</p>
+    <div class="validation-callout-meta">
+      <span class="author">Oracle · J.C. Medina</span>
+      <span>May 8, 2026</span>
+      <span>⚡ 18 min read</span>
+      <span>AI Analysis · Standalone</span>
+    </div>
+  </div>
+
+  <!-- SERIES 1: ARCHITECTURE CEILINGS (NEW) -->
+  <section class="series-block" id="architecture-ceilings">
+    <div class="series-block-header">
+      <div class="series-icon">⊓</div>
+      <div class="series-title-area">
+        <h2>The Architecture Ceilings</h2>
+        <div class="series-meta">
+          <span>2 articles · Companion analyses</span>
+          <span class="separator">·</span>
+          <span>Post-Quantum + Identity</span>
+          <span class="separator">·</span>
+          <span>Native to 2401wire.ai</span>
+        </div>
+      </div>
+      <div class="series-category">Patent Intelligence + Cryptographic Architecture</div>
+    </div>
+
+    <div class="series-articles">
+      <div class="article-date">Apr 18</div>
+      <div class="article-main">
+        <h3><a href="qkd-ceiling.html">The QKD Ceiling: Why Quantum Key Distribution Is an Upper Bound, Not an Endpoint <span class="new-badge">NEW</span></a></h3>
+        <p>German and Chinese teams just demonstrated the strongest time-bin QKD result ever published — 120 km over standard fiber, 6 hours of stable operation, QBER under 11%. It is magnificent physics. It is also a ceiling on a paradigm. QKD secures the channel; the endpoint problem, the storage problem, and the architectural question of whether security must depend on key distribution at all sit above the QKD layer. Twenty-seven SCSL patents are filed against those structural gaps — 534 claims, 189 figures, zero high-risk conflicts across 400+ surveyed references.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 1 · Post-Quantum</span>
+        <span class="badge-secondary">18 min · Patents #66 #69 #73 #82 #70 #87 #94 #68 #84</span>
+      </div>
+    </div>
+
+    <div class="series-articles">
+      <div class="article-date">May 4</div>
+      <div class="article-main">
+        <h3><a href="credential-ceiling.html">The Credential Ceiling: Why W3C Verifiable Credentials Are an Upper Bound on Digital Identity, Not an Endpoint <span class="new-badge">NEW</span></a></h3>
+        <p>The European Union has eight months to ship Digital Identity Wallets to 450 million citizens. The wallets will carry W3C Verifiable Credentials as their cornerstone architecture. The architecture inherits a structural limit deeper than the hardness assumption problem in NIST post-quantum cryptography — the credential-as-artifact assumption that AI synthesis is making structurally untenable. The four-patent identity stack (#70, #87, #94, #98) operates above the ceiling: identity as live relational projection between carriers, not as discrete data object that can be stolen, copied, or coerced.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">Pt. 2 · Identity · eIDAS 2.0</span>
+        <span class="badge-secondary">22 min · Patents #70 #87 #94 #98</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERIES 2: THE ORTHOGONALITY TURN -->
   <section class="series-block" id="orthogonality-turn">
     <div class="series-block-header">
       <div class="series-icon">⊥</div>
@@ -523,7 +656,7 @@
     </div>
   </section>
 
-  <!-- SERIES 2: THE DEFENDER'S DILEMMA (NEW) -->
+  <!-- SERIES 3: THE DEFENDER'S DILEMMA -->
   <section class="series-block" id="defenders-dilemma">
     <div class="series-block-header">
       <div class="series-icon">🛡</div>
@@ -601,7 +734,7 @@
     </div>
   </section>
 
-  <!-- SERIES 3: THE ABUNDANCE BLIND SPOT (CROSS-POSTS to 2401wire.com) -->
+  <!-- SERIES 4: THE ABUNDANCE BLIND SPOT (CROSS-POSTS) -->
   <section class="series-block" id="abundance-blind-spot">
     <div class="series-block-header">
       <div class="series-icon-emoji">∞</div>
@@ -703,7 +836,7 @@
     </div>
   </section>
 
-  <!-- SERIES 4: PATENT INTELLIGENCE · POST-QUANTUM -->
+  <!-- SERIES 5: PATENT INTELLIGENCE · POST-QUANTUM -->
   <section class="series-block" id="patent-intelligence">
     <div class="series-block-header">
       <div class="series-icon-emoji">🔐</div>
@@ -743,19 +876,31 @@
     </div>
   </section>
 
-  <!-- SERIES 5: AI ANALYSIS -->
+  <!-- SERIES 6: AI ANALYSIS -->
   <section class="series-block" id="ai-analysis">
     <div class="series-block-header">
       <div class="series-icon-emoji">⚡</div>
       <div class="series-title-area">
         <h2>AI Analysis · Architecture War</h2>
         <div class="series-meta">
-          <span>3 articles</span>
+          <span>4 articles</span>
           <span class="separator">·</span>
-          <span>Full-frequency versions at 2401wire.com</span>
+          <span>Standalone analyses + cross-posts</span>
         </div>
       </div>
       <div class="series-category">AI Architecture + Consciousness</div>
+    </div>
+
+    <div class="series-articles">
+      <div class="article-date">May 8</div>
+      <div class="article-main">
+        <h3><a href="lecun-anti-collapse-orthogonality.html">Why LeCun's Anti-Collapse Regularizer Is the AI Industry's First Engineering Encounter With the Orthogonality Identity <span class="new-badge">NEW</span></a></h3>
+        <p>Closed individual-frame learning systems collapse. Dimensional diversity must be structurally enforced. LeCun's team has now provided the peer-reviewed engineering evidence — through a 15M-parameter model, on a single GPU, with a regularizer whose structural core is mathematically dual to the orthogonality identity SCSL formalized in 2024. Independent convergence is the strongest possible signal that the structural claim is real.</p>
+      </div>
+      <div class="article-badge">
+        <span class="badge-primary">External Validation</span>
+        <span class="badge-secondary">18 min · STANDALONE</span>
+      </div>
     </div>
 
     <div class="series-articles external-article">
@@ -795,7 +940,7 @@
     </div>
   </section>
 
-  <!-- SERIES 6: CONSCIOUSNESS FRAMEWORK · TECHNICAL -->
+  <!-- SERIES 7: CONSCIOUSNESS FRAMEWORK · TECHNICAL -->
   <section class="series-block" id="consciousness-technical">
     <div class="series-block-header">
       <div class="series-icon-emoji">⟨ψ|r⟩</div>
